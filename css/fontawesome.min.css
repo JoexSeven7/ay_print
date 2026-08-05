@@ -1,17 +1,6 @@
-/*
-  FONT AWESOME LOCAL SETUP
-  ========================
-  
-  OPTION 1: Download from https://fontawesome.com/download
-  - Download "Free Web" package
-  - Extract webfonts/ folder to your-project/
-  - Copy all.min.css to css/fontawesome.min.css
-  
-  OPTION 2: Use npm (run in terminal)
-  - npm install
-  - npm run build:css
-  
-  Below is a fallback that still uses CDN (replace after setup)
-*/
-
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+/*!
+ * Font Awesome placeholder.
+ * This file is intentionally minimal. Download the real "Free Web" package from
+ * https://fontawesome.com/download, then copy its css/all.min.css contents here
+ * (or replace this file with css/all.min.css). See SETUP.md step 3.
+ */

@@ -1,6 +1,6 @@
 @echo off
 echo ============================================
-echo   ATHARRYS PROPERTIES - Local Setup
+echo   AY PRINT - Local Setup
 echo ============================================
 echo.
 

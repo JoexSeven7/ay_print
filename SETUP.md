@@ -1,4 +1,4 @@
-# ATHARRYS PROPERTIES - Local Development Setup
+# AY PRINT — Local Development Setup
 
 ## Quick Start (Windows)
 
@@ -30,11 +30,22 @@ npm run build:css
 
 ### Step 4: Replace Formspree ID
 In these files, replace `FORMSPREE_ID` with your actual Formspree form ID:
-- `contact.html`
-- `index.html`  
-- `property-detail.html`
+- `contact.html` (quote/order form)
+- `index.html` (newsletter form)
+- `product-detail.html` (request-quote modal, if used)
 
 Get your free form ID at: https://formspree.io
+
+---
+
+## Adding Your Products & Images
+
+- Product catalogue lives in **`data/products.json`**. Edit titles, prices, categories,
+  sizes, finishes, images, etc. Keep it in sync with the embedded fallback in `js/products.js`.
+- Drop real product photos into **`images/products/`** (and portfolio shots into
+  `images/portfolio/`). Missing images fall back to `images/placeholder.svg`.
+- Replace `images/logo.png`, `favicon-*.png`, `apple-touch-icon.png`, `android-chrome-*.png`
+  and `favicon.ico` with your real brand assets.
 
 ---
 
@@ -51,19 +62,9 @@ npx serve
 ```
 Then open: http://localhost:3000
 
----
-
-## File Changes Summary
-
-| File | Change |
-|------|--------|
-| `css/input.css` | Tailwind input (source) |
-| `css/output.css` | Tailwind compiled (generated) |
-| `css/fontawesome.min.css` | Font Awesome styles |
-| `tailwind.config.js` | Tailwind configuration |
-| `package.json` | npm dependencies |
-| `setup.bat` | Windows setup script |
-| All `.html` files | Changed from CDN to local CSS |
+> The site fetches `data/products.json` over HTTP, so you must use a server
+> (`npx serve`), not open the file directly (`file://`). If opened via `file://`,
+> the pages fall back to embedded sample data.
 
 ---
 
@@ -73,6 +74,7 @@ Then open: http://localhost:3000
 - [ ] Run `npm run build:css`
 - [ ] Download & setup Font Awesome
 - [ ] Replace `FORMSPREE_ID` with actual Formspree ID
+- [ ] Add real product images + logo/favicons
 - [ ] Test all forms work
 - [ ] Deploy to hosting provider
 
@@ -91,3 +93,7 @@ Make sure you replaced `FORMSPREE_ID` with your actual Formspree form ID.
 
 ### Icons not showing
 Download Font Awesome webfonts folder and place in project root.
+
+### Products not loading
+You must serve over HTTP (`npx serve`). Opening `index.html` directly via `file://`
+will use the embedded fallback data instead of `data/products.json`.

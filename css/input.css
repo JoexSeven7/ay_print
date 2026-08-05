@@ -9,24 +9,26 @@
 /* Custom CSS Variables */
 @layer base {
     :root {
-        --color-primary: #1a2744;
-        --color-secondary: #8b2635;
-        --color-accent: #ffffff;
-        --color-dark: #1a2744;
-        --color-light: #f3f4f6;
-        --color-maroon: #8b2635;
-        --color-maroonDark: #6b1a1a;
-        --color-navy: #1a2744;
-        --color-navyLight: #2a3754;
+        --color-primary: #2E90E6;
+        --color-secondary: #C9A227;
+        --color-accent: #F4E4BC;
+        --color-dark: #1b3a5b;
+        --color-light: #f3f7fb;
+        --color-gold: #C9A227;
+        --color-goldDark: #A8811B;
+        --color-blue: #2E90E6;
+        --color-blueLight: #5AA9E6;
+        --color-navy: #1b3a5b;
+        --color-navyLight: #2a5a86;
     }
 }
 
 @layer components {
     .btn-primary {
-        @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-navyLight transition-colors;
+        @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-blueLight transition-colors;
     }
     .btn-secondary {
-        @apply bg-secondary text-white px-6 py-3 rounded-lg font-semibold hover:bg-maroonDark transition-colors;
+        @apply bg-secondary text-white px-6 py-3 rounded-lg font-semibold hover:bg-goldDark transition-colors;
     }
     .card {
         @apply bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow;

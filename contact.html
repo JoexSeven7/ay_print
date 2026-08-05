@@ -4,246 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; frame-src https://www.google.com https://maps.google.com; img-src 'self' data: https:; font-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io;">
-    <meta name="description" content="Contact ATHARRYS PROPERTIES LIMITED for all your real estate needs. Visit our offices, call us, or send a message. We respond within 24 hours.">
-    <meta name="keywords" content="contact us, real estate contact, ATHARRYS PROPERTIES">
-    <title>Contact Us | ATHARRYS PROPERTIES LIMITED</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; frame-src https://www.google.com https://maps.google.com https://maps.googleapis.com; img-src 'self' data: https:; font-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io;">
+    <meta name="description" content="Contact AY PRINT for a quote on business cards, flyers, bags, banners, stickers and more.">
+    <meta name="keywords" content="print quote, contact AY PRINT, printing order">
+    <title>Contact & Quote | AY PRINT</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="stylesheet" href="css/output.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/custom.css">
 </head>
 <body class="font-sans antialiased">
+
     <nav class="bg-white/60 backdrop-blur shadow-sm fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0">
-                    <a href="index.html" class="flex items-center">
-                        <img src="images/logo.png" alt="ATHARRYS PROPERTIES" class="h-12 w-auto">
-                    </a>
-                </div>
-                <button class="md:hidden p-2 rounded-lg hover:bg-gray-100" id="navToggle" aria-label="Toggle navigation">
-                    <span class="block w-6 h-0.5 bg-gray-600 mb-1"></span>
-                    <span class="block w-6 h-0.5 bg-gray-600 mb-1"></span>
-                    <span class="block w-6 h-0.5 bg-gray-600"></span>
-                </button>
+                <div class="flex-shrink-0"><a href="index.html" class="flex items-center"><img src="images/logo.svg" alt="AY PRINT" class="h-12 w-auto"></a></div>
+                <button class="md:hidden p-2 rounded-lg hover:bg-gray-100" id="navToggle" aria-label="Toggle navigation"><span class="block w-6 h-0.5 bg-gray-600 mb-1"></span><span class="block w-6 h-0.5 bg-gray-600 mb-1"></span><span class="block w-6 h-0.5 bg-gray-600"></span></button>
                 <ul class="hidden md:flex space-x-8 items-center" id="navMenu">
                     <li><a href="index.html" class="text-gray-700 hover:text-primary transition-colors">Home</a></li>
-                    <li><a href="properties.html" class="text-gray-700 hover:text-primary transition-colors">Properties</a></li>
-                    <li><a href="about.html" class="text-gray-700 hover:text-primary transition-colors">About Us</a></li>
+                    <li><a href="products.html" class="text-gray-700 hover:text-primary transition-colors">Products</a></li>
                     <li><a href="services.html" class="text-gray-700 hover:text-primary transition-colors">Services</a></li>
+                    <li><a href="gallery.html" class="text-gray-700 hover:text-primary transition-colors">Gallery</a></li>
                     <li><a href="blog.html" class="text-gray-700 hover:text-primary transition-colors">Blog</a></li>
-                    <li><a href="contact.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-maroonDark transition-colors">Contact Us</a></li>
+                    <li class="relative"><a href="products.html" class="text-gray-700 hover:text-primary transition-colors" aria-label="Quote shortlist"><i class="far fa-bookmark text-xl relative"></i><span id="quoteCount" class="absolute -top-2 -right-2 bg-secondary text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center hidden" style="z-index:10;">0</span></a></li>
+                    <li><a href="contact.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-goldDark transition-colors">Get a Quote</a></li>
                 </ul>
             </div>
         </div>
         <div class="md:hidden hidden bg-white/60 backdrop-blur border-t" id="mobileMenu">
             <ul class="px-4 py-4 space-y-3">
                 <li><a href="index.html" class="block text-gray-700 hover:text-primary">Home</a></li>
-                <li><a href="properties.html" class="block text-gray-700 hover:text-primary">Properties</a></li>
-                <li><a href="about.html" class="block text-gray-700 hover:text-primary">About Us</a></li>
+                <li><a href="products.html" class="block text-gray-700 hover:text-primary">Products</a></li>
                 <li><a href="services.html" class="block text-gray-700 hover:text-primary">Services</a></li>
+                <li><a href="gallery.html" class="block text-gray-700 hover:text-primary">Gallery</a></li>
                 <li><a href="blog.html" class="block text-gray-700 hover:text-primary">Blog</a></li>
-                <li><a href="contact.html" class="block bg-primary text-white px-6 py-2 rounded-lg text-center">Contact Us</a></li>
+                <li><a href="products.html" class="block text-gray-700 hover:text-primary">My Quote List</a></li>
+                <li><a href="contact.html" class="block bg-primary text-white px-6 py-2 rounded-lg text-center">Get a Quote</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="relative pt-32 pb-20 bg-cover bg-center bg-no-repeat" style="background-image:url('images/build4.jpeg');">
-        <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Contact Us</h1>
-            <p class="text-xl text-gray-200 mb-6">Get in touch with our team for all your real estate needs</p>
-            <nav class="flex justify-center items-center gap-2 text-gray-300">
-                <a href="index.html" class="hover:text-white transition-colors">Home</a>
-                <span>/</span>
-                <span class="text-white">Contact Us</span>
-            </nav>
+    <section class="pt-28 pb-10 bg-gradient-to-r from-[#2E90E6] via-[#3a6aa0] to-[#C9A227]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-3xl md:text-5xl font-bold text-white mb-3">Get a Quote</h1>
+            <p class="text-blue-50 text-lg">Tell us what you need and we'll reply within 24 hours</p>
         </div>
     </section>
 
     <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row gap-12">
-                <div class="lg:w-1/2">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h2>
-                    <p class="text-gray-600 mb-8">Have questions about our services or need help finding your perfect property? Our team is here to assist you. Fill out the form or reach out to us directly using the information below.</p>
-                    <div class="space-y-6 mb-8">
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0"><i class="fas fa-map-marker-alt text-xl text-primary"></i></div>
-                            <div><h3 class="font-semibold text-gray-900 mb-1">Head Office</h3><p class="text-gray-600">No 53, Udeco Medical Road<br>Nigeria</p></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Request a Quote</h2>
+                <form id="quoteForm" action="https://formspree.io/f/FORMSPREE_ID" method="POST" class="bg-white p-8 rounded-2xl shadow-lg space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none">
                         </div>
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0"><i class="fas fa-phone text-xl text-primary"></i></div>
-                            <div><h3 class="font-semibold text-gray-900 mb-1">Phone</h3><p class="text-gray-600">+234 902 773 0330</p></div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0"><i class="fas fa-envelope text-xl text-primary"></i></div>
-                            <div><h3 class="font-semibold text-gray-900 mb-1">Email</h3><p class="text-gray-600" style="word-break:break-all;">info@atharrysproperties.com</p></div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0"><i class="fas fa-clock text-xl text-primary"></i></div>
-                            <div><h3 class="font-semibold text-gray-900 mb-1">Business Hours</h3><p class="text-gray-600">Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 2:00 PM<br>Sunday: Closed</p></div>
-                        </div>
-                    </div>
-                    <div class="bg-primary/10 p-6 rounded-xl mb-8">
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0"><i class="fas fa-bolt text-xl text-white"></i></div>
-                            <div><h3 class="font-semibold text-gray-900 mb-1">Quick Response Guarantee</h3><p class="text-gray-600">We respond to all inquiries within 24 hours. For urgent matters, call us directly.</p></div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none">
                         </div>
                     </div>
                     <div>
-                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Follow Us</h3>
-                        <p class="text-gray-600 mb-4">Stay connected with us on social media for the latest updates and property listings.</p>
-                        <div class="flex gap-4">
-                            <a href="https://www.facebook.com/share/14c1jmGXyEo/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors" aria-label="Facebook"><i class="fab fa-facebook-f text-white"></i></a>
-                            <a href="https://www.tiktok.com/@atharryshomes?_r=1&_t=ZS-95VFMLOwd1N" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors" aria-label="TikTok"><i class="fab fa-tiktok text-white"></i></a>
-                            <a href="https://www.instagram.com/atharrys_homes?igsh=dXd0emlzdG16NGhk&utm_source=qr" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors" aria-label="Instagram"><i class="fab fa-instagram text-white"></i></a>
-                            <a href="#" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-white"></i></a>
-                        </div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none">
                     </div>
-                </div>
-                <div class="lg:w-1/2">
-                    <div class="bg-white p-8 rounded-xl shadow-lg">
-                        <h2 class="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
-                        <form id="contactForm" action="https://formspree.io/f/xykqypyw" method="POST" class="space-y-4">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
-                                    <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                                </div>
-                                <div>
-                                    <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
-                                    <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                                </div>
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                            </div>
-                            <div>
-                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                            </div>
-                            <div>
-                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
-                                <select id="subject" name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                                    <option value="">Select a subject</option>
-                                    <option value="general">General Inquiry</option>
-                                    <option value="buy">I Want to Buy a Property</option>
-                                    <option value="sell">I Want to Sell a Property</option>
-                                    <option value="rent">I Want to Rent a Property</option>
-                                    <option value="property-management">Property Management</option>
-                                    <option value="valuation">Property Valuation</option>
-                                    <option value="consultation">Consultation Services</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="propertyInterest" class="block text-sm font-medium text-gray-700 mb-2">Property of Interest (Optional)</label>
-                                <input type="text" id="propertyInterest" name="propertyInterest" placeholder="Property ID or Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                            </div>
-                            <div>
-                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
-                                <textarea id="message" name="message" rows="6" required placeholder="Tell us about your real estate needs..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <input type="checkbox" id="newsletter" name="newsletter" class="w-4 h-4 text-primary rounded focus:ring-primary">
-                                <label for="newsletter" class="text-gray-700">Subscribe to our newsletter for property updates and market insights</label>
-                            </div>
-                            <button type="submit" class="w-full bg-secondary text-white px-6 py-3 rounded-lg font-semibold hover:bg-maroonDark transition-colors">Send Message</button>
-                        </form>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                        <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none">
                     </div>
-                </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Product of Interest</label>
+                        <select id="productInterest" name="productInterest" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none bg-white">
+                            <option value="">Select a product…</option>
+                            <option value="business-cards">Business Cards</option>
+                            <option value="flyers-leaflets">Flyers & Leaflets</option>
+                            <option value="branded-bags">Branded Tote & Paper Bags</option>
+                            <option value="roll-up-banners">Roll-Up Banners</option>
+                            <option value="stickers-labels">Stickers & Labels</option>
+                            <option value="brochures-catalogues">Brochures & Catalogues</option>
+                            <option value="posters">Posters</option>
+                            <option value="large-format">Large Format Printing</option>
+                            <option value="other">Something else</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell us about your print job — quantity, size, finish, deadline…" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-secondary text-white px-6 py-3 rounded-lg font-semibold hover:bg-goldDark transition-colors">Send Quote Request</button>
+                </form>
             </div>
-        </div>
-    </section>
-
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Office Locations</h2>
-                <p class="text-xl text-gray-600">Visit Our Office In Lagos</p>
-            </div>
-            <div class="flex flex-wrap justify-center gap-4 mb-8">
-                <button class="map-tab px-6 py-3 rounded-lg bg-primary text-white font-semibold" data-location="lagos">Lagos Office</button>
-            </div>
-            <div class="rounded-xl overflow-hidden shadow-lg mb-8">
-                <iframe id="officeMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.728639489274!2d3.4272!3d6.4398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf51280e7648d%3A0x4d01e5de6b847fe!2sNo+53+Udeco+Mexico+Road%2C+Chevron%2C+Lagos!5e0!3m2!1sen!2sng!4v1234567890" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="office-card bg-gray-50 p-6 rounded-xl" data-location="lagos">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Lagos Office</h3>
-                    <p class="text-gray-600 mb-2"><i class="fas fa-map-marker-alt text-primary mr-2"></i>No 53, Udeco Medical Road</p>
-                    <p class="text-gray-600 mb-2"><i class="fas fa-phone text-primary mr-2"></i> +234 801 234 5678</p>
-                    <p class="text-gray-600"><i class="fas fa-clock text-primary mr-2"></i> Mon - Fri: 8:00 AM - 6:00 PM</p>
+            <div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Contact Info</h2>
+                <div class="bg-white p-8 rounded-2xl shadow-lg space-y-6">
+                    <div class="flex items-start gap-4"><i class="fas fa-map-marker-alt text-primary text-xl mt-1"></i><div><h4 class="font-semibold text-gray-900">Address</h4><p class="text-gray-600">No 12, Industrial Road, Lagos</p></div></div>
+                    <div class="flex items-start gap-4"><i class="fas fa-phone text-primary text-xl mt-1"></i><div><h4 class="font-semibold text-gray-900">Phone</h4><p class="text-gray-600">+234 801 234 5678</p></div></div>
+                    <div class="flex items-start gap-4"><i class="fab fa-whatsapp text-primary text-xl mt-1"></i><div><h4 class="font-semibold text-gray-900">WhatsApp</h4><p class="text-gray-600">+234 902 773 0330</p></div></div>
+                    <div class="flex items-start gap-4"><i class="fas fa-envelope text-primary text-xl mt-1"></i><div><h4 class="font-semibold text-gray-900">Email</h4><p class="text-gray-600">hello@ayprint.com</p></div></div>
+                    <div class="flex items-start gap-4"><i class="fas fa-clock text-primary text-xl mt-1"></i><div><h4 class="font-semibold text-gray-900">Hours</h4><p class="text-gray-600">Mon - Sat: 8:00 AM - 6:00 PM</p></div></div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-                <p class="text-xl text-gray-600">Find answers to common questions about our services</p>
-            </div>
-            <div class="space-y-4">
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <button class="faq-question w-full px-6 py-4 flex justify-between items-center text-left hover:bg-gray-50 transition-colors">
-                        <h3 class="font-semibold text-gray-900">How do I schedule a property viewing?</h3>
-                        <i class="fas fa-chevron-down text-gray-500 transition-transform"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-4 hidden"><p class="text-gray-600">You can schedule a property viewing by filling out our contact form, calling us directly, or using the "Schedule Viewing" button on any property detail page. Our team will confirm the appointment within 24 hours.</p></div>
+                <div class="mt-6 bg-primary text-white p-6 rounded-2xl">
+                    <h4 class="font-semibold mb-2">Fast turnaround</h4>
+                    <p class="text-blue-50 text-sm">Most standard jobs are ready within 2-4 business days. Ask about rush options!</p>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <button class="faq-question w-full px-6 py-4 flex justify-between items-center text-left hover:bg-gray-50 transition-colors">
-                        <h3 class="font-semibold text-gray-900">What documents do I need to buy a property?</h3>
-                        <i class="fas fa-chevron-down text-gray-500 transition-transform"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-4 hidden"><p class="text-gray-600">Typically, you'll need a valid ID, proof of address, proof of income, and tax clearance. Our team will guide you through all necessary documentation based on your specific situation and the property type.</p></div>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <button class="faq-question w-full px-6 py-4 flex justify-between items-center text-left hover:bg-gray-50 transition-colors">
-                        <h3 class="font-semibold text-gray-900">Do you offer property management services?</h3>
-                        <i class="fas fa-chevron-down text-gray-500 transition-transform"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-4 hidden"><p class="text-gray-600">Yes, we offer comprehensive property management services including tenant screening, rent collection, maintenance coordination, and regular property inspections. Contact us for a customized management plan.</p></div>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <button class="faq-question w-full px-6 py-4 flex justify-between items-center text-left hover:bg-gray-50 transition-colors">
-                        <h3 class="font-semibold text-gray-900">How long does it take to sell a property?</h3>
-                        <i class="fas fa-chevron-down text-gray-500 transition-transform"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-4 hidden"><p class="text-gray-600">The time to sell a property varies based on location, price, and market conditions. On average, properties in prime locations sell within 3-6 months. Our marketing strategies and extensive network help accelerate the process.</p></div>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <button class="faq-question w-full px-6 py-4 flex justify-between items-center text-left hover:bg-gray-50 transition-colors">
-                        <h3 class="font-semibold text-gray-900">Do you provide property valuation services?</h3>
-                        <i class="fas fa-chevron-down text-gray-500 transition-transform"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-4 hidden"><p class="text-gray-600">Yes, we provide professional property valuation services for buying, selling, refinancing, or investment purposes. Our certified valuers provide detailed reports with market analysis and comparable sales data.</p></div>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <button class="faq-question w-full px-6 py-4 flex justify-between items-center text-left hover:bg-gray-50 transition-colors">
-                        <h3 class="font-semibold text-gray-900">What areas do you cover?</h3>
-                        <i class="fas fa-chevron-down text-gray-500 transition-transform"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-4 hidden"><p class="text-gray-600">We have offices in Lagos, Abuja, and Port Harcourt, and we serve clients across Nigeria. Our extensive network allows us to help you find properties in any location you're interested in.</p></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 bg-gradient-to-r from-[#1a2744] via-[#3a4a64] to-[#8b2635]">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Find Your Dream Property?</h2>
-            <p class="text-xl text-blue-100 mb-8">Browse our extensive collection of properties or contact us for personalized assistance.</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="properties.html" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Browse Properties</a>
-                <a href="tel:+2348012345678" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors">Call Us Now</a>
             </div>
         </div>
     </section>
@@ -251,60 +117,17 @@
     <footer class="bg-gray-900 text-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div>
-                    <img src="images/logo.png" alt="ATHARRYS PROPERTIES" class="h-12 w-auto mb-6">
-                    <p class="text-gray-400 mb-6">ATHARRYS PROPERTIES LIMITED is your trusted partner in real estate solutions. With over 7 years of experience, we deliver excellence in property management, sales, and investments.</p>
-                    <div class="flex gap-4">
-                        <a href="https://www.facebook.com/share/14c1jmGXyEo/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.tiktok.com/@atharryshomes?_r=1&_t=ZS-95VFMLOwd1N" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://www.instagram.com/atharrys_homes?igsh=dXd0emlzdG16NGhk&utm_source=qr" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
-                    <ul class="space-y-3">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="properties.html" class="text-gray-400 hover:text-white transition-colors">Properties</a></li>
-                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
-                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-6">Our Services</h3>
-                    <ul class="space-y-3">
-                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Property Sales</a></li>
-                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Property Management</a></li>
-                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Commercial Real Estate</a></li>
-                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Property Valuation</a></li>
-                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Consultation Services</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-6">Contact Us</h3>
-                    <ul class="space-y-3 text-gray-400">
-                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt mt-1"></i><span>No 53, Udeco Medical Road</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-phone"></i><span>+234 801 234 5678</span></li>
-                        <li class="flex items-center gap-3"><i class="fab fa-whatsapp"></i><span>+234 902 773 0330</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-envelope"></i><span style="word-break:break-all;">info@atharrysproperties.com</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-clock"></i><span>Mon - Fri: 8:00 AM - 6:00 PM</span></li>
-                    </ul>
-                </div>
+                <div><img src="images/logo.svg" alt="AY PRINT" class="h-12 w-auto mb-6"><p class="text-gray-400 mb-6">AY PRINT is your trusted partner for premium printing.</p></div>
+                <div><h3 class="text-lg font-semibold mb-6">Quick Links</h3><ul class="space-y-3"><li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li><li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Products</a></li><li><a href="gallery.html" class="text-gray-400 hover:text-white transition-colors">Gallery</a></li><li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li></ul></div>
+                <div><h3 class="text-lg font-semibold mb-6">Our Products</h3><ul class="space-y-3"><li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Business Cards</a></li><li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Flyers</a></li><li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Branded Bags</a></li><li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Banners</a></li></ul></div>
+                <div><h3 class="text-lg font-semibold mb-6">Contact Us</h3><ul class="space-y-3 text-gray-400"><li class="flex items-start gap-3"><i class="fas fa-map-marker-alt mt-1"></i><span>No 12, Industrial Road, Lagos</span></li><li class="flex items-center gap-3"><i class="fas fa-phone"></i><span>+234 801 234 5678</span></li><li class="flex items-center gap-3"><i class="fab fa-whatsapp"></i><span>+234 902 773 0330</span></li><li class="flex items-center gap-3"><i class="fas fa-envelope"></i><span style="word-break:break-all;">hello@ayprint.com</span></li></ul></div>
             </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm">&copy; 2024 ATHARRYS PROPERTIES LIMITED. All rights reserved.</p>
-                <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
-                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
-                </div>
-            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center"><p class="text-gray-400 text-sm">&copy; 2026 AY PRINT. All rights reserved.</p></div>
         </div>
     </footer>
 
-    <button class="fixed bottom-8 right-8 bg-secondary text-white w-12 h-12 rounded-full shadow-lg hover:bg-maroonDark transition-colors opacity-0 invisible" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
-    <a href="https://wa.me/2349027730330" target="_blank" rel="noopener noreferrer" class="fixed bottom-24 right-8 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 flex items-center justify-center z-50" aria-label="Contact on WhatsApp"><i class="fab fa-whatsapp text-2xl"></i></a>
+    <button class="fixed bottom-8 right-8 bg-secondary text-white w-12 h-12 rounded-full shadow-lg hover:bg-goldDark transition-colors opacity-0 invisible" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <a href="https://wa.me/2349027730330" target="_blank" rel="noopener noreferrer" class="fixed bottom-24 right-8 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 flex items-center justify-center z-50" aria-label="WhatsApp"><i class="fab fa-whatsapp text-2xl"></i></a>
 
     <script src="js/main.js"></script>
     <script src="js/contact.js"></script>
