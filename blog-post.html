@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io;">
+    <meta name="description" content="Read the latest real estate insights, market updates, and investment tips from ATHARRYS PROPERTIES LIMITED.">
+    <meta name="keywords" content="blog post, real estate article, ATHARRYS PROPERTIES">
+    <title>Blog Post | ATHARRYS PROPERTIES LIMITED</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="css/output.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+</head>
+<body class="font-sans antialiased">
+    <nav class="bg-white/60 backdrop-blur shadow-sm fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center">
+                        <img src="images/logo.png" alt="ATHARRYS PROPERTIES" class="h-12 w-auto">
+                    </a>
+                </div>
+                <button class="md:hidden p-2 rounded-lg hover:bg-gray-100" id="navToggle" aria-label="Toggle navigation">
+                    <span class="block w-6 h-0.5 bg-gray-600 mb-1"></span>
+                    <span class="block w-6 h-0.5 bg-gray-600 mb-1"></span>
+                    <span class="block w-6 h-0.5 bg-gray-600"></span>
+                </button>
+                <ul class="hidden md:flex space-x-8 items-center" id="navMenu">
+                    <li><a href="index.html" class="text-gray-700 hover:text-primary transition-colors">Home</a></li>
+                    <li><a href="properties.html" class="text-gray-700 hover:text-primary transition-colors">Properties</a></li>
+                    <li><a href="about.html" class="text-gray-700 hover:text-primary transition-colors">About Us</a></li>
+                    <li><a href="services.html" class="text-gray-700 hover:text-primary transition-colors">Services</a></li>
+                    <li><a href="blog.html" class="text-primary font-semibold border-b-2 border-primary pb-1">Blog</a></li>
+                    <li><a href="contact.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-maroonDark transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="md:hidden hidden bg-white/60 backdrop-blur border-t" id="mobileMenu">
+            <ul class="px-4 py-4 space-y-3">
+                <li><a href="index.html" class="block text-gray-700 hover:text-primary">Home</a></li>
+                <li><a href="properties.html" class="block text-gray-700 hover:text-primary">Properties</a></li>
+                <li><a href="about.html" class="block text-gray-700 hover:text-primary">About Us</a></li>
+                <li><a href="services.html" class="block text-gray-700 hover:text-primary">Services</a></li>
+                <li><a href="blog.html" class="block text-primary font-semibold">Blog</a></li>
+                <li><a href="contact.html" class="block bg-primary text-white px-6 py-2 rounded-lg text-center">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-20 bg-cover bg-center bg-no-repeat" style="background-image:url('images/nigblog.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4" id="postTitle">Blog Post</h1>
+            <div id="postMeta" class="text-gray-300 mb-6"></div>
+            <nav class="flex justify-center items-center gap-2 text-gray-300">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <span>/</span>
+                <a href="blog.html" class="hover:text-white transition-colors">Blog</a>
+                <span>/</span>
+                <span class="text-white" id="breadcrumbTitle">Blog Post</span>
+            </nav>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <article id="postArticle" class="hidden">
+                <div class="relative mb-8 rounded-2xl overflow-hidden">
+                    <img id="postImage" src="" alt="" class="w-full h-96 object-cover">
+                    <span id="postCategoryBadge" class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold hidden"></span>
+                </div>
+                <div id="postBody" class="prose prose-lg max-w-none text-gray-700"></div>
+                <div class="mt-12 pt-8 border-t border-gray-200">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Share This Article</h3>
+                    <div class="flex gap-3">
+                        <a href="#" class="share-btn facebook w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="share-btn twitter w-10 h-10 bg-sky-500 text-white rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="share-btn whatsapp w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-colors" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="share-btn email w-10 h-10 bg-gray-600 text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors" aria-label="Share via Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-gray-200">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Related Posts</h3>
+                    <div id="similarPosts" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+                </div>
+            </article>
+            <div id="postBody" class="text-center py-12"><i class="fas fa-spinner fa-spin text-4xl text-primary mb-4"></i><p class="text-gray-600">Loading article...</p></div>
+            <div class="mt-8 flex justify-between">
+                <button id="prevPostBtn" class="hidden bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors"><i class="fas fa-arrow-left mr-2"></i> Previous</button>
+                <button id="nextPostBtn" class="hidden bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors">Next <i class="fas fa-arrow-right ml-2"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Recent Posts</h2>
+                <p class="text-xl text-gray-600">Stay informed with our latest articles and insights</p>
+            </div>
+            <div id="recentPostsList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gradient-to-r from-[#1a2744] via-[#3a4a64] to-[#8b2635]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Stay Updated with Our Newsletter</h2>
+            <p class="text-xl text-blue-100 mb-8">Subscribe to receive the latest property listings, market insights, and exclusive offers directly in your inbox.</p>
+            <form id="newsletterForm" action="https://formspree.io/f/FORMSPREE_ID" method="POST" class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+                <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email address" required class="flex-1 px-6 py-4 rounded-lg focus:ring-2 focus:ring-white focus:outline-none">
+                <button type="submit" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Subscribe</button>
+            </form>
+            <p class="text-blue-100 mt-4 text-sm">By subscribing, you agree to our Privacy Policy. Unsubscribe anytime.</p>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <img src="images/logo.png" alt="ATHARRYS PROPERTIES" class="h-12 w-auto mb-6">
+                    <p class="text-gray-400 mb-6">ATHARRYS PROPERTIES LIMITED is your trusted partner in real estate solutions. With over 7 years of experience, we deliver excellence in property management, sales, and investments.</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/share/14c1jmGXyEo/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@atharryshomes?_r=1&_t=ZS-95VFMLOwd1N" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/atharrys_homes?igsh=dXd0emlzdG16NGhk&utm_source=qr" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="properties.html" class="text-gray-400 hover:text-white transition-colors">Properties</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Our Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Property Sales</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Property Management</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Commercial Real Estate</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Property Valuation</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Consultation Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt mt-1"></i><span>No 53, Udeco Medical Road</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-phone"></i><span>+234 801 234 5678</span></li>
+                        <li class="flex items-center gap-3"><i class="fab fa-whatsapp"></i><span>+234 902 773 0330</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-envelope"></i><span style="word-break:break-all;">info@atharrysproperties.com</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-clock"></i><span>Mon - Fri: 8:00 AM - 6:00 PM</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">&copy; 2024 ATHARRYS PROPERTIES LIMITED. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="fixed bottom-8 right-8 bg-secondary text-white w-12 h-12 rounded-full shadow-lg hover:bg-maroonDark transition-colors opacity-0 invisible" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <a href="https://wa.me/2349027730330" target="_blank" rel="noopener noreferrer" class="fixed bottom-24 right-8 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 flex items-center justify-center z-50" aria-label="Contact on WhatsApp"><i class="fab fa-whatsapp text-2xl"></i></a>
+
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>

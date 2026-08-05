@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-Content-Type-Options" content="nosniff">
+     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; frame-src https://www.google.com https://maps.google.com https://maps.googleapis.com; img-src 'self' data: https:; font-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io;">
+     <meta name="description" content="Explore our comprehensive real estate services including property sales, management, commercial real estate, valuation, and consultation.">
+     <meta name="keywords" content="real estate services, property management, commercial real estate, ATHARRYS PROPERTIES">
+     <title>Services | ATHARRYS PROPERTIES LIMITED</title>
+      <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+      <link rel="manifest" href="site.webmanifest">
+      <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+     <link rel="stylesheet" href="css/output.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+   
+</head>
+<body class="font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="bg-white/60 backdrop-blur shadow-sm fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center">
+                        <img src="images/logo.png" alt="ATHARRYS PROPERTIES" class="h-12 w-auto">
+                    </a>
+                </div>
+                <button class="md:hidden p-2 rounded-lg hover:bg-gray-100" id="navToggle" aria-label="Toggle navigation">
+                    <span class="block w-6 h-0.5 bg-gray-600 mb-1"></span>
+                    <span class="block w-6 h-0.5 bg-gray-600 mb-1"></span>
+                    <span class="block w-6 h-0.5 bg-gray-600"></span>
+                </button>
+                <ul class="hidden md:flex space-x-8 items-center" id="navMenu">
+                    <li><a href="index.html" class="text-gray-700 hover:text-primary transition-colors">Home</a></li>
+                    <li><a href="properties.html" class="text-gray-700 hover:text-primary transition-colors">Properties</a></li>
+                    <li><a href="about.html" class="text-gray-700 hover:text-primary transition-colors">About Us</a></li>
+                    <li><a href="services.html" class="text-primary font-semibold border-b-2 border-primary pb-1">Services</a></li>
+                    <li><a href="blog.html" class="text-gray-700 hover:text-primary transition-colors">Blog</a></li>
+                    <li><a href="contact.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-maroonDark transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white/60 backdrop-blur border-t" id="mobileMenu">
+            <ul class="px-4 py-4 space-y-3">
+                <li><a href="index.html" class="block text-gray-700 hover:text-primary">Home</a></li>
+                <li><a href="properties.html" class="block text-gray-700 hover:text-primary">Properties</a></li>
+                <li><a href="about.html" class="block text-gray-700 hover:text-primary">About Us</a></li>
+                <li><a href="services.html" class="block text-primary font-semibold">Services</a></li>
+                <li><a href="blog.html" class="block text-gray-700 hover:text-primary">Blog</a></li>
+                <li><a href="contact.html" class="block bg-primary text-white px-6 py-2 rounded-lg text-center">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="relative pt-32 pb-20 bg-cover bg-center bg-no-repeat" style="background-image: url('images/services-header.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Our Services</h1>
+            <p class="text-xl text-gray-200 mb-6">Comprehensive real estate solutions tailored to your needs</p>
+            <nav class="flex justify-center items-center gap-2 text-gray-300">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <span>/</span>
+                <span class="text-white">Services</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What We Do</h2>
+                <p class="text-xl text-gray-600">From buying and selling to property management and investment advice, we provide end-to-end real estate solutions</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Property Sales -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow ">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-3xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Property Sales</h3>
+                    <p class="text-gray-600 mb-6">Whether you're buying your first home, upgrading to a larger property, or selling your current property, our experienced team will guide you through every step of the process.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Free Property Valuation</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Professional Photography</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Marketing & Advertising</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Negotiation Support</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Legal Documentation</li>
+                    </ul>
+                    <a href="contact.html" class="text-primary font-semibold hover:text-blue-700 transition-colors">Get Started <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+                <!-- Property Management -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow ">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-key text-3xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Property Management</h3>
+                    <p class="text-gray-600 mb-6">Maximize your rental income and minimize stress with our comprehensive property management services. We handle everything so you can enjoy passive income.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Tenant Screening</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Rent Collection</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Property Maintenance</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Regular Inspections</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Financial Reporting</li>
+                    </ul>
+                    <a href="contact.html" class="text-primary font-semibold hover:text-blue-700 transition-colors">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+                <!-- Commercial Real Estate -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow ">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-building text-3xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Commercial Real Estate</h3>
+                    <p class="text-gray-600 mb-6">From office spaces to retail locations and industrial properties, we help businesses find the perfect commercial space to meet their needs and budget.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Office Space Leasing</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Retail Property Sales</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Industrial Properties</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Land Acquisition</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Investment Advisory</li>
+                    </ul>
+                    <a href="contact.html" class="text-primary font-semibold hover:text-blue-700 transition-colors">Explore Options <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+                <!-- Property Valuation -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-calculator text-3xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Property Valuation</h3>
+                    <p class="text-gray-600 mb-6">Get accurate and professional property valuations for buying, selling, refinancing, or investment purposes. Our certified valuers provide detailed reports.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Market Analysis</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Comparable Sales Data</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Detailed Reports</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Investment Analysis</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Tax Assessment Support</li>
+                    </ul>
+                    <a href="contact.html" class="text-primary font-semibold hover:text-blue-700 transition-colors">Request Valuation <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+                <!-- Consultation Services -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-comments text-3xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Consultation Services</h3>
+                    <p class="text-gray-600 mb-6">Expert advice on real estate investments, market trends, and property portfolio management. Our consultants help you make informed decisions.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Investment Strategy</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Market Research</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Portfolio Review</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Risk Assessment</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Exit Planning</li>
+                    </ul>
+                    <a href="contact.html" class="text-primary font-semibold hover:text-blue-700 transition-colors">Book Consultation <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+                <!-- Legal Support -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-file-contract text-3xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Legal Support</h3>
+                    <p class="text-gray-600 mb-6">Complete legal documentation and support for all property transactions. Our legal team ensures your interests are protected throughout the process.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Contract Review</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Title Verification</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Documentation</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Registration Support</li>
+                        <li class="flex items-center gap-2 text-gray-600"><i class="fas fa-check text-green-500"></i> Dispute Resolution</li>
+                    </ul>
+                    <a href="contact.html" class="text-primary font-semibold hover:text-blue-700 transition-colors">Get Legal Help <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Process -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How We Work</h2>
+                <p class="text-xl text-gray-600">Our streamlined process ensures a smooth and successful experience</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="relative">
+                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6">1</div>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Consultation</h3>
+                        <p class="text-gray-600">We start with a free consultation to understand your needs, goals, and budget. This helps us tailor our services to your specific requirements.</p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6">2</div>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Property Search</h3>
+                        <p class="text-gray-600">Our team searches and curates properties that match your criteria. We provide detailed information and arrange viewings at your convenience.</p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6">3</div>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Due Diligence</h3>
+                        <p class="text-gray-600">We conduct thorough due diligence on all properties, including title verification, physical inspection, and market analysis.</p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6">4</div>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Negotiation</h3>
+                        <p class="text-gray-600">Our experienced negotiators work to get you the best deal. We handle all communications and ensure favorable terms.</p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6">5</div>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Closing</h3>
+                        <p class="text-gray-600">We manage all documentation, payments, and legal requirements to ensure a smooth and secure closing process.</p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6">6</div>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">After-Sales Support</h3>
+                        <p class="text-gray-600">Our relationship doesn't end at closing. We provide ongoing support and assistance whenever you need us.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Choose ATHARRYS PROPERTIES?</h2>
+                     <p class="text-gray-600 mb-8">With over 7 years of experience and a track record of success, we are the trusted choice for real estate services in Nigeria.</p>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-award text-xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Industry Expertise</h4>
+                                <p class="text-gray-600">Our team has deep knowledge of the Nigerian real estate market and emerging trends.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-shield-alt text-xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Trusted & Reliable</h4>
+                                <p class="text-gray-600">We've built our reputation on integrity, transparency, and delivering on our promises.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-headset text-xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">24/7 Support</h4>
+                                <p class="text-gray-600">Our dedicated team is always available to answer your questions and provide assistance.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-handshake text-xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Customer-Centric</h4>
+                                <p class="text-gray-600">We put our clients first and tailor our services to meet their unique needs.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-globe text-xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Wide Network</h4>
+                                <p class="text-gray-600">Our extensive network gives us access to exclusive properties and opportunities.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-chart-line text-xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Proven Results</h4>
+                                <p class="text-gray-600">Our track record speaks for itself with hundreds of successful transactions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="images/officde.jpg" alt="Why Choose Us" class="rounded-2xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600">Real stories from real clients who have experienced our services</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex text-accent mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">"ATHARRYS PROPERTIES made buying my first home an absolute breeze. Their team was professional, knowledgeable, and always available to answer my questions. I couldn't be happier with my new home!"</p>
+                    <div class="flex items-center gap-4">
+                        <img src="images/ameka_unamdi.jpg" alt="Client" class="w-20 h-20 rounded-full object-cover flex-shrink-0">
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Chinedu Okafor</h4>
+                            <p class="text-sm text-gray-600">Homeowner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex text-accent mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Their property management service is exceptional. They handle everything efficiently, and I never have to worry about my rental properties. Highly recommended!"</p>
+                    <div class="flex items-center gap-4">
+                        <img src="images/chinedu_okafor.jpg" alt="Client" class="w-20 h-20 rounded-full object-cover flex-shrink-0">
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Emeka Nnamdi</h4>
+                            <p class="text-sm text-gray-600">Landlord</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex text-accent mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">"We found the perfect office space for our business thanks to ATHARRYS. Their commercial real estate team understood our needs and found us a great location at an excellent price."</p>
+                    <div class="flex items-center gap-4">
+                        <img src="images/fatimma.jpg" alt="Client" class="w-20 h-20 rounded-full object-cover flex-shrink-0">
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Fatima Abdullahi</h4>
+                            <p class="text-sm text-gray-600">Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-[#1a2744] via-[#3a4a64] to-[#8b2635]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Get Started?</h2>
+            <p class="text-xl text-blue-100 mb-8">Contact us today to discuss your real estate needs and discover how we can help you achieve your goals.</p>
+            <a href="contact.html" class="inline-block bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <img src="images/logo.png" alt="ATHARRYS PROPERTIES" class="h-12 w-auto mb-6">
+                     <p class="text-gray-400 mb-6">ATHARRYS PROPERTIES LIMITED is your trusted partner in real estate solutions. With over 7 years of experience, we deliver excellence in property management, sales, and investments.</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/share/14c1jmGXyEo/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@atharryshomes?_r=1&_t=ZS-95VFMLOwd1N" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/atharrys_homes?igsh=dXd0emlzdG16NGhk&utm_source=qr" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="properties.html" class="text-gray-400 hover:text-white transition-colors">Properties</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Our Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Property Sales</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Property Management</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Commercial Real Estate</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Property Valuation</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Consultation Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1"></i>
+                            <span>No 53, Udeco Medical Road</span>
+                        </li>
+<li class="flex items-center gap-3">
+                            <i class="fas fa-phone"></i>
+                            <span>+234 801 234 5678</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+234 902 773 0330</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope"></i>
+                            <span style="word-break: break-all;">info@atharrysproperties.com</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Fri: 8:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">&copy; 2024 ATHARRYS PROPERTIES LIMITED. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="fixed bottom-8 right-8 bg-secondary text-white w-12 h-12 rounded-full shadow-lg hover:bg-maroonDark transition-colors opacity-0 invisible" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/2349027730330" target="_blank" rel="noopener noreferrer" class="fixed bottom-24 right-8 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 flex items-center justify-center z-50" aria-label="Contact on WhatsApp">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

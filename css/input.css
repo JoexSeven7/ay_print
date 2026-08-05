@@ -1,0 +1,34 @@
+/* Tailwind CSS Input File */
+/* Run: npm install, then npm run build:css */
+
+/* Import Tailwind base, components, utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables */
+@layer base {
+    :root {
+        --color-primary: #1a2744;
+        --color-secondary: #8b2635;
+        --color-accent: #ffffff;
+        --color-dark: #1a2744;
+        --color-light: #f3f4f6;
+        --color-maroon: #8b2635;
+        --color-maroonDark: #6b1a1a;
+        --color-navy: #1a2744;
+        --color-navyLight: #2a3754;
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-navyLight transition-colors;
+    }
+    .btn-secondary {
+        @apply bg-secondary text-white px-6 py-3 rounded-lg font-semibold hover:bg-maroonDark transition-colors;
+    }
+    .card {
+        @apply bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow;
+    }
+}
