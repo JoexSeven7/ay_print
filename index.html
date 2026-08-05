@@ -1,283 +1,497 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; frame-src https://www.google.com https://maps.google.com https://maps.googleapis.com; img-src 'self' data: https:; font-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io;">
-    <meta name="description" content="AY PRINT — premium printing for business cards, flyers, bags, banners, stickers and more. Fast turnaround, free design and eco-friendly options.">
-    <meta name="keywords" content="printing, business cards, flyers, branded bags, banners, stickers, brochures, posters, AY PRINT">
-    <title>AY PRINT | Cards, Flyers, Bags & Printing Services</title>
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="stylesheet" href="css/output.css">
-    <link rel="stylesheet" href="css/fontawesome.min.css">
-    <link rel="stylesheet" href="css/custom.css">
-</head>
-<body class="font-sans antialiased">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-Content-Type-Options" content="nosniff" />
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-src https://www.google.com https://maps.google.com https://maps.googleapis.com; img-src 'self' data: https:; font-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; frame-ancestors *;" />
+		<meta
+			name="description"
+			content="AY PRINT — premium printing for business cards, flyers, bags, banners, stickers and more. Fast turnaround, free design and eco-friendly options." />
+		<meta
+			name="keywords"
+			content="printing, business cards, flyers, branded bags, banners, stickers, brochures, posters, AY PRINT" />
+		<title>AY PRINT | Cards, Flyers, Bags & Printing Services</title>
+		<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+		<link rel="manifest" href="site.webmanifest" />
+		<link rel="stylesheet" href="css/output.css" />
+		<link rel="stylesheet" href="css/fontawesome.min.css" />
+		<link rel="stylesheet" href="css/custom.css" />
+	</head>
+	<body class="font-sans antialiased">
+		<nav class="bg-white/60 backdrop-blur shadow-sm fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="flex justify-between items-center h-20">
+					<div class="flex-shrink-0">
+						<a href="index.html" class="flex items-center">
+							<img src="images/ay_logo.png" alt="AY PRINT" class="h-12 w-auto" />
+						</a>
+					</div>
+					<button class="md:hidden p-2 rounded-lg hover:bg-gray-100" id="navToggle" aria-label="Toggle navigation">
+						<span class="block w-6 h-0.5 bg-primary mb-1"></span>
+						<span class="block w-6 h-0.5 bg-primary mb-1"></span>
+						<span class="block w-6 h-0.5 bg-primary"></span>
+					</button>
+					<ul class="hidden md:flex space-x-8 items-center" id="navMenu">
+						<li><a href="index.html" class="text-primary font-semibold border-b-2 border-primary pb-1">Home</a></li>
+						<li><a href="products.html" class="text-gray-700 hover:text-primary transition-colors">Products</a></li>
+						<li><a href="services.html" class="text-gray-700 hover:text-primary transition-colors">Services</a></li>
+						<li><a href="gallery.html" class="text-gray-700 hover:text-primary transition-colors">Gallery</a></li>
+						<li><a href="blog.html" class="text-gray-700 hover:text-primary transition-colors">Blog</a></li>
+						<li class="relative">
+							<a
+								href="products.html"
+								class="text-gray-700 hover:text-primary transition-colors"
+								aria-label="View quote shortlist">
+								<i class="far fa-bookmark text-xl relative"></i>
+								<span
+									id="quoteCount"
+									class="absolute -top-2 -right-2 bg-secondary text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center hidden"
+									style="z-index: 10"
+									>0</span
+								>
+							</a>
+						</li>
+						<li>
+							<a
+								href="contact.html"
+								class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-goldDark transition-colors"
+								>Get a Quote</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="md:hidden hidden bg-white/60 backdrop-blur border-t" id="mobileMenu">
+				<ul class="px-4 py-4 space-y-3">
+					<li><a href="index.html" class="block text-primary font-semibold">Home</a></li>
+					<li><a href="products.html" class="block text-gray-700 hover:text-primary">Products</a></li>
+					<li><a href="services.html" class="block text-gray-700 hover:text-primary">Services</a></li>
+					<li><a href="gallery.html" class="block text-gray-700 hover:text-primary">Gallery</a></li>
+					<li><a href="blog.html" class="block text-gray-700 hover:text-primary">Blog</a></li>
+					<li><a href="products.html" class="block text-gray-700 hover:text-primary">My Quote List</a></li>
+					<li>
+						<a href="contact.html" class="block bg-primary text-white px-6 py-2 rounded-lg text-center">Get a Quote</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
 
-    <nav class="bg-white/60 backdrop-blur shadow-sm fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0">
-                    <a href="index.html" class="flex items-center">
-                        <img src="images/logo.svg" alt="AY PRINT" class="h-12 w-auto">
-                    </a>
-                </div>
-                <button class="md:hidden p-2 rounded-lg hover:bg-gray-100" id="navToggle" aria-label="Toggle navigation">
-                    <span class="block w-6 h-0.5 bg-gray-600 mb-1"></span>
-                    <span class="block w-6 h-0.5 bg-gray-600 mb-1"></span>
-                    <span class="block w-6 h-0.5 bg-gray-600"></span>
-                </button>
-                <ul class="hidden md:flex space-x-8 items-center" id="navMenu">
-                    <li><a href="index.html" class="text-primary font-semibold border-b-2 border-primary pb-1">Home</a></li>
-                    <li><a href="products.html" class="text-gray-700 hover:text-primary transition-colors">Products</a></li>
-                    <li><a href="services.html" class="text-gray-700 hover:text-primary transition-colors">Services</a></li>
-                    <li><a href="gallery.html" class="text-gray-700 hover:text-primary transition-colors">Gallery</a></li>
-                    <li><a href="blog.html" class="text-gray-700 hover:text-primary transition-colors">Blog</a></li>
-                    <li class="relative">
-                        <a href="products.html" class="text-gray-700 hover:text-primary transition-colors" aria-label="View quote shortlist">
-                            <i class="far fa-bookmark text-xl relative"></i>
-                            <span id="quoteCount" class="absolute -top-2 -right-2 bg-secondary text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center hidden" style="z-index:10;">0</span>
-                        </a>
-                    </li>
-                    <li><a href="contact.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-goldDark transition-colors">Get a Quote</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="md:hidden hidden bg-white/60 backdrop-blur border-t" id="mobileMenu">
-            <ul class="px-4 py-4 space-y-3">
-                <li><a href="index.html" class="block text-primary font-semibold">Home</a></li>
-                <li><a href="products.html" class="block text-gray-700 hover:text-primary">Products</a></li>
-                <li><a href="services.html" class="block text-gray-700 hover:text-primary">Services</a></li>
-                <li><a href="gallery.html" class="block text-gray-700 hover:text-primary">Gallery</a></li>
-                <li><a href="blog.html" class="block text-gray-700 hover:text-primary">Blog</a></li>
-                <li><a href="products.html" class="block text-gray-700 hover:text-primary">My Quote List</a></li>
-                <li><a href="contact.html" class="block bg-primary text-white px-6 py-2 rounded-lg text-center">Get a Quote</a></li>
-            </ul>
-        </div>
-    </nav>
+		<section
+			class="relative pt-16 md:pt-0 min-h-screen flex items-center justify-center overflow-hidden"
+			id="heroSection">
+			<div class="absolute inset-0 z-0" id="heroMedia">
+				<img src="images/placeholder.svg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-30" />
+			</div>
+			<div class="absolute inset-0 bg-gradient-to-r from-[#2E90E6]/70 via-[#3a6aa0]/50 to-[#C9A227]/60 z-[1]"></div>
+			<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+				<span class="inline-block bg-white/80 text-primary text-sm font-semibold px-4 py-1 rounded-full mb-4"
+					>Premium Printing · Fast Turnaround</span
+				>
+				<h1 class="text-3xl md:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight drop-shadow">
+					Bring Your Brand to Life in Print
+				</h1>
+				<p class="text-base md:text-2xl text-white mb-6 md:mb-8 max-w-3xl mx-auto drop-shadow">
+					Business cards, flyers, bags, banners, stickers and more — printed with precision and delivered fast.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-8 md:mb-12">
+					<a
+						href="products.html"
+						class="bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-blueLight transition-colors"
+						>Browse Products</a
+					>
+					<a
+						href="contact.html"
+						class="bg-secondary text-white px-8 py-4 rounded-lg font-semibold hover:bg-goldDark transition-colors"
+						>Get a Quote</a
+					>
+				</div>
+			</div>
+		</section>
 
-    <section class="relative pt-16 md:pt-0 min-h-screen flex items-center justify-center overflow-hidden" id="heroSection">
-        <div class="absolute inset-0 z-0" id="heroMedia">
-            <img src="images/placeholder.svg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-30">
-        </div>
-        <div class="absolute inset-0 bg-gradient-to-r from-[#2E90E6]/70 via-[#3a6aa0]/50 to-[#C9A227]/60 z-[1]"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-            <span class="inline-block bg-white/80 text-primary text-sm font-semibold px-4 py-1 rounded-full mb-4">Premium Printing · Fast Turnaround</span>
-            <h1 class="text-3xl md:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight drop-shadow">Bring Your Brand to Life in Print</h1>
-            <p class="text-base md:text-2xl text-white mb-6 md:mb-8 max-w-3xl mx-auto drop-shadow">Business cards, flyers, bags, banners, stickers and more — printed with precision and delivered fast.</p>
-            <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-8 md:mb-12">
-                <a href="products.html" class="bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-blueLight transition-colors">Browse Products</a>
-                <a href="contact.html" class="bg-secondary text-white px-8 py-4 rounded-lg font-semibold hover:bg-goldDark transition-colors">Get a Quote</a>
-            </div>
-        </div>
-    </section>
+		<section class="py-16 bg-white">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+					<div class="flex items-center gap-3">
+						<i class="fas fa-check-circle text-secondary text-xl"></i
+						><span class="text-gray-700">Free Design Support</span>
+					</div>
+					<div class="flex items-center gap-3">
+						<i class="fas fa-check-circle text-secondary text-xl"></i><span class="text-gray-700">Fast Turnaround</span>
+					</div>
+					<div class="flex items-center gap-3">
+						<i class="fas fa-check-circle text-secondary text-xl"></i
+						><span class="text-gray-700">Eco-Friendly Options</span>
+					</div>
+					<div class="flex items-center gap-3">
+						<i class="fas fa-check-circle text-secondary text-xl"></i><span class="text-gray-700">Bulk Discounts</span>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="flex items-center gap-3"><i class="fas fa-check-circle text-secondary text-xl"></i><span class="text-gray-700">Free Design Support</span></div>
-                <div class="flex items-center gap-3"><i class="fas fa-check-circle text-secondary text-xl"></i><span class="text-gray-700">Fast Turnaround</span></div>
-                <div class="flex items-center gap-3"><i class="fas fa-check-circle text-secondary text-xl"></i><span class="text-gray-700">Eco-Friendly Options</span></div>
-                <div class="flex items-center gap-3"><i class="fas fa-check-circle text-secondary text-xl"></i><span class="text-gray-700">Bulk Discounts</span></div>
-            </div>
-        </div>
-    </section>
+		<section class="py-20 bg-gray-50">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Products</h2>
+					<p class="text-xl text-gray-600">Our most popular print jobs, ready to make your brand pop</p>
+				</div>
+				<div class="relative">
+					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="carouselTrack"></div>
+				</div>
+				<div class="text-center mt-10">
+					<a
+						href="products.html"
+						class="inline-block bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-blueLight transition-colors"
+						>View All Products</a
+					>
+				</div>
+			</div>
+		</section>
 
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Products</h2>
-                <p class="text-xl text-gray-600">Our most popular print jobs, ready to make your brand pop</p>
-            </div>
-            <div class="relative">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="carouselTrack"></div>
-            </div>
-            <div class="text-center mt-10">
-                <a href="products.html" class="inline-block bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-blueLight transition-colors">View All Products</a>
-            </div>
-        </div>
-    </section>
+		<section class="py-16 bg-white">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+					<div class="text-center">
+						<div class="text-4xl text-primary mb-2"><i class="fas fa-print"></i></div>
+						<div class="text-3xl font-bold text-gray-900 mb-1" data-count="500000">0</div>
+						<div class="text-gray-600">Items Printed</div>
+					</div>
+					<div class="text-center">
+						<div class="text-4xl text-primary mb-2"><i class="fas fa-users"></i></div>
+						<div class="text-3xl font-bold text-gray-900 mb-1" data-count="1200">0</div>
+						<div class="text-gray-600">Happy Clients</div>
+					</div>
+					<div class="text-center">
+						<div class="text-4xl text-primary mb-2"><i class="fas fa-award"></i></div>
+						<div class="text-3xl font-bold text-gray-900 mb-1" data-count="8">0</div>
+						<div class="text-gray-600">Years Experience</div>
+					</div>
+					<div class="text-center">
+						<div class="text-4xl text-primary mb-2"><i class="fas fa-smile"></i></div>
+						<div class="text-3xl font-bold text-gray-900 mb-1" data-count="98">0</div>
+						<div class="text-gray-600">% Satisfaction</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="text-center"><div class="text-4xl text-primary mb-2"><i class="fas fa-print"></i></div><div class="text-3xl font-bold text-gray-900 mb-1" data-count="500000">0</div><div class="text-gray-600">Items Printed</div></div>
-                <div class="text-center"><div class="text-4xl text-primary mb-2"><i class="fas fa-users"></i></div><div class="text-3xl font-bold text-gray-900 mb-1" data-count="1200">0</div><div class="text-gray-600">Happy Clients</div></div>
-                <div class="text-center"><div class="text-4xl text-primary mb-2"><i class="fas fa-award"></i></div><div class="text-3xl font-bold text-gray-900 mb-1" data-count="8">0</div><div class="text-gray-600">Years Experience</div></div>
-                <div class="text-center"><div class="text-4xl text-primary mb-2"><i class="fas fa-smile"></i></div><div class="text-3xl font-bold text-gray-900 mb-1" data-count="98">0</div><div class="text-gray-600">% Satisfaction</div></div>
-            </div>
-        </div>
-    </section>
+		<section class="py-20 bg-gray-50">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+					<div class="relative mt-4 md:mt-0">
+						<img
+							src="images/placeholder.svg"
+							alt="About AY PRINT"
+							class="rounded-2xl shadow-2xl"
+							onerror="this.src = 'images/placeholder.svg'" />
+						<div
+							class="absolute bottom-0 right-4 translate-y-1/2 md:bottom-[-1.5rem] md:right-[-1.5rem] md:translate-y-0 bg-primary text-white p-6 rounded-xl shadow-xl">
+							<span class="text-4xl font-bold">8+</span>
+							<p class="text-sm">Years of Printing</p>
+						</div>
+					</div>
+					<div class="lg:pl-8">
+						<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 mt-16">Welcome to AY PRINT</h2>
+						<p class="text-xl text-primary mb-6">Your Trusted Printing Partner Since 2018</p>
+						<p class="text-gray-600 mb-4">
+							At AY PRINT we help businesses look their best on paper and beyond. From crisp business cards to
+							large-format banners, we combine premium materials, vivid colour and fast turnaround to deliver print that
+							gets noticed.
+						</p>
+						<p class="text-gray-600 mb-6">
+							Whether you're a startup needing your first business cards or a growing brand ordering branded bags in
+							bulk, our team is here to guide you from artwork to delivery.
+						</p>
+						<a
+							href="about.html"
+							class="inline-block bg-primary text-white px-8 py-3 mt-4 rounded-lg font-semibold hover:bg-blueLight transition-colors"
+							>Learn More About Us</a
+						>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="relative mt-4 md:mt-0">
-                    <img src="images/placeholder.svg" alt="About AY PRINT" class="rounded-2xl shadow-2xl" onerror="this.src='images/placeholder.svg'">
-                    <div class="absolute bottom-0 right-4 translate-y-1/2 md:bottom-[-1.5rem] md:right-[-1.5rem] md:translate-y-0 bg-primary text-white p-6 rounded-xl shadow-xl">
-                        <span class="text-4xl font-bold">8+</span>
-                        <p class="text-sm">Years of Printing</p>
-                    </div>
-                </div>
-                <div class="lg:pl-8">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 mt-16">Welcome to AY PRINT</h2>
-                    <p class="text-xl text-primary mb-6">Your Trusted Printing Partner Since 2018</p>
-                    <p class="text-gray-600 mb-4">At AY PRINT we help businesses look their best on paper and beyond. From crisp business cards to large-format banners, we combine premium materials, vivid colour and fast turnaround to deliver print that gets noticed.</p>
-                    <p class="text-gray-600 mb-6">Whether you're a startup needing your first business cards or a growing brand ordering branded bags in bulk, our team is here to guide you from artwork to delivery.</p>
-                    <a href="about.html" class="inline-block bg-primary text-white px-8 py-3 mt-4 rounded-lg font-semibold hover:bg-blueLight transition-colors">Learn More About Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
+		<section class="py-20 bg-white">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+					<p class="text-xl text-gray-600">End-to-end printing solutions for every brand</p>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+						<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+							<i class="fas fa-id-card text-3xl text-primary"></i>
+						</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-3">Business Cards</h3>
+						<p class="text-gray-600 mb-4">Premium cards on 300gsm art card with matte, gloss or soft-touch finishes.</p>
+						<a href="services.html" class="text-primary font-semibold hover:text-blueLight transition-colors"
+							>Learn More <i class="fas fa-arrow-right ml-2"></i
+						></a>
+					</div>
+					<div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+						<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+							<i class="fas fa-file-alt text-3xl text-primary"></i>
+						</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-3">Flyers & Leaflets</h3>
+						<p class="text-gray-600 mb-4">High-impact promotions in multiple sizes and paper weights.</p>
+						<a href="services.html" class="text-primary font-semibold hover:text-blueLight transition-colors"
+							>Learn More <i class="fas fa-arrow-right ml-2"></i
+						></a>
+					</div>
+					<div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+						<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+							<i class="fas fa-shopping-bag text-3xl text-primary"></i>
+						</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-3">Branded Bags</h3>
+						<p class="text-gray-600 mb-4">Eco-friendly totes and premium paper gift bags with your logo.</p>
+						<a href="services.html" class="text-primary font-semibold hover:text-blueLight transition-colors"
+							>Learn More <i class="fas fa-arrow-right ml-2"></i
+						></a>
+					</div>
+					<div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+						<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+							<i class="fas fa-scroll text-3xl text-primary"></i>
+						</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-3">Banners & Signage</h3>
+						<p class="text-gray-600 mb-4">Roll-up banners and large-format printing for events and storefronts.</p>
+						<a href="services.html" class="text-primary font-semibold hover:text-blueLight transition-colors"
+							>Learn More <i class="fas fa-arrow-right ml-2"></i
+						></a>
+					</div>
+					<div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+						<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+							<i class="fas fa-tags text-3xl text-primary"></i>
+						</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-3">Stickers & Labels</h3>
+						<p class="text-gray-600 mb-4">Custom die-cut stickers and product labels in any shape.</p>
+						<a href="services.html" class="text-primary font-semibold hover:text-blueLight transition-colors"
+							>Learn More <i class="fas fa-arrow-right ml-2"></i
+						></a>
+					</div>
+					<div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+						<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+							<i class="fas fa-book text-3xl text-primary"></i>
+						</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-3">Brochures & Posters</h3>
+						<p class="text-gray-600 mb-4">Catalogues, brochures and photo-quality posters that impress.</p>
+						<a href="services.html" class="text-primary font-semibold hover:text-blueLight transition-colors"
+							>Learn More <i class="fas fa-arrow-right ml-2"></i
+						></a>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
-                <p class="text-xl text-gray-600">End-to-end printing solutions for every brand</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-id-card text-3xl text-primary"></i></div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Business Cards</h3>
-                    <p class="text-gray-600 mb-4">Premium cards on 300gsm art card with matte, gloss or soft-touch finishes.</p>
-                    <a href="services.html" class="text-primary font-semibold hover:text-blueLight transition-colors">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-file-alt text-3xl text-primary"></i></div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Flyers & Leaflets</h3>
-                    <p class="text-gray-600 mb-4">High-impact promotions in multiple sizes and paper weights.</p>
-                    <a href="services.html" class="text-primary font-semibold hover:text-blueLight transition-colors">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-shopping-bag text-3xl text-primary"></i></div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Branded Bags</h3>
-                    <p class="text-gray-600 mb-4">Eco-friendly totes and premium paper gift bags with your logo.</p>
-                    <a href="services.html" class="text-primary font-semibold hover:text-blueLight transition-colors">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-scroll text-3xl text-primary"></i></div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Banners & Signage</h3>
-                    <p class="text-gray-600 mb-4">Roll-up banners and large-format printing for events and storefronts.</p>
-                    <a href="services.html" class="text-primary font-semibold hover:text-blueLight transition-colors">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-tags text-3xl text-primary"></i></div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Stickers & Labels</h3>
-                    <p class="text-gray-600 mb-4">Custom die-cut stickers and product labels in any shape.</p>
-                    <a href="services.html" class="text-primary font-semibold hover:text-blueLight transition-colors">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6"><i class="fas fa-book text-3xl text-primary"></i></div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Brochures & Posters</h3>
-                    <p class="text-gray-600 mb-4">Catalogues, brochures and photo-quality posters that impress.</p>
-                    <a href="services.html" class="text-primary font-semibold hover:text-blueLight transition-colors">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
+		<section class="py-20 bg-white">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+					<p class="text-xl text-gray-600">Trusted by businesses across Nigeria</p>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div class="bg-gray-50 p-8 rounded-xl">
+						<div class="flex text-secondary mb-4">
+							<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i
+							><i class="fas fa-star"></i><i class="fas fa-star"></i>
+						</div>
+						<p class="text-gray-600 mb-6">
+							"AY PRINT delivered our business cards ahead of schedule and the quality was outstanding. The soft-touch
+							finish got us so many compliments."
+						</p>
+						<div class="flex items-center gap-4">
+							<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+								CO
+							</div>
+							<div>
+								<h4 class="font-semibold text-gray-900">Chidi Okafor</h4>
+								<p class="text-sm text-gray-600">Startup Founder</p>
+							</div>
+						</div>
+					</div>
+					<div class="bg-gray-50 p-8 rounded-xl">
+						<div class="flex text-secondary mb-4">
+							<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i
+							><i class="fas fa-star"></i><i class="fas fa-star"></i>
+						</div>
+						<p class="text-gray-600 mb-6">
+							"We order branded tote bags in bulk for every event. Consistent quality, great prices and they always
+							deliver on time."
+						</p>
+						<div class="flex items-center gap-4">
+							<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+								AO
+							</div>
+							<div>
+								<h4 class="font-semibold text-gray-900">Amara Obi</h4>
+								<p class="text-sm text-gray-600">Marketing Lead</p>
+							</div>
+						</div>
+					</div>
+					<div class="bg-gray-50 p-8 rounded-xl">
+						<div class="flex text-secondary mb-4">
+							<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i
+							><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+						</div>
+						<p class="text-gray-600 mb-6">
+							"Our roll-up banners look fantastic at exhibitions. Setup is tool-free and the carry case is a nice
+							touch."
+						</p>
+						<div class="flex items-center gap-4">
+							<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+								IE
+							</div>
+							<div>
+								<h4 class="font-semibold text-gray-900">Ibrahim Eze</h4>
+								<p class="text-sm text-gray-600">Event Planner</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
-                <p class="text-xl text-gray-600">Trusted by businesses across Nigeria</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-8 rounded-xl">
-                    <div class="flex text-secondary mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="text-gray-600 mb-6">"AY PRINT delivered our business cards ahead of schedule and the quality was outstanding. The soft-touch finish got us so many compliments."</p>
-                    <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">CO</div><div><h4 class="font-semibold text-gray-900">Chidi Okafor</h4><p class="text-sm text-gray-600">Startup Founder</p></div></div>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-xl">
-                    <div class="flex text-secondary mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="text-gray-600 mb-6">"We order branded tote bags in bulk for every event. Consistent quality, great prices and they always deliver on time."</p>
-                    <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">AO</div><div><h4 class="font-semibold text-gray-900">Amara Obi</h4><p class="text-sm text-gray-600">Marketing Lead</p></div></div>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-xl">
-                    <div class="flex text-secondary mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-                    <p class="text-gray-600 mb-6">"Our roll-up banners look fantastic at exhibitions. Setup is tool-free and the carry case is a nice touch."</p>
-                    <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">IE</div><div><h4 class="font-semibold text-gray-900">Ibrahim Eze</h4><p class="text-sm text-gray-600">Event Planner</p></div></div>
-                </div>
-            </div>
-        </div>
-    </section>
+		<section class="py-20 bg-gradient-to-r from-[#2E90E6] via-[#3a6aa0] to-[#C9A227]">
+			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+				<h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Stay Updated with Print Tips & Offers</h2>
+				<p class="text-xl text-blue-50 mb-8">Subscribe for design tips, product launches and exclusive discounts.</p>
+				<form
+					id="newsletterForm"
+					action="https://formspree.io/f/FORMSPREE_ID"
+					method="POST"
+					class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+					<input
+						type="email"
+						id="newsletterEmail"
+						name="email"
+						placeholder="Enter your email address"
+						required
+						class="flex-1 px-6 py-4 rounded-lg focus:ring-2 focus:ring-white focus:outline-none" />
+					<button
+						type="submit"
+						class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+						Subscribe
+					</button>
+				</form>
+				<p class="text-blue-50 mt-4 text-sm">By subscribing, you agree to our Privacy Policy. Unsubscribe anytime.</p>
+			</div>
+		</section>
 
-    <section class="py-20 bg-gradient-to-r from-[#2E90E6] via-[#3a6aa0] to-[#C9A227]">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Stay Updated with Print Tips & Offers</h2>
-            <p class="text-xl text-blue-50 mb-8">Subscribe for design tips, product launches and exclusive discounts.</p>
-            <form id="newsletterForm" action="https://formspree.io/f/FORMSPREE_ID" method="POST" class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
-                <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email address" required class="flex-1 px-6 py-4 rounded-lg focus:ring-2 focus:ring-white focus:outline-none">
-                <button type="submit" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Subscribe</button>
-            </form>
-            <p class="text-blue-50 mt-4 text-sm">By subscribing, you agree to our Privacy Policy. Unsubscribe anytime.</p>
-        </div>
-    </section>
+		<footer class="bg-gray-900 text-white py-16">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-12">
+					<div>
+						<img src="images/ay_logo.png" alt="AY PRINT" class="h-12 w-auto mb-6" />
+						<p class="text-gray-400 mb-6">
+							AY PRINT is your trusted partner for premium printing — business cards, flyers, bags, banners, stickers
+							and more. Fast turnaround, free design and eco-friendly options.
+						</p>
+						<div class="flex gap-4">
+							<a
+								href="#"
+								class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+								aria-label="Facebook"
+								><i class="fab fa-facebook-f"></i
+							></a>
+							<a
+								href="#"
+								class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+								aria-label="Instagram"
+								><i class="fab fa-instagram"></i
+							></a>
+							<a
+								href="#"
+								class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+								aria-label="Twitter"
+								><i class="fab fa-twitter"></i
+							></a>
+							<a
+								href="#"
+								class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+								aria-label="LinkedIn"
+								><i class="fab fa-linkedin-in"></i
+							></a>
+						</div>
+					</div>
+					<div>
+						<h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+						<ul class="space-y-3">
+							<li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+							<li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Products</a></li>
+							<li><a href="gallery.html" class="text-gray-400 hover:text-white transition-colors">Gallery</a></li>
+							<li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+							<li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+							<li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+							<li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+						</ul>
+					</div>
+					<div>
+						<h3 class="text-lg font-semibold mb-6">Our Products</h3>
+						<ul class="space-y-3">
+							<li>
+								<a href="products.html" class="text-gray-400 hover:text-white transition-colors">Business Cards</a>
+							</li>
+							<li>
+								<a href="products.html" class="text-gray-400 hover:text-white transition-colors">Flyers & Leaflets</a>
+							</li>
+							<li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Branded Bags</a></li>
+							<li>
+								<a href="products.html" class="text-gray-400 hover:text-white transition-colors">Banners & Signage</a>
+							</li>
+							<li>
+								<a href="products.html" class="text-gray-400 hover:text-white transition-colors">Stickers & Labels</a>
+							</li>
+							<li>
+								<a href="products.html" class="text-gray-400 hover:text-white transition-colors">Brochures & Posters</a>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+						<ul class="space-y-3 text-gray-400">
+							<li class="flex items-start gap-3">
+								<i class="fas fa-map-marker-alt mt-1"></i><span>No 12, Industrial Road, Lagos</span>
+							</li>
+							<li class="flex items-center gap-3"><i class="fas fa-phone"></i><span>+234 801 234 5678</span></li>
+							<li class="flex items-center gap-3"><i class="fab fa-whatsapp"></i><span>+234 902 773 0330</span></li>
+							<li class="flex items-center gap-3">
+								<i class="fas fa-envelope"></i><span style="word-break: break-all">hello@ayprint.com</span>
+							</li>
+							<li class="flex items-center gap-3">
+								<i class="fas fa-clock"></i><span>Mon - Sat: 8:00 AM - 6:00 PM</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+					<p class="text-gray-400 text-sm">&copy; 2026 AY PRINT. All rights reserved.</p>
+					<div class="flex gap-6 mt-4 md:mt-0">
+						<a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+						<a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+					</div>
+				</div>
+			</div>
+		</footer>
 
-    <footer class="bg-gray-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div>
-                    <img src="images/logo.svg" alt="AY PRINT" class="h-12 w-auto mb-6">
-                    <p class="text-gray-400 mb-6">AY PRINT is your trusted partner for premium printing — business cards, flyers, bags, banners, stickers and more. Fast turnaround, free design and eco-friendly options.</p>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
-                    <ul class="space-y-3">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Products</a></li>
-                        <li><a href="gallery.html" class="text-gray-400 hover:text-white transition-colors">Gallery</a></li>
-                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
-                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-6">Our Products</h3>
-                    <ul class="space-y-3">
-                        <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Business Cards</a></li>
-                        <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Flyers & Leaflets</a></li>
-                        <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Branded Bags</a></li>
-                        <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Banners & Signage</a></li>
-                        <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Stickers & Labels</a></li>
-                        <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Brochures & Posters</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-6">Contact Us</h3>
-                    <ul class="space-y-3 text-gray-400">
-                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt mt-1"></i><span>No 12, Industrial Road, Lagos</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-phone"></i><span>+234 801 234 5678</span></li>
-                        <li class="flex items-center gap-3"><i class="fab fa-whatsapp"></i><span>+234 902 773 0330</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-envelope"></i><span style="word-break:break-all;">hello@ayprint.com</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-clock"></i><span>Mon - Sat: 8:00 AM - 6:00 PM</span></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm">&copy; 2026 AY PRINT. All rights reserved.</p>
-                <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
-                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+		<button
+			class="fixed bottom-8 right-8 bg-secondary text-white w-12 h-12 rounded-full shadow-lg hover:bg-goldDark transition-colors opacity-0 invisible"
+			id="backToTop"
+			aria-label="Back to top">
+			<i class="fas fa-arrow-up"></i>
+		</button>
+		<a
+			href="https://wa.me/2349027730330"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="fixed bottom-24 right-8 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 flex items-center justify-center z-50"
+			aria-label="Contact on WhatsApp"
+			><i class="fab fa-whatsapp text-2xl"></i
+		></a>
 
-    <button class="fixed bottom-8 right-8 bg-secondary text-white w-12 h-12 rounded-full shadow-lg hover:bg-goldDark transition-colors opacity-0 invisible" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
-    <a href="https://wa.me/2349027730330" target="_blank" rel="noopener noreferrer" class="fixed bottom-24 right-8 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 flex items-center justify-center z-50" aria-label="Contact on WhatsApp"><i class="fab fa-whatsapp text-2xl"></i></a>
-
-    <script src="js/hero.js"></script>
-    <script src="js/main.js"></script>
-</body>
+		<script src="js/hero.js"></script>
+		<script src="js/main.js"></script>
+	</body>
 </html>
