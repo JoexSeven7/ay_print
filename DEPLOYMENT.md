@@ -9,32 +9,38 @@ shared/cPanel host. No server-side code, no Node runtime needed in production.
 
 ## 1. Pre‑Deployment Checklist (do these BEFORE going live)
 
-- [x] **CSP allowed Formspree** — `connect-src` and `form-action` permit
+- [x] **CSP allows Formspree** — `connect-src` and `form-action` permit
       `https://formspree.io` in all HTML pages.
 - [x] **Quote form `id="quoteForm"`** present in `contact.html`.
 - [x] **Broken image fallback** — every `<img>` uses
       `onerror="this.src='images/placeholder.svg'"`.
-- [ ] **[YOU MUST DO] Replace the remaining `FORMSPREE_ID` placeholders** with your
-      real Formspree form ID:
-        - `index.html` → newsletter form (`id="newsletterForm"`)
-        - `contact.html` → quote/order form (`id="quoteForm"`)
-        - `product-detail.html` → request-quote modal (if enabled)
-      Go to https://formspree.io → create a form → copy the ID → replace each
-      `FORMSPREE_ID` with it.
+- [ ] **[YOU MUST DO] Set your Formspree endpoint** in `data/config.json`:
+      ```json
+      "formspree": {
+          "id": "your-formspree-id",
+          "endpoint": "https://formspree.io/f/your-formspree-id"
+      }
+      ```
+      Go to https://formspree.io → create a form → copy the ID → paste it here.
+      The JS (`js/main.js` and `js/contact.js`) reads it from config at runtime.
+- [ ] **[YOU MUST DO] Update site configuration** in `data/config.json`:
+      - `contact` — your real address, phone, WhatsApp, email, hours
+      - `social` — your real social media URLs
+      - `stats` — your real business statistics
 - [ ] **[RECOMMENDED] Rebuild Tailwind CSS** so `css/output.css` is current:
       `npm install` then `npm run build:css`.
 - [ ] **Add real images.** Supply product photos in `images/products/`, portfolio
-      shots in `images/portfolio/`, and replace `images/logo.png` + favicons.
+      shots in `images/portfolio/`, and replace `images/ay_logo.png` + favicons.
 - [ ] **Verify all image paths** referenced in `data/products.json` exist (or rely on
       the `placeholder.svg` fallback).
-- [ ] **Set a real domain / business emails** in the footer & contact page.
+- [ ] **Verify all JSON data files** (`data/*.json`) are valid JSON.
 
 ### How the site loads data (important)
-`js/main.js`, `js/products.js`, `js/product-detail.js` call `fetch('data/products.json')`.
+`js/main.js`, `js/products.js`, `js/product-detail.js`, `js/blog.js`,
+`js/blog-post.js`, and `js/gallery.js` all call `fetch('data/*.json')`.
 This **requires a web server** (HTTP), not opening the file directly (`file://`).
-All the hosts below serve over HTTP, so this works. If the fetch ever fails, the pages
-fall back to embedded data in the JS — but keep `data/products.json` as the single
-source of truth and keep it in sync with the embedded copies when you edit products.
+All the hosts below serve over HTTP, so this works. If a fetch fails, the page
+shows an empty state or error in the console.
 
 ---
 
@@ -99,17 +105,35 @@ Open the live URL and check:
 2. **Products page** loads listings from `data/products.json` (DevTools → Network →
    confirm `products.json` returns 200).
 3. **Product detail** page opens via `product-detail.html?id=1`.
-4. **Quote form**: submit → success alert + email via Formspree (fails if `FORMSPREE_ID`
-   placeholders remain).
-5. **Icons** render (Font Awesome from cdnjs).
+4. **Quote form**: submit → success alert + email via Formspree (fails if
+   `data/config.json` has no real Formspree endpoint).
+5. **Icons** render (Font Awesome from local `css/fontawesome.min.css`).
 6. Open DevTools → Console → no red CSP/404 errors.
+7. **Contact info, copyright year, and WhatsApp link** populate automatically from
+   `data/config.json`.
 
 ---
 
-## 6. Known Limitations / Future Work
-- Products live in `data/products.json` + duplicated embedded copies in `js/products.js`.
-  Editing one without the other causes drift. Centralise later (or generate JSON at
-  build time).
-- The "Add to Quote" shortlist uses `localStorage` (per‑device only) — fine for a
-  brochure site.
-- Sample copy/prices are placeholders — replace with real catalogue data.
+## 6. Configuration Reference (`data/config.json`)
+
+| Section       | Key              | Description                              |
+|---------------|------------------|------------------------------------------|
+| `company`     | `name`           | Brand name shown in footer & meta        |
+| `company`     | `logo`           | Logo image path                          |
+| `company`     | `since`          | Year founded (shown on about page)       |
+| `contact`     | `address`        | Physical address                         |
+| `contact`     | `phone`          | Phone number                             |
+| `contact`     | `whatsapp`       | WhatsApp display number                  |
+| `contact`     | `whatsappLink`   | Full WhatsApp URL (wa.me link)           |
+| `contact`     | `email`          | Contact email                            |
+| `contact`     | `hours`          | Business hours                           |
+| `social`      | `facebook` etc.  | Social media profile URLs               |
+| `stats`       | `itemsPrinted`   | Counter value for items printed          |
+| `stats`       | `happyClients`   | Counter value for happy clients          |
+| `stats`       | `yearsExperience`| Counter value for years experience       |
+| `stats`       | `satisfaction`   | Counter value for satisfaction %         |
+| `formspree`   | `id`             | Formspree form ID                        |
+| `formspree`   | `endpoint`       | Full Formspree submission URL            |
+| `branding`    | `primaryColor` etc.| Brand color hex values                 |
+| `copyright`   | `useCurrentYear` | If `true`, uses JS `new Date().getFullYear()` |
+| `copyright`   | `fallbackYear`   | Fallback year if dynamic year fails      |

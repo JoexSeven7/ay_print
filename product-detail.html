@@ -95,22 +95,23 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-6">Contact Us</h3>
                     <ul class="space-y-3 text-gray-400">
-                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt mt-1"></i><span>No 12, Industrial Road, Lagos</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-phone"></i><span>+234 801 234 5678</span></li>
-                        <li class="flex items-center gap-3"><i class="fab fa-whatsapp"></i><span>+234 902 773 0330</span></li>
-                        <li class="flex items-center gap-3"><i class="fas fa-envelope"></i><span style="word-break:break-all;">hello@ayprint.com</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt mt-1"></i><span data-config="contact.address">No 12, Industrial Road, Lagos</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-phone"></i><span data-config="contact.phone">+234 801 234 5678</span></li>
+                        <li class="flex items-center gap-3"><i class="fab fa-whatsapp"></i><span data-config="contact.whatsapp">+234 902 773 0330</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-envelope"></i><span style="word-break:break-all;" data-config="contact.email">hello@ayprint.com</span></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-                <p class="text-gray-400 text-sm">&copy; 2026 AY PRINT. All rights reserved.</p>
+                <p class="text-gray-400 text-sm">&copy; <span data-config-year></span> <span data-config="company.name"></span>. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <button class="fixed bottom-8 right-8 bg-secondary text-white w-12 h-12 rounded-full shadow-lg hover:bg-goldDark transition-colors opacity-0 invisible" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
-    <a href="https://wa.me/2349027730330" target="_blank" rel="noopener noreferrer" class="fixed bottom-24 right-8 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 flex items-center justify-center z-50" aria-label="Contact on WhatsApp"><i class="fab fa-whatsapp text-2xl"></i></a>
+    <a href="#" data-whatsapp-link target="_blank" rel="noopener noreferrer" class="fixed bottom-24 right-8 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 flex items-center justify-center z-50" aria-label="Contact on WhatsApp"><i class="fab fa-whatsapp text-2xl"></i></a>
 
+    <script src="js/config.js"></script>
     <script src="js/main.js"></script>
     <script src="js/product-detail.js"></script>
 </body>

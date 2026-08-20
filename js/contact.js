@@ -14,7 +14,6 @@
     const messageInput = document.getElementById("message");
     const honeypot = document.getElementById("company_website");
 
-    // Prefill product interest from ?product=slug
     const params = new URLSearchParams(window.location.search);
     const productSlug = params.get("product");
     if (productSlug && productSelect) {
@@ -55,13 +54,21 @@
         setError(messageInput, messageInput.value.trim() === "");
     });
 
+    async function setFormActionFromConfig() {
+        const endpoint = window.SITE_CONFIG?.formspree?.endpoint;
+        if (endpoint) {
+            form.action = endpoint;
+        }
+    }
+
     form.addEventListener("submit", async function (e) {
         e.preventDefault();
 
-        // Honeypot: bots auto-fill the hidden field; silently ignore them.
         if (honeypot && honeypot.value.trim() !== "") {
             return;
         }
+
+        await setFormActionFromConfig();
 
         const firstName = firstNameInput ? firstNameInput.value : "";
         const lastName = lastNameInput ? lastNameInput.value : "";
@@ -99,6 +106,7 @@
         if (typeof showLoader === "function") showLoader();
 
         try {
+            await setFormActionFromConfig();
             const response = await fetch(form.action, {
                 method: "POST",
                 body: new FormData(form),
@@ -117,7 +125,7 @@
         } finally {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
-            if (typeof hideLoader === "function") setTimeout(hideLoader, 1200);
+            if (typeof hideLoader === "function") setTimeout(hideLoader, window.APP_CONFIG.thresholds.hideLoaderDelay);
         }
     });
 })();

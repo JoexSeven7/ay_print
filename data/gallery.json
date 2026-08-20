@@ -1,0 +1,65 @@
+{
+  "items": [
+    {
+      "title": "Luxury Business Cards",
+      "category": "cards",
+      "image": "images/portfolio/cards-1.jpg"
+    },
+    {
+      "title": "Event Flyers",
+      "category": "flyers",
+      "image": "images/portfolio/flyers-1.jpg"
+    },
+    {
+      "title": "Branded Tote Bags",
+      "category": "bags",
+      "image": "images/portfolio/bags-1.jpg"
+    },
+    {
+      "title": "Roll-Up Banner",
+      "category": "banners",
+      "image": "images/portfolio/banner-1.jpg"
+    },
+    {
+      "title": "Product Stickers",
+      "category": "stickers",
+      "image": "images/portfolio/stickers-1.jpg"
+    },
+    {
+      "title": "Premium Brochure",
+      "category": "flyers",
+      "image": "images/portfolio/brochure-1.jpg"
+    },
+    {
+      "title": "Gift Paper Bags",
+      "category": "bags",
+      "image": "images/portfolio/bags-2.jpg"
+    },
+    {
+      "title": "Storefront Signage",
+      "category": "banners",
+      "image": "images/portfolio/banner-2.jpg"
+    },
+    {
+      "title": "Foil Business Cards",
+      "category": "cards",
+      "image": "images/portfolio/cards-2.jpg"
+    },
+    {
+      "title": "Die-Cut Stickers",
+      "category": "stickers",
+      "image": "images/portfolio/stickers-2.jpg"
+    },
+    {
+      "title": "A5 Leaflets",
+      "category": "flyers",
+      "image": "images/portfolio/flyers-2.jpg"
+    },
+    {
+      "title": "Cotton Totes",
+      "category": "bags",
+      "image": "images/portfolio/bags-3.jpg"
+    }
+  ],
+  "categories": ["all", "cards", "flyers", "bags", "banners", "stickers"]
+}

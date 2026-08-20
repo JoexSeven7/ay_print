@@ -17,16 +17,6 @@
     }
 
     const container = document.getElementById('productDetail');
-    const embeddedProductsData = [
-        { "id": 1, "title": "Business Cards", "slug": "business-cards", "category": "cards", "subcategory": "Standard / Premium / Spot-UV", "material": "300gsm Art Card", "sizes": ["85x55mm", "90x50mm"], "finish": ["Matte", "Gloss", "Soft-touch"], "minOrder": 100, "price": 0, "priceDisplay": "From ₦15,000 / 100 pcs", "turnaround": "2-3 business days", "features": ["Full colour both sides", "Free design", "Fast turnaround"], "image": "images/products/business-cards.jpg", "images": ["images/products/business-cards.jpg", "images/products/business-cards-2.jpg"], "description": "Make a lasting first impression with premium business cards printed on 300gsm art card. Choose from matte, gloss or soft-touch finishes, with optional spot-UV highlights for that extra lift.", "options": ["Paper type", "Size", "Finish", "Quantity"], "featured": true, "createdAt": "2026-08-05" },
-        { "id": 2, "title": "Flyers & Leaflets", "slug": "flyers-leaflets", "category": "flyers", "subcategory": "A5 / A6 / DL", "material": "150gsm Gloss Art", "sizes": ["A6", "A5", "DL", "A4"], "finish": ["Gloss", "Matte"], "minOrder": 500, "price": 0, "priceDisplay": "From ₦25,000 / 500 pcs", "turnaround": "2-4 business days", "features": ["Vivid full-colour print", "Bulk discounts", "Folded options"], "image": "images/products/flyers.jpg", "images": ["images/products/flyers.jpg", "images/products/flyers-2.jpg"], "description": "Promote events, sales and menus with high-impact flyers and leaflets.", "options": ["Size", "Paper weight", "Finish", "Quantity"], "featured": true, "createdAt": "2026-08-05" },
-        { "id": 3, "title": "Branded Tote & Paper Bags", "slug": "branded-bags", "category": "bags", "subcategory": "Tote / Gift / Paper", "material": "100% Cotton / Kraft Paper", "sizes": ["Small", "Medium", "Large"], "finish": ["Screen print", "Full-colour"], "minOrder": 50, "price": 0, "priceDisplay": "From ₦450 / pc", "turnaround": "5-7 business days", "features": ["Eco-friendly options", "Reusable", "Custom artwork"], "image": "images/products/bags.jpg", "images": ["images/products/bags.jpg", "images/products/bags-2.jpg"], "description": "Carry your brand everywhere with custom tote bags and premium paper gift bags.", "options": ["Bag type", "Size", "Print method", "Quantity"], "featured": true, "createdAt": "2026-08-05" },
-        { "id": 4, "title": "Roll-Up Banners", "slug": "roll-up-banners", "category": "banners", "subcategory": "Standard / Premium", "material": "440gsm PVC / Pop-up", "sizes": ["85cm x 200cm", "100cm x 200cm"], "finish": ["Matte", "Gloss"], "minOrder": 1, "price": 0, "priceDisplay": "From ₦18,000 / pc", "turnaround": "1-2 business days", "features": ["Portable stand included", "Tool-free setup", "Indoor/outdoor"], "image": "images/products/banners.jpg", "images": ["images/products/banners.jpg"], "description": "Crisp roll-up banners.", "options": ["Size", "Material", "Quantity"], "featured": false, "createdAt": "2026-08-05" },
-        { "id": 5, "title": "Stickers & Labels", "slug": "stickers-labels", "category": "stickers", "subcategory": "Die-cut / Roll", "material": "Vinyl / Paper", "sizes": ["Custom"], "finish": ["Gloss", "Matte", "Transparent"], "minOrder": 100, "price": 0, "priceDisplay": "From ₦12,000 / 100 pcs", "turnaround": "3-4 business days", "features": ["Weatherproof vinyl", "Any shape", "Strong adhesive"], "image": "images/products/stickers.jpg", "images": ["images/products/stickers.jpg"], "description": "Custom stickers and labels.", "options": ["Shape", "Material", "Finish", "Quantity"], "featured": false, "createdAt": "2026-08-05" },
-        { "id": 6, "title": "Brochures & Catalogues", "slug": "brochures-catalogues", "category": "brochures", "subcategory": "Tri-fold / Saddle-stitch", "material": "170gsm Silk", "sizes": ["A4", "A5"], "finish": ["Gloss", "Matte", "Soft-touch"], "minOrder": 100, "price": 0, "priceDisplay": "From ₦40,000 / 100 pcs", "turnaround": "4-5 business days", "features": ["Multiple folds", "Perfect binding", "Premium feel"], "image": "images/products/brochures.jpg", "images": ["images/products/brochures.jpg"], "description": "Professional brochures and catalogues.", "options": ["Fold type", "Size", "Finish", "Quantity"], "featured": false, "createdAt": "2026-08-05" },
-        { "id": 7, "title": "Posters", "slug": "posters", "category": "posters", "subcategory": "A2 / A1 / A0", "material": "200gsm Photo Paper", "sizes": ["A2", "A1", "A0"], "finish": ["Gloss", "Matte"], "minOrder": 1, "price": 0, "priceDisplay": "From ₦3,500 / pc", "turnaround": "1-2 business days", "features": ["Photo-quality", "Large format", "Vivid colour"], "image": "images/products/posters.jpg", "images": ["images/products/posters.jpg"], "description": "Bold photo-quality posters.", "options": ["Size", "Paper", "Finish", "Quantity"], "featured": false, "createdAt": "2026-08-05" },
-        { "id": 8, "title": "Large Format Printing", "slug": "large-format", "category": "banners", "subcategory": "Flex / Vinyl / Mesh", "material": "PVC Flex", "sizes": ["Custom"], "finish": ["Gloss", "Matte"], "minOrder": 1, "price": 0, "priceDisplay": "From ₦2,500 / sqm", "turnaround": "2-3 business days", "features": ["Weatherproof", "Any size", "Eyelets available"], "image": "images/products/large-format.jpg", "images": ["images/products/large-format.jpg"], "description": "Big, bold large-format printing.", "options": ["Material", "Size", "Finishing", "Quantity"], "featured": false, "createdAt": "2026-08-05" }
-    ];
 
     function getId() {
         const params = new URLSearchParams(window.location.search);
@@ -42,7 +32,7 @@
         const images = (p.images && p.images.length) ? p.images : [p.image];
         const galleryThumbs = images.map((src, i) => `
             <button class="thumb-btn rounded-lg overflow-hidden border-2 ${i === 0 ? 'border-primary' : 'border-transparent'}" data-src="${escapeAttr(src)}">
-                <img src="${escapeAttr(src)}" alt="${escapeHtml(p.title)} thumbnail" class="w-20 h-20 object-cover" onerror="this.src='images/placeholder.svg'">
+                <img src="${escapeAttr(src)}" alt="${escapeHtml(p.title)} thumbnail" class="w-20 h-20 object-cover" onerror="this.src='${window.APP_CONFIG.paths.placeholderImage}'">
             </button>`).join('');
 
         const specRows = [
@@ -71,7 +61,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <div>
                     <div class="rounded-2xl overflow-hidden shadow-lg bg-white">
-                        <img id="mainImage" src="${escapeAttr(images[0])}" alt="${escapeHtml(p.title)}" class="w-full h-80 object-cover" onerror="this.src='images/placeholder.svg'">
+                        <img id="mainImage" src="${escapeAttr(images[0])}" alt="${escapeHtml(p.title)}" class="w-full h-80 object-cover" onerror="this.src='${window.APP_CONFIG.paths.placeholderImage}'">
                     </div>
                     <div class="flex gap-3 mt-4">${galleryThumbs}</div>
                 </div>
@@ -103,18 +93,19 @@
             </div>
         `;
 
-        // Gallery thumbnail switching
         const mainImage = document.getElementById('mainImage');
         container.querySelectorAll('.thumb-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 mainImage.src = btn.dataset.src;
-                container.querySelectorAll('.thumb-btn').forEach(b => b.classList.remove('border-primary'), b.classList.add('border-transparent'));
+                container.querySelectorAll('.thumb-btn').forEach(b => {
+                    b.classList.remove('border-primary');
+                    b.classList.add('border-transparent');
+                });
                 btn.classList.add('border-primary');
                 btn.classList.remove('border-transparent');
             });
         });
 
-        // Add to Quote
         const addBtn = document.getElementById('addToQuote');
         if (addBtn) {
             addBtn.addEventListener('click', () => {
@@ -127,9 +118,25 @@
                 }
             });
         }
+    }
 
-        // Related products (same category, exclude current)
-        const related = embeddedProductsData.filter(x => x.category === p.category && x.id !== p.id).slice(0, 3);
+    async function loadProducts() {
+        try {
+            const res = await fetch(window.APP_CONFIG.paths.productsData);
+            if (res.ok) {
+                const data = await res.json();
+                return data.products;
+            }
+        } catch (e) {
+            console.error('Products load failed:', e);
+        }
+        return [];
+    }
+
+    async function renderRelated(currentProduct, allProducts) {
+        const related = allProducts
+            .filter(x => x.category === currentProduct.category && x.id !== currentProduct.id)
+            .slice(0, window.APP_CONFIG.limits.relatedProducts);
         const relatedEl = document.getElementById('relatedProducts');
         if (relatedEl) {
             if (related.length === 0) {
@@ -137,7 +144,7 @@
             } else {
                 relatedEl.innerHTML = related.map(r => `
                     <a href="product-detail.html?id=${escapeAttr(r.id)}" class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                        <img src="${escapeAttr(r.image)}" alt="${escapeHtml(r.title)}" class="w-full h-40 object-cover" onerror="this.src='images/placeholder.svg'">
+                        <img src="${escapeAttr(r.image)}" alt="${escapeHtml(r.title)}" class="w-full h-40 object-cover" onerror="this.src='${window.APP_CONFIG.paths.placeholderImage}'">
                         <div class="p-4">
                             <h3 class="font-semibold text-gray-900">${escapeHtml(r.title)}</h3>
                             <p class="text-primary font-bold mt-1">${escapeHtml(r.priceDisplay)}</p>
@@ -150,15 +157,18 @@
     async function init() {
         const id = getId();
         let product = null;
-        try {
-            const res = await fetch('data/products.json');
-            if (res.ok) {
-                const data = await res.json();
-                product = data.products.find(p => p.id === id);
-            }
-        } catch (e) { /* fall through to embedded */ }
-        if (!product) product = embeddedProductsData.find(p => p.id === id);
-        render(product);
+        let allProducts = [];
+
+        allProducts = await loadProducts();
+        product = allProducts.find(p => p.id === id);
+
+        if (product) {
+            render(product);
+            await renderRelated(product, allProducts);
+        } else {
+            container.innerHTML = `<div class="text-center py-20"><p class="text-xl text-gray-600">Sorry, we couldn't find that product.</p><a href="products.html" class="btn-primary inline-block mt-4">Back to Products</a></div>`;
+        }
+
         if (typeof attachQuoteListeners === 'function') attachQuoteListeners();
         if (typeof syncQuoteButtons === 'function') syncQuoteButtons();
     }

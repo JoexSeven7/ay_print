@@ -1,6 +1,5 @@
 // Main JavaScript for AY PRINT website
 
-// Global products data for homepage
 let productsData = [];
 
 // ============================================
@@ -71,53 +70,169 @@ function validatePhoneInput(inputElement) {
 // NAME / PRODUCT / TEXT VALIDATION HELPERS
 // ============================================
 
-// Single source of truth for allowed product slugs (enum validation)
 const ALLOWED_PRODUCTS = [
-  "business-cards", "flyers-leaflets", "branded-bags", "roll-up-banners",
-  "stickers-labels", "brochures-catalogues", "posters", "large-format", "other"
+	'business-cards', 'flyers-leaflets', 'branded-bags', 'roll-up-banners',
+	'sticks-labels', 'brochures-catalogues', 'posters', 'large-format', 'other'
 ];
 
-// Name: must start with a letter, then letters/spaces/apostrophe/hyphen/dot only
 const NAME_REGEX = /^[\p{L}][\p{L} .\x27-]{0,49}$/u;
 
 function validateName(name) {
-  const v = (name || "").trim();
-  if (!v) return false;
-  if (/^[\d\s\-+().]+$/.test(v)) return false;
-  return NAME_REGEX.test(v);
+	const v = (name || '').trim();
+	if (!v) return false;
+	if (/^[\d\s\-+().]+$/.test(v)) return false;
+	return NAME_REGEX.test(v);
 }
 
 function validateProduct(value) {
-  return ALLOWED_PRODUCTS.includes((value || "").trim());
+	return ALLOWED_PRODUCTS.includes((value || '').trim());
 }
 
-// Sanitize free-text for safe display: strip anything outside the allow-list, cap length.
-// Display-only — server must still re-validate; never treat as security.
 function sanitizeText(raw, max) {
-  max = max || 2000;
-  return (raw || "").replace(/[^\p{L}\p{N} ,.!?;:\x22\x27\-()\n]/gu, "").slice(0, max);
+	max = max || window.APP_CONFIG.limits.sanitizeTextMax;
+	return (raw || '').replace(/[^\p{L}\p{N} ,.!?;:\x22\x27\-()\n]/gu, '').slice(0, max);
 }
 
-// Normalize phone to digits only (comparison / storage hint)
 function normalizePhoneDigits(phone) {
-  return (phone || "").replace(/\D/g, "");
+	return (phone || '').replace(/\D/g, '');
 }
 
 function validateNameInput(inputElement) {
-  const name = inputElement.value.trim();
-  const isValid = validateName(name);
-  if (!isValid && name) {
-    inputElement.classList.add("border-red-500");
-    inputElement.classList.remove("border-gray-300");
-    return false;
-  }
-  inputElement.classList.remove("border-red-500");
-  inputElement.classList.add("border-gray-300");
-  return true;
-}// LOADING OVERLAY — brand-consistent (blue + gold)
+	const name = inputElement.value.trim();
+	const isValid = validateName(name);
+	if (!isValid && name) {
+		inputElement.classList.add('border-red-500');
+		inputElement.classList.remove('border-gray-300');
+		return false;
+	}
+	inputElement.classList.remove('border-red-500');
+	inputElement.classList.add('border-gray-300');
+	return true;
+}
+
+// ============================================
+// CONFIG LOADING & DYNAMIC CONTENT POPULATION
 // ============================================
 
-const _BRAND = { primary: '#2E90E6', secondary: '#C9A227' };
+async function loadSiteConfig() {
+	const config = await fetchSiteConfig?.();
+	if (!config) return;
+
+	if (typeof populateConfigElements === 'function') {
+		populateConfigElements();
+	}
+
+	setFormActions(config);
+}
+
+function setFormActions(config) {
+	const formspreeEndpoint = config?.formspree?.endpoint;
+	if (formspreeEndpoint) {
+		document.querySelectorAll('form[action^="https://formspree.io/f/FORMSPREE_ID"]').forEach(form => {
+			form.action = formspreeEndpoint;
+		});
+	}
+}
+
+function renderStarRating(rating) {
+	const full = Math.floor(rating);
+	const hasHalf = rating % 1 >= 0.5;
+	const empty = 5 - full - (hasHalf ? 1 : 0);
+	let html = '<i class="fas fa-star"></i>'.repeat(full);
+	if (hasHalf) html += '<i class="fas fa-star-half-alt"></i>';
+	html += '<i class="far fa-star"></i>'.repeat(empty);
+	return html;
+}
+
+function getInitials(name) {
+	return name.split(' ').map(p => p[0]).join('').substring(0, 2).toUpperCase();
+}
+
+async function loadTestimonials() {
+	try {
+		const res = await fetch(window.APP_CONFIG.paths.testimonialsData);
+		if (!res.ok) return;
+		const data = await res.json();
+		renderTestimonials(data.testimonials);
+	} catch (e) {
+		console.error('Testimonials load failed:', e);
+	}
+}
+
+function renderTestimonials(testimonials) {
+	const container = document.getElementById('testimonialsContainer');
+	if (!container) return;
+	if (!testimonials || testimonials.length === 0) return;
+
+	container.innerHTML = testimonials.map(t => `
+		<div class="bg-gray-50 p-8 rounded-xl">
+			<div class="flex text-secondary mb-4">
+				${renderStarRating(t.rating)}
+			</div>
+			<p class="text-gray-600 mb-6">${escapeHtml(t.quote)}</p>
+			<div class="flex items-center gap-4">
+				<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+					${escapeHtml(getInitials(t.name))}
+				</div>
+				<div>
+					<h4 class="font-semibold text-gray-900">${escapeHtml(t.name)}</h4>
+					<p class="text-sm text-gray-600">${escapeHtml(t.title)}</p>
+				</div>
+			</div>
+		</div>
+	`).join('');
+}
+
+async function loadServices() {
+	try {
+		const res = await fetch(window.APP_CONFIG.paths.servicesData);
+		if (!res.ok) return;
+		const data = await res.json();
+		renderServices(data.services);
+	} catch (e) {
+		console.error('Services load failed:', e);
+	}
+}
+
+function renderServices(services) {
+	const containers = document.querySelectorAll('[data-services-container]');
+	if (containers.length === 0) return;
+
+	const html = services.map(s => `
+		<div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+			<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+				<i class="fas ${escapeAttr(s.icon)} text-3xl text-primary"></i>
+			</div>
+			<h3 class="text-xl font-semibold text-gray-900 mb-3">${escapeHtml(s.title)}</h3>
+			<p class="text-gray-600 mb-4">${escapeHtml(s.description)}</p>
+			<a href="products.html" class="text-primary font-semibold hover:text-blueLight transition-colors">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+		</div>
+	`).join('');
+
+	containers.forEach(container => {
+		container.innerHTML = html;
+	});
+}
+
+function loadWhatsAppLink() {
+	const config = window.SITE_CONFIG;
+	if (!config) return;
+	const waLink = config.contact?.whatsappLink;
+	if (waLink) {
+		document.querySelectorAll('[data-whatsapp-link]').forEach(el => {
+			el.setAttribute('href', waLink);
+		});
+	}
+}
+
+// ============================================
+// LOADING OVERLAY
+// ============================================
+
+const _BRAND = window.APP_CONFIG.branding || {
+	primary: '#2E90E6',
+	secondary: '#C9A227'
+};
 
 function createLoadingOverlay() {
 	if (document.getElementById('loading-overlay')) return;
@@ -127,59 +242,59 @@ function createLoadingOverlay() {
 	overlay.setAttribute('aria-live', 'polite');
 	overlay.setAttribute('aria-atomic', 'true');
 	overlay.innerHTML = `
-        <div class="fixed inset-0 z-[9999] hidden flex items-center justify-center"
-             style="background:rgba(27,58,91,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);">
-            <div class="flex flex-col items-center gap-8 loader-enter">
-                <div class="relative w-20 h-20">
-                    <div class="absolute inset-0 rounded-full"
-                         style="background:linear-gradient(135deg,#2E90E6,#C9A227);
-                                 animation:loader-breathe 2s ease-in-out infinite;"></div>
-                    <div class="absolute inset-[4px] rounded-full bg-[#1b3a5b]/80"></div>
-                    <div class="absolute inset-[4px] rounded-full"
-                         style="border:3px solid transparent;
-                                 border-top-color:#C9A227;
-                                 border-right-color:#C9A227;
-                                 animation:loader-spin 0.9s cubic-bezier(0.5,0,0.5,1) infinite;"></div>
-                </div>
-                <p class="text-white text-lg font-medium tracking-[0.25em] uppercase"
-                   style="font-family:inherit;">
-                    AY PRINT<span class="loading-dots"></span>
-                </p>
-            </div>
-        </div>
-    `;
+		<div class="fixed inset-0 z-[9999] hidden flex items-center justify-center"
+			style="background:var(--color-loader-overlay,rgba(27,58,91,0.92));backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);">
+			<div class="flex flex-col items-center gap-8 loader-enter">
+				<div class="relative w-20 h-20">
+					<div class="absolute inset-0 rounded-full"
+						style="background:linear-gradient(135deg,var(--color-primary,#2E90E6),var(--color-secondary,#C9A227));
+							animation:loader-breathe 2s ease-in-out infinite;"></div>
+					<div class="absolute inset-[4px] rounded-full bg-[#1b3a5b]/80"></div>
+					<div class="absolute inset-[4px] rounded-full"
+						style="border:3px solid transparent;
+							border-top-color:var(--color-secondary,#C9A227);
+							border-right-color:var(--color-secondary,#C9A227);
+							animation:loader-spin 0.9s cubic-bezier(0.5,0,0.5,1) infinite;"></div>
+				</div>
+				<p class="text-white text-lg font-medium tracking-[0.25em] uppercase"
+					style="font-family:inherit;">
+					AY PRINT<span class="loading-dots"></span>
+				</p>
+			</div>
+		</div>
+	`;
 	document.body.appendChild(overlay);
 
 	if (!document.getElementById('loading-dots-style')) {
 		const style = document.createElement('style');
 		style.id = 'loading-dots-style';
 		style.textContent = `
-            .loading-dots::after {
-                content: '';
-                animation: loading-dots 1.6s steps(4,end) infinite;
-            }
-            @keyframes loading-dots {
-                0%,20%  { content:''; }
-                40%     { content:'.'; }
-                60%     { content:'..'; }
-                80%,100%{ content:'...'; }
-            }
-            .loader-enter {
-                animation: loader-enter 0.5s cubic-bezier(0.22,1,0.36,1) forwards;
-            }
-            @keyframes loader-enter {
-                from { opacity:0; transform:scale(0.85) translateY(12px); }
-                to   { opacity:1; transform:scale(1)   translateY(0);   }
-            }
-            @keyframes loader-spin {
-                0%   { transform:rotate(0deg);   }
-                100% { transform:rotate(360deg); }
-            }
-            @keyframes loader-breathe {
-                0%,100% { opacity:0.6; transform:scale(1);   }
-                50%     { opacity:1;   transform:scale(1.04); }
-            }
-        `;
+			.loading-dots::after {
+				content: '';
+				animation: loading-dots 1.6s steps(4,end) infinite;
+			}
+			@keyframes loading-dots {
+				0%,20%  { content:''; }
+				40%     { content:'.'; }
+				60%     { content:'..'; }
+				80%,100%{ content:'...'; }
+			}
+			.loader-enter {
+				animation: loader-enter 0.5s cubic-bezier(0.22,1,0.36,1) forwards;
+			}
+			@keyframes loader-enter {
+				from { opacity:0; transform:scale(0.85) translateY(12px); }
+				to   { opacity:1; transform:scale(1)   translateY(0);   }
+			}
+			@keyframes loader-spin {
+				0%   { transform:rotate(0deg);   }
+				100% { transform:rotate(360deg); }
+			}
+			@keyframes loader-breathe {
+				0%,100% { opacity:0.6; transform:scale(1);   }
+				50%     { opacity:1;   transform:scale(1.04); }
+			}
+		`;
 		document.head.appendChild(style);
 	}
 }
@@ -227,13 +342,13 @@ document.addEventListener('DOMContentLoaded', function () {
 			showLoader();
 			setTimeout(() => {
 				window.location.href = this.getAttribute('href');
-			}, 800);
+			}, window.APP_CONFIG.thresholds.loaderNavigateDelay);
 		});
 	});
 });
 
 window.addEventListener('load', function () {
-	setTimeout(hideLoader, 500);
+	setTimeout(hideLoader, window.APP_CONFIG.thresholds.initialHideDelay);
 });
 
 // ============================================
@@ -241,7 +356,7 @@ window.addEventListener('load', function () {
 // ============================================
 
 function getQuote() {
-	return JSON.parse(localStorage.getItem('ayprintQuote') || '[]');
+	return JSON.parse(localStorage.getItem(window.APP_CONFIG.limits.quoteStorageKey) || '[]');
 }
 
 function updateQuoteCount() {
@@ -261,7 +376,7 @@ function toggleQuote(id) {
 	} else {
 		quote.push(strId);
 	}
-	localStorage.setItem('ayprintQuote', JSON.stringify(quote));
+	localStorage.setItem(window.APP_CONFIG.limits.quoteStorageKey, JSON.stringify(quote));
 	updateQuoteCount();
 	syncQuoteButtons();
 }
@@ -284,7 +399,6 @@ function syncQuoteButtons() {
 	});
 }
 
-// Delegated handler for all "Add to Quote" buttons
 let quoteDelegated = false;
 function attachQuoteListeners() {
 	if (!quoteDelegated) {
@@ -302,85 +416,15 @@ function attachQuoteListeners() {
 // HOMEPAGE: fetch products + render featured
 // ============================================
 
-const embeddedProductsData = [
-	{
-		id: 1,
-		title: 'Business Cards',
-		slug: 'business-cards',
-		category: 'cards',
-		subcategory: 'Standard / Premium / Spot-UV',
-		material: '300gsm Art Card',
-		sizes: ['85x55mm', '90x50mm'],
-		finish: ['Matte', 'Gloss', 'Soft-touch'],
-		minOrder: 100,
-		price: 0,
-		priceDisplay: 'From ₦15,000 / 100 pcs',
-		turnaround: '2-3 business days',
-		features: ['Full colour both sides', 'Free design', 'Fast turnaround'],
-		image: 'images/products/IMG_3207.jpeg',
-		images: ['images/products/IMG_3207.jpeg', 'images/products/IMG_3207.jpeg'],
-		description: 'Make a lasting first impression with premium business cards printed on 300gsm art card.',
-		options: ['Paper type', 'Size', 'Finish', 'Quantity'],
-		featured: true,
-		createdAt: '2026-08-05',
-	},
-	{
-		id: 2,
-		title: 'Flyers & Leaflets',
-		slug: 'flyers-leaflets',
-		category: 'flyers',
-		subcategory: 'A5 / A6 / DL',
-		material: '150gsm Gloss Art',
-		sizes: ['A6', 'A5', 'DL', 'A4'],
-		finish: ['Gloss', 'Matte'],
-		minOrder: 500,
-		price: 0,
-		priceDisplay: 'From ₦25,000 / 500 pcs',
-		turnaround: '2-4 business days',
-		features: ['Vivid full-colour print', 'Bulk discounts', 'Folded options'],
-		image: 'images/products/card.jpeg',
-		images: ['images/products/card.jpeg', 'images/products/card.jpeg'],
-		description: 'Promote events, sales and menus with high-impact flyers and leaflets.',
-		options: ['Size', 'Paper weight', 'Finish', 'Quantity'],
-		featured: true,
-		createdAt: '2026-08-05',
-	},
-	{
-		id: 3,
-		title: 'Branded Tote & Paper Bags',
-		slug: 'branded-bags',
-		category: 'bags',
-		subcategory: 'Tote / Gift / Paper',
-		material: '100% Cotton / Kraft Paper',
-		sizes: ['Small', 'Medium', 'Large'],
-		finish: ['Screen print', 'Full-colour'],
-		minOrder: 50,
-		price: 0,
-		priceDisplay: 'From ₦450 / pc',
-		turnaround: '5-7 business days',
-		features: ['Eco-friendly options', 'Reusable', 'Custom artwork'],
-		image: 'images/products/bags.jpg',
-		images: ['images/products/bags.jpg', 'images/products/bags-2.jpg'],
-		description: 'Carry your brand everywhere with custom tote bags and premium paper gift bags.',
-		options: ['Bag type', 'Size', 'Print method', 'Quantity'],
-		featured: true,
-		createdAt: '2026-08-05',
-	},
-];
-
 async function fetchProducts() {
 	try {
-		const response = await fetch('data/products.json');
+		const response = await fetch(window.APP_CONFIG.paths.productsData);
 		if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
 		const data = await response.json();
 		productsData = data.products;
 		return productsData;
 	} catch (error) {
 		console.error('Error loading products:', error);
-		if (window.location.protocol === 'file:') {
-			productsData = embeddedProductsData;
-			return productsData;
-		}
 		return [];
 	}
 }
@@ -392,32 +436,33 @@ function generateProductCard(product) {
 		: '';
 
 	return `
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow product-card">
-            <div class="relative">
-                <img src="${escapeAttr(product.image)}" alt="${escapeAttr(product.title)}" class="w-full h-48 object-cover" onerror="this.src='images/placeholder.svg'">
-                ${featuredBadge}
-                ${categoryBadge}
-                <button class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow hover:bg-gray-100 transition-colors quote-btn" data-id="${escapeAttr(product.id)}" title="Add to quote" aria-label="Add to quote">
-                    <i class="far fa-bookmark text-gray-600"></i>
-                </button>
-            </div>
-            <div class="p-5">
-                <h3 class="text-lg font-semibold text-gray-900 mb-1">${escapeHtml(product.title)}</h3>
-                <p class="text-sm text-gray-500 mb-3"><i class="fas fa-layer-group text-primary mr-2"></i>${escapeHtml(product.subcategory)}</p>
-                <p class="text-lg font-bold text-primary mb-1">${escapeHtml(product.priceDisplay)}</p>
-                <p class="text-sm text-gray-600 mb-4"><i class="fas fa-clock text-secondary mr-2"></i>${escapeHtml(product.turnaround)}</p>
-                <a href="product-detail.html?id=${escapeAttr(product.id)}" class="block text-center border-2 border-primary text-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition-colors">View Details</a>
-            </div>
-        </div>
-    `;
+		<div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow product-card">
+			<div class="relative">
+				<img src="${escapeAttr(product.image)}" alt="${escapeAttr(product.title)}" class="w-full h-48 object-cover" onerror="this.src='${window.APP_CONFIG.paths.placeholderImage}'">
+				${featuredBadge}
+				${categoryBadge}
+				<button class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow hover:bg-gray-100 transition-colors quote-btn" data-id="${escapeAttr(product.id)}" title="Add to quote" aria-label="Add to quote">
+					<i class="far fa-bookmark text-gray-600"></i>
+				</button>
+			</div>
+			<div class="p-5">
+				<h3 class="text-lg font-semibold text-gray-900 mb-1">${escapeHtml(product.title)}</h3>
+				<p class="text-sm text-gray-500 mb-3"><i class="fas fa-layer-group text-primary mr-2"></i>${escapeHtml(product.subcategory)}</p>
+				<p class="text-lg font-bold text-primary mb-1">${escapeHtml(product.priceDisplay)}</p>
+				<p class="text-sm text-gray-600 mb-4"><i class="fas fa-clock text-secondary mr-2"></i>${escapeHtml(product.turnaround)}</p>
+				<a href="product-detail.html?id=${escapeAttr(product.id)}" class="block text-center border-2 border-primary text-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition-colors">View Details</a>
+			</div>
+		</div>
+	`;
 }
 
 function renderFeaturedProducts(products) {
 	const track = document.getElementById('carouselTrack');
 	if (!track) return;
 
-	const featured = products.filter((p) => p.featured).slice(0, 4);
-	const display = featured.length > 0 ? featured : products.slice(0, 4);
+	const limit = window.APP_CONFIG.limits.featuredProducts;
+	const featured = products.filter((p) => p.featured).slice(0, limit);
+	const display = featured.length > 0 ? featured : products.slice(0, limit);
 
 	if (display.length === 0) {
 		track.innerHTML = `<div class="col-span-full text-center py-12"><p class="text-gray-600">No products available at the moment.</p></div>`;
@@ -429,26 +474,21 @@ function renderFeaturedProducts(products) {
 	syncQuoteButtons();
 }
 
-document.addEventListener('DOMContentLoaded', async function () {
-	await fetchProducts();
-	renderFeaturedProducts(productsData);
+// ============================================
+// NAVBAR INTERACTIONS
+// ============================================
 
-	updateQuoteCount();
-	attachQuoteListeners();
-	syncQuoteButtons();
-
-	// Mobile Navigation Toggle
+function initNavbar() {
 	const navToggle = document.getElementById('navToggle');
 	const mobileMenu = document.getElementById('mobileMenu');
 	if (navToggle && mobileMenu) {
 		navToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 	}
 
-	// Navbar Scroll Effect
 	const navbar = document.getElementById('navbar');
 	if (navbar) {
 		window.addEventListener('scroll', function () {
-			if (window.pageYOffset > 50) {
+			if (window.pageYOffset > window.APP_CONFIG.thresholds.navbarScroll) {
 				navbar.classList.remove('bg-white/60');
 				navbar.classList.add('bg-gray-100/95');
 			} else {
@@ -458,11 +498,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 		});
 	}
 
-	// Back to Top Button
 	const backToTop = document.getElementById('backToTop');
 	if (backToTop) {
 		window.addEventListener('scroll', function () {
-			if (window.pageYOffset > 300) {
+			if (window.pageYOffset > window.APP_CONFIG.thresholds.backToTopScroll) {
 				backToTop.classList.remove('opacity-0', 'invisible');
 				backToTop.classList.add('opacity-100', 'visible');
 			} else {
@@ -470,15 +509,20 @@ document.addEventListener('DOMContentLoaded', async function () {
 				backToTop.classList.remove('opacity-100', 'visible');
 			}
 		});
-		backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+		backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: window.APP_CONFIG.animations.scrollBehavior }));
 	}
+}
 
-	// Animated Counter for Stats
+// ============================================
+// ANIMATED COUNTERS
+// ============================================
+
+function initCounters() {
 	const counters = document.querySelectorAll('[data-count]');
 	counters.forEach((counter) => {
 		const target = parseInt(counter.getAttribute('data-count'));
-		const duration = 2000;
-		const step = target / (duration / 16);
+		const duration = window.APP_CONFIG.thresholds.counterDuration;
+		const step = target / (duration / window.APP_CONFIG.thresholds.counterTick);
 		let current = 0;
 		const updateCounter = () => {
 			current += step;
@@ -498,12 +542,17 @@ document.addEventListener('DOMContentLoaded', async function () {
 					}
 				});
 			},
-			{ threshold: 0.5 },
+			{ threshold: window.APP_CONFIG.thresholds.intersectionThreshold },
 		);
 		observer.observe(counter);
 	});
+}
 
-	// Newsletter Form (Formspree)
+// ============================================
+// NEWSLETTER FORM (Formspree)
+// ============================================
+
+function initNewsletterForm() {
 	const newsletterForm = document.getElementById('newsletterForm');
 	const newsletterEmail = document.getElementById('newsletterEmail');
 	if (newsletterEmail) {
@@ -512,11 +561,11 @@ document.addEventListener('DOMContentLoaded', async function () {
 	if (newsletterForm) {
 		newsletterForm.addEventListener('submit', async function (e) {
 			e.preventDefault();
-			const email = newsletterEmail.value;
+			const email = newsletterEmail ? newsletterEmail.value : '';
 			if (!validateEmail(email)) {
 				alert('Please enter a valid email address.');
-				newsletterEmail.classList.add('border-red-500');
-				newsletterEmail.focus();
+				if (newsletterEmail) newsletterEmail.classList.add('border-red-500');
+				if (newsletterEmail) newsletterEmail.focus();
 				return;
 			}
 			const submitBtn = newsletterForm.querySelector('button[type="submit"]');
@@ -541,12 +590,17 @@ document.addEventListener('DOMContentLoaded', async function () {
 			} finally {
 				submitBtn.textContent = originalBtnText;
 				submitBtn.disabled = false;
-				if (typeof hideLoader === 'function') setTimeout(hideLoader, 1200);
+				if (typeof hideLoader === 'function') setTimeout(hideLoader, window.APP_CONFIG.thresholds.hideLoaderDelay);
 			}
 		});
 	}
+}
 
-	// FAQ Accordion
+// ============================================
+// FAQ ACCORDION
+// ============================================
+
+function initFaqAccordion() {
 	document.querySelectorAll('.faq-question').forEach((question) => {
 		question.addEventListener('click', function () {
 			const answer = this.nextElementSibling;
@@ -555,18 +609,46 @@ document.addEventListener('DOMContentLoaded', async function () {
 			icon.classList.toggle('rotate-180');
 		});
 	});
+}
 
-	// Smooth scroll for anchor links
+// ============================================
+// SMOOTH SCROLL FOR ANCHOR LINKS
+// ============================================
+
+function initSmoothScroll() {
 	document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 		anchor.addEventListener('click', function (e) {
 			const target = document.querySelector(this.getAttribute('href'));
 			if (target) {
 				e.preventDefault();
-				target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+				target.scrollIntoView({ behavior: window.APP_CONFIG.animations.scrollBehavior, block: 'start' });
 			}
 		});
 	});
+}
+
+// ============================================
+// MAIN INITIALIZATION
+// ============================================
+
+document.addEventListener('DOMContentLoaded', async function () {
+	await loadSiteConfig();
+	await loadTestimonials();
+	await loadServices();
+	loadWhatsAppLink();
+
+	await fetchProducts();
+	renderFeaturedProducts(productsData);
+
+	updateQuoteCount();
+	attachQuoteListeners();
+	syncQuoteButtons();
+
+	initNavbar();
+	initCounters();
+	initNewsletterForm();
+	initFaqAccordion();
+	initSmoothScroll();
 });
 
 console.log('AY PRINT website loaded successfully!');
-

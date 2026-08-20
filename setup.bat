@@ -38,8 +38,9 @@ echo   Setup Complete!
 echo ============================================
 echo.
 echo Next steps:
-echo 1. Replace FORMSPREE_ID in HTML files with your Formspree form ID
-echo 2. Run a local server: npx serve
-echo 3. Open http://localhost:3000 to test
+echo 1. Set your Formspree ID in data/config.json
+echo 2. Update contact info and stats in data/config.json
+echo 3. Run a local server: npx serve
+echo 4. Open http://localhost:3000 to test
 echo.
 pause

@@ -20,6 +20,11 @@
         --color-blueLight: #5AA9E6;
         --color-navy: #1b3a5b;
         --color-navyLight: #2a5a86;
+        --color-gradient-start: #2E90E6;
+        --color-gradient-mid: #3a6aa0;
+        --color-gradient-end: #C9A227;
+        --color-loader-overlay: rgba(27, 58, 91, 0.92);
+        --color-gold-transparent: rgba(201, 162, 39, 0.4);
     }
 }
 

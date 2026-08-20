@@ -1,0 +1,34 @@
+{
+  "services": [
+    {
+      "title": "Business Cards",
+      "description": "300gsm art card with matte, gloss or soft-touch finishes and optional spot-UV.",
+      "icon": "fa-id-card"
+    },
+    {
+      "title": "Flyers & Leaflets",
+      "description": "Promotions, menus and programmes in A6, A5, DL and A4 with folding options.",
+      "icon": "fa-file-alt"
+    },
+    {
+      "title": "Branded Bags",
+      "description": "Eco-friendly cotton totes and kraft paper gift bags printed with your logo.",
+      "icon": "fa-shopping-bag"
+    },
+    {
+      "title": "Banners & Signage",
+      "description": "Roll-up banners and large-format flex/vinyl printing for events and storefronts.",
+      "icon": "fa-scroll"
+    },
+    {
+      "title": "Stickers & Labels",
+      "description": "Custom die-cut stickers and product labels in any shape, weatherproof vinyl available.",
+      "icon": "fa-tags"
+    },
+    {
+      "title": "Brochures & Posters",
+      "description": "Catalogues, brochures and photo-quality posters that leave a lasting impression.",
+      "icon": "fa-book"
+    }
+  ]
+}

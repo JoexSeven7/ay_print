@@ -20,6 +20,7 @@ module.exports = {
         navy: '#1b3a5b',
         navyLight: '#2a5a86',
         gradientStart: '#2E90E6',
+        gradientMid: '#3a6aa0',
         gradientEnd: '#C9A227',
       },
       backgroundImage: {
