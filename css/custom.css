@@ -67,3 +67,21 @@
 html {
     scroll-behavior: smooth;
 }
+
+/* ============================================
+   PRODUCT DETAIL — VARIANT SWITCHER
+   ============================================ */
+.variant-panel {
+    will-change: opacity;
+}
+
+#mainImage,
+.variant-panel {
+    transition: opacity 0.25s ease;
+}
+
+.variant-tab:focus-visible,
+.variant-thumb:focus-visible {
+    outline: 2px solid var(--color-primary, #2E90E6);
+    outline-offset: 2px;
+}

@@ -1,73 +1,72 @@
 {
-  "company": {
-    "name": "AY PRINT",
-    "logo": "images/ay_logo.png",
-    "since": 2018,
-    "description": "AY PRINT is your trusted partner for premium printing — business cards, flyers, bags, banners, stickers and more. Fast turnaround, free design and eco-friendly options."
-  },
-  "contact": {
-    "address": "No 12, Industrial Road, Lagos",
-    "phone": "+234 801 234 5678",
-    "whatsapp": "+234 902 773 0330",
-    "whatsappLink": "https://wa.me/2349027730330",
-    "email": "hello@ayprint.com",
-    "hours": "Mon - Sat: 8:00 AM - 6:00 PM"
-  },
-  "social": {
-    "facebook": "#",
-    "instagram": "#",
-    "twitter": "#",
-    "linkedin": "#"
-  },
-  "stats": {
-    "itemsPrinted": 500000,
-    "happyClients": 1200,
-    "yearsExperience": 8,
-    "satisfaction": 98
-  },
-  "branding": {
-    "primaryColor": "#2E90E6",
-    "secondaryColor": "#C9A227",
-    "accentColor": "#F4E4BC",
-    "darkColor": "#1b3a5b",
-    "goldDark": "#A8811B",
-    "blueLight": "#5AA9E6",
-    "gradientStart": "#2E90E6",
-    "gradientMid": "#3a6aa0",
-    "gradientEnd": "#C9A227"
-  },
-  "formspree": {
-    "id": "FORMSPREE_ID",
-    "endpoint": "https://formspree.io/f/FORMSPREE_ID",
-    "connectSrc": "https://formspree.io"
-  },
-  "assets": {
-    "placeholderImage": "images/placeholder.svg",
-    "favicon": "favicon.ico",
-    "faviconPng": "favicon.png",
-    "appleTouchIcon": "apple-touch-icon.png",
-    "webmanifest": "site.webmanifest"
-  },
-  "paths": {
-    "productsData": "data/products.json",
-    "blogPostsData": "data/blog-posts.json",
-    "galleryData": "data/gallery.json",
-    "testimonialsData": "data/testimonials.json",
-    "servicesData": "data/services.json",
-    "siteConfig": "data/config.json"
-  },
-  "copyright": {
-    "useCurrentYear": true,
-    "fallbackYear": 2026,
-    "text": "AY PRINT. All rights reserved."
-  },
-  "navigation": [
-    { "label": "Home", "href": "index.html" },
-    { "label": "Products", "href": "products.html" },
-    { "label": "Services", "href": "services.html" },
-    { "label": "Gallery", "href": "gallery.html" },
-    { "label": "Blog", "href": "blog.html" },
-    { "label": "About", "href": "about.html" },
-    { "label": "Contact", "href": "contact.html" }
-  ]
+	"company": {
+		"name": "AY PRINT",
+		"logo": "images/ay_logo.png",
+		"since": 2018,
+		"description": "AY PRINT is your trusted partner for premium printing — business cards, flyers, bags, banners, stickers and more. Fast turnaround, free design and eco-friendly options."
+	},
+	"contact": {
+		"address": "58, market street ,shomolu lagos",
+		"phone": "+234 7068606143",
+		"whatsapp": "+234 907 570 4865",
+		"whatsappLink": "https://wa.me/message/R3AHK2FJFIR2O1",
+		"email": "hello@ayprint.com",
+		"instagram": "@ayprint",
+		"instagramLink": "https://www.instagram.com/ayprint.ng",
+		"hours": "Mon - Sat: 8:00 AM - 6:00 PM"
+	},
+	"social": {
+		"instagram": "https://www.instagram.com/ayprint.ng"
+	},
+	"stats": {
+		"itemsPrinted": 500000,
+		"happyClients": 1200,
+		"yearsExperience": 8,
+		"satisfaction": 98
+	},
+	"branding": {
+		"primaryColor": "#2E90E6",
+		"secondaryColor": "#C9A227",
+		"accentColor": "#F4E4BC",
+		"darkColor": "#1b3a5b",
+		"goldDark": "#A8811B",
+		"blueLight": "#5AA9E6",
+		"gradientStart": "#2E90E6",
+		"gradientMid": "#3a6aa0",
+		"gradientEnd": "#C9A227"
+	},
+	"formspree": {
+		"id": "FORMSPREE_ID",
+		"endpoint": "https://formspree.io/f/FORMSPREE_ID",
+		"connectSrc": "https://formspree.io"
+	},
+	"assets": {
+		"placeholderImage": "images/placeholder.svg",
+		"favicon": "favicon.ico",
+		"faviconPng": "favicon.png",
+		"appleTouchIcon": "apple-touch-icon.png",
+		"webmanifest": "site.webmanifest"
+	},
+	"paths": {
+		"productsData": "data/products.json",
+		"blogPostsData": "data/blog-posts.json",
+		"galleryData": "data/gallery.json",
+		"testimonialsData": "data/testimonials.json",
+		"servicesData": "data/services.json",
+		"siteConfig": "data/config.json"
+	},
+	"copyright": {
+		"useCurrentYear": true,
+		"fallbackYear": 2026,
+		"text": "AY PRINT. All rights reserved."
+	},
+	"navigation": [
+		{ "label": "Home", "href": "index.html" },
+		{ "label": "Products", "href": "products.html" },
+		{ "label": "Services", "href": "services.html" },
+		{ "label": "Gallery", "href": "gallery.html" },
+		{ "label": "Blog", "href": "blog.html" },
+		{ "label": "About", "href": "about.html" },
+		{ "label": "Contact", "href": "contact.html" }
+	]
 }
