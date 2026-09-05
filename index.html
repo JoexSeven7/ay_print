@@ -15,8 +15,8 @@
 			content="printing, business cards, flyers, branded bags, banners, stickers, brochures, posters, AY PRINT" />
 		<title>AY PRINT | Cards, Flyers, Bags & Printing Services</title>
 		<link rel="icon" href="favicon.ico" />
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+		<link rel="icon" type="image/png" href="favicon.png" />
+		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 		<link rel="manifest" href="site.webmanifest" />
 		<link rel="stylesheet" href="css/output.css" />
 		<link rel="stylesheet" href="css/fontawesome.min.css" />
@@ -85,9 +85,9 @@
 			class="relative pt-16 md:pt-0 min-h-screen flex items-center justify-center overflow-hidden"
 			id="heroSection">
 			<div class="absolute inset-0 z-0" id="heroMedia">
-				<img src="images/placeholder.svg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-30" />
+				<img src="images/hero_page.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-30" />
 			</div>
-			<div class="absolute inset-0 bg-gradient-to-r from-primary/70 via-gradientMid/50 to-secondary/60 z-[1]"></div>
+			<div class="absolute inset-0 bg-gradient-to-r from-primary/7-0 via-gradientMid/50 to-secondary/60 z-[1]"></div>
 			<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
 				<span class="inline-block bg-white/80 text-primary text-sm font-semibold px-4 py-1 rounded-full mb-4"
 					>Premium Printing · Fast Turnaround</span
@@ -158,22 +158,42 @@
 				<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
 					<div class="text-center">
 						<div class="text-4xl text-primary mb-2"><i class="fas fa-print"></i></div>
-						<div class="text-3xl font-bold text-gray-900 mb-1" data-config-attr="data-count|stats.itemsPrinted" data-count="0">0</div>
+						<div
+							class="text-3xl font-bold text-gray-900 mb-1"
+							data-config-attr="data-count|stats.itemsPrinted"
+							data-count="0">
+							0
+						</div>
 						<div class="text-gray-600">Items Printed</div>
 					</div>
 					<div class="text-center">
 						<div class="text-4xl text-primary mb-2"><i class="fas fa-users"></i></div>
-						<div class="text-3xl font-bold text-gray-900 mb-1" data-config-attr="data-count|stats.happyClients" data-count="0">0</div>
+						<div
+							class="text-3xl font-bold text-gray-900 mb-1"
+							data-config-attr="data-count|stats.happyClients"
+							data-count="0">
+							0
+						</div>
 						<div class="text-gray-600">Happy Clients</div>
 					</div>
 					<div class="text-center">
 						<div class="text-4xl text-primary mb-2"><i class="fas fa-award"></i></div>
-						<div class="text-3xl font-bold text-gray-900 mb-1" data-config-attr="data-count|stats.yearsExperience" data-count="0">0</div>
+						<div
+							class="text-3xl font-bold text-gray-900 mb-1"
+							data-config-attr="data-count|stats.yearsExperience"
+							data-count="0">
+							0
+						</div>
 						<div class="text-gray-600">Years Experience</div>
 					</div>
 					<div class="text-center">
 						<div class="text-4xl text-primary mb-2"><i class="fas fa-smile"></i></div>
-						<div class="text-3xl font-bold text-gray-900 mb-1" data-config-attr="data-count|stats.satisfaction" data-count="0">0</div>
+						<div
+							class="text-3xl font-bold text-gray-900 mb-1"
+							data-config-attr="data-count|stats.satisfaction"
+							data-count="0">
+							0
+						</div>
 						<div class="text-gray-600">% Satisfaction</div>
 					</div>
 				</div>
@@ -191,13 +211,15 @@
 							onerror="this.src = 'images/placeholder.svg'" />
 						<div
 							class="absolute bottom-0 right-4 translate-y-1/2 md:bottom-[-1.5rem] md:right-[-1.5rem] md:translate-y-0 bg-primary text-white p-6 rounded-xl shadow-xl">
-						<span class="text-4xl font-bold">8+</span>
-						<p class="text-sm">Years of Printing</p>
+							<span class="text-4xl font-bold">8+</span>
+							<p class="text-sm">Years of Printing</p>
 						</div>
 					</div>
 					<div class="lg:pl-8">
 						<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 mt-16">Welcome to AY PRINT</h2>
-						<p class="text-xl text-primary mb-6">Your Trusted Printing Partner Since <span data-config="company.since">2018</span></p>
+						<p class="text-xl text-primary mb-6">
+							Your Trusted Printing Partner Since <span data-config="company.since">2018</span>
+						</p>
 						<p class="text-gray-600 mb-4">
 							At AY PRINT we help businesses look their best on paper and beyond. From crisp business cards to
 							large-format banners, we combine premium materials, vivid colour and fast turnaround to deliver print that
@@ -328,21 +350,29 @@
 						<h3 class="text-lg font-semibold mb-6">Contact Us</h3>
 						<ul class="space-y-3 text-gray-400">
 							<li class="flex items-start gap-3">
-								<i class="fas fa-map-marker-alt mt-1"></i><span data-config="contact.address">No 12, Industrial Road, Lagos</span>
-							</li>
-							<li class="flex items-center gap-3"><i class="fas fa-phone"></i><span data-config="contact.phone">+234 801 234 5678</span></li>
-							<li class="flex items-center gap-3"><i class="fab fa-whatsapp"></i><span data-config="contact.whatsapp">+234 902 773 0330</span></li>
-							<li class="flex items-center gap-3">
-								<i class="fas fa-envelope"></i><span style="word-break: break-all" data-config="contact.email">hello@ayprint.com</span>
+								<i class="fas fa-map-marker-alt mt-1"></i
+								><span data-config="contact.address">No 12, Industrial Road, Lagos</span>
 							</li>
 							<li class="flex items-center gap-3">
-								<i class="fas fa-clock"></i><span data-config="contact.hours">Mon - Sat: 8:00 AM - 6:00 PM</span>
+								<i class="fas fa-phone"></i><span data-config="contact.phone">+234 801 234 5678</span>
+							</li>
+							<li class="flex items-center gap-3">
+								<i class="fab fa-whatsapp"></i><span data-config="contact.whatsapp">+234 902 773 0330</span>
+							</li>
+							<li class="flex items-center gap-3">
+								<i class="fas fa-envelope"></i
+								><span style="word-break: break-all" data-config="contact.email">hello@ayprint.com</span>
+							</li>
+							<li class="flex items-center gap-3">
+								<i class="fas fa-clock"></i><span data-config="contact.hours">Mon - Sat: 9:00 AM - 6:00 PM</span>
 							</li>
 						</ul>
 					</div>
 				</div>
 				<div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-					<p class="text-gray-400 text-sm">&copy; <span data-config-year></span> <span data-config="company.name"></span>. All rights reserved.</p>
+					<p class="text-gray-400 text-sm">
+						&copy; <span data-config-year></span> <span data-config="company.name"></span>. All rights reserved.
+					</p>
 					<div class="flex gap-6 mt-4 md:mt-0">
 						<a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
 						<a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
@@ -367,8 +397,8 @@
 			><i class="fab fa-whatsapp text-2xl"></i
 		></a>
 
-		<script src="js/config.js"></script>
-		<script src="js/hero.js"></script>
-		<script src="js/main.js"></script>
+		<script src="js/config.js" defer></script>
+		<script src="js/hero.js" defer></script>
+		<script src="js/main.js" defer></script>
 	</body>
 </html>
