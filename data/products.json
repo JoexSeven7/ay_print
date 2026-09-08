@@ -215,7 +215,7 @@
 			"images": ["images/products/banners.jpg", "images/products/banners-2.jpg"],
 			"description": "Stand out at exhibitions and in-store with crisp roll-up banners. Lightweight aluminium stand, tool-free setup, and a protective carry case included.",
 			"options": ["Size", "Material", "Quantity"],
-			"featured": false,
+			"featured": true,
 			"createdAt": "2026-08-05",
 			"variants": [
 				{
