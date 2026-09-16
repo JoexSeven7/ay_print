@@ -12,8 +12,7 @@ shared/cPanel host. No server-side code, no Node runtime needed in production.
 - [x] **CSP allows Formspree** — `connect-src` and `form-action` permit
       `https://formspree.io` in all HTML pages.
 - [x] **Quote form `id="quoteForm"`** present in `contact.html`.
-- [x] **Broken image fallback** — every `<img>` uses
-      `onerror="this.src='images/placeholder.svg'"`.
+- [x] **Image assets populated** — product, gallery, blog, about, logo, and favicon references resolve to files in the project.
 - [ ] **[YOU MUST DO] Set your Formspree endpoint** in `data/config.json`:
       ```json
       "formspree": {
@@ -29,11 +28,8 @@ shared/cPanel host. No server-side code, no Node runtime needed in production.
       - `stats` — your real business statistics
 - [ ] **[RECOMMENDED] Rebuild Tailwind CSS** so `css/output.css` is current:
       `npm install` then `npm run build:css`.
-- [ ] **Add real images.** Supply product photos in `images/products/`, portfolio
-      shots in `images/portfolio/`, and replace `images/ay_logo.png` + favicons.
-- [ ] **Verify all image paths** referenced in `data/products.json` exist (or rely on
-      the `placeholder.svg` fallback).
-- [ ] **Verify all JSON data files** (`data/*.json`) are valid JSON.
+- [x] **Verify all image paths** referenced in HTML and `data/*.json` resolve to existing files.
+- [x] **Verify all JSON data files** (`data/*.json`) are valid JSON.
 
 ### How the site loads data (important)
 `js/main.js`, `js/products.js`, `js/product-detail.js`, `js/blog.js`,

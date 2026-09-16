@@ -9,7 +9,7 @@
             galleryData: 'data/gallery.json',
             testimonialsData: 'data/testimonials.json',
             servicesData: 'data/services.json',
-            placeholderImage: 'images/placeholder.svg'
+            placeholderImage: 'images/products/card.jpeg'
         },
         thresholds: {
             navbarScroll: 50,

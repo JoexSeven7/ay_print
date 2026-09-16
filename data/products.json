@@ -211,8 +211,8 @@
 			"priceDisplay": "From ₦18,000 / pc",
 			"turnaround": "1-2 business days",
 			"features": ["Portable stand included", "Tool-free setup", "Indoor/outdoor"],
-			"image": "images/products/banners.jpg",
-			"images": ["images/products/banners.jpg", "images/products/banners-2.jpg"],
+			"image": "images/products/IMG_3207.jpeg",
+			"images": ["images/products/IMG_3207.jpeg", "images/products/card4.jpeg"],
 			"description": "Stand out at exhibitions and in-store with crisp roll-up banners. Lightweight aluminium stand, tool-free setup, and a protective carry case included.",
 			"options": ["Size", "Material", "Quantity"],
 			"featured": true,
@@ -220,7 +220,7 @@
 			"variants": [
 				{
 					"name": "Standard 85cm",
-					"image": "images/products/banners.jpg",
+					"image": "images/products/IMG_3207.jpeg",
 					"sizes": ["85cm x 200cm"],
 					"material": "440gsm PVC",
 					"finish": ["Matte"],
@@ -231,7 +231,7 @@
 				},
 				{
 					"name": "Premium 100cm",
-					"image": "images/products/banners-2.jpg",
+					"image": "images/products/card4.jpeg",
 					"sizes": ["100cm x 200cm"],
 					"material": "Premium 440gsm PVC",
 					"finish": ["Matte", "Gloss"],
@@ -256,8 +256,8 @@
 			"priceDisplay": "From ₦12,000 / 100 pcs",
 			"turnaround": "3-4 business days",
 			"features": ["Weatherproof vinyl", "Any shape", "Strong adhesive"],
-			"image": "images/products/stickers.jpg",
-			"images": ["images/products/stickers.jpg"],
+			"image": "images/products/card.jpeg",
+			"images": ["images/products/card.jpeg"],
 			"description": "Custom stickers and product labels in any shape. Choose weatherproof vinyl for outdoor use or paper labels for packaging, with gloss, matte or transparent finishes.",
 			"options": ["Shape", "Material", "Finish", "Quantity"],
 			"featured": false,
@@ -265,7 +265,7 @@
 			"variants": [
 				{
 					"name": "Die-cut Vinyl",
-					"image": "images/products/stickers.jpg",
+					"image": "images/products/card.jpeg",
 					"material": "Vinyl",
 					"finish": ["Gloss", "Matte"],
 					"priceDisplay": "From ₦12,000 / 100 pcs",
@@ -299,8 +299,8 @@
 			"priceDisplay": "From ₦40,000 / 100 pcs",
 			"turnaround": "4-5 business days",
 			"features": ["Multiple folds", "Perfect binding", "Premium feel"],
-			"image": "images/products/brochures.jpg",
-			"images": ["images/products/brochures.jpg"],
+			"image": "images/products/card1.jpeg",
+			"images": ["images/products/card1.jpeg"],
 			"description": "Showcase your products and services with professionally printed brochures and catalogues. Tri-fold, saddle-stitched and perfect-bound options on silk art paper.",
 			"options": ["Fold type", "Size", "Finish", "Quantity"],
 			"featured": false,
@@ -308,7 +308,7 @@
 			"variants": [
 				{
 					"name": "Tri-fold",
-					"image": "images/products/brochures.jpg",
+					"image": "images/products/card1.jpeg",
 					"sizes": ["A4"],
 					"material": "170gsm Silk",
 					"finish": ["Gloss", "Matte"],
@@ -344,8 +344,8 @@
 			"priceDisplay": "From ₦3,500 / pc",
 			"turnaround": "1-2 business days",
 			"features": ["Photo-quality", "Large format", "Vivid colour"],
-			"image": "images/products/posters.jpg",
-			"images": ["images/products/posters.jpg"],
+			"image": "images/products/card3.jpeg",
+			"images": ["images/products/card3.jpeg"],
 			"description": "Bold, photo-quality posters for events, promotions and wall art. Printed on 200gsm photo paper in A2, A1 and A0 sizes with gloss or matte finish.",
 			"options": ["Size", "Paper", "Finish", "Quantity"],
 			"featured": false,
@@ -353,7 +353,7 @@
 			"variants": [
 				{
 					"name": "A2 Gloss",
-					"image": "images/products/posters.jpg",
+					"image": "images/products/card3.jpeg",
 					"sizes": ["A2"],
 					"material": "200gsm Photo Paper",
 					"finish": ["Gloss"],
@@ -389,8 +389,8 @@
 			"priceDisplay": "From ₦2,500 / sqm",
 			"turnaround": "2-3 business days",
 			"features": ["Weatherproof", "Any size", "Eyelets available"],
-			"image": "images/products/large-format.jpg",
-			"images": ["images/products/large-format.jpg"],
+			"image": "images/products/card4.jpeg",
+			"images": ["images/products/card4.jpeg"],
 			"description": "Big, bold and built to last. Large-format flex and vinyl printing for shop fronts, billboards and events, with optional eyelets and hemming.",
 			"options": ["Material", "Size", "Finishing", "Quantity"],
 			"featured": false,
@@ -398,7 +398,7 @@
 			"variants": [
 				{
 					"name": "Flex Banner",
-					"image": "images/products/large-format.jpg",
+					"image": "images/products/card4.jpeg",
 					"material": "PVC Flex",
 					"finish": ["Gloss", "Matte"],
 					"priceDisplay": "From ₦2,500 / sqm",

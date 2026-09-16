@@ -54,8 +54,7 @@ All site-wide settings live in **`data/config.json`**. Edit:
 
 - Product catalogue lives in **`data/products.json`**. Edit titles, prices, categories,
   sizes, finishes, images, etc.
-- Drop real product photos into **`images/products/`** (and portfolio shots into
-  `images/portfolio/`). Missing images fall back to `images/placeholder.svg`.
+- Product, gallery, blog, and about-page image slots are populated from the available files under `images/products/` and `images/hero_page.jpg`. Reuse is intentional where no category-specific photo is available.
 - Replace `images/ay_logo.png`, `favicon-*.png`, `apple-touch-icon.png`, `android-chrome-*.png`
   and `favicon.ico` with your real brand assets.
 
@@ -87,7 +86,7 @@ Then open: http://localhost:3000
 - [ ] Download & setup Font Awesome
 - [ ] Set your Formspree ID in `data/config.json`
 - [ ] Update contact info, social links, and stats in `data/config.json`
-- [ ] Add real product images + logo/favicons
+- [x] Verify product, gallery, blog, logo, and favicon image paths
 - [ ] Test all forms work
 - [ ] Deploy to hosting provider
 

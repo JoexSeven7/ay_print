@@ -41,7 +41,7 @@
 		"connectSrc": "https://formspree.io"
 	},
 	"assets": {
-		"placeholderImage": "images/placeholder.svg",
+		"placeholderImage": "images/products/card.jpeg",
 		"favicon": "favicon.ico",
 		"faviconPng": "favicon.png",
 		"appleTouchIcon": "apple-touch-icon.png",

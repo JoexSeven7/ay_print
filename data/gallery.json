@@ -13,17 +13,17 @@
 		{
 			"title": "Event Flyers",
 			"category": "flyers",
-			"image": "images/products/flyers-1.jpeg"
+			"image": "images/products/card.jpeg"
 		},
 		{
 			"title": "A5 Leaflets",
 			"category": "flyers",
-			"image": "images/products/flyers-2.jpeg"
+			"image": "images/products/card1.jpeg"
 		},
 		{
 			"title": "Premium Brochure",
 			"category": "brochures",
-			"image": "images/products/brochure-1.jpeg"
+			"image": "images/products/card2.jpeg"
 		},
 		{
 			"title": "Branded Tote Bags",
@@ -43,22 +43,22 @@
 		{
 			"title": "Roll-Up Banner",
 			"category": "banners",
-			"image": "images/products/banner-1.jpeg"
+			"image": "images/products/IMG_3207.jpeg"
 		},
 		{
 			"title": "Storefront Signage",
 			"category": "banners",
-			"image": "images/products/banner-2.jpeg"
+			"image": "images/products/card4.jpeg"
 		},
 		{
 			"title": "Product Stickers",
 			"category": "stickers",
-			"image": "images/product/stickers-1.jpeg"
+			"image": "images/products/card.jpeg"
 		},
 		{
 			"title": "Die-Cut Stickers",
 			"category": "stickers",
-			"image": "images/products/stickers-2.jpeg"
+			"image": "images/products/card3.jpeg"
 		}
 	],
 	"categories": ["all", "cards", "flyers", "brochures", "bags", "banners", "stickers"]
