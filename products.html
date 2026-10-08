@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Character encoding for UTF-8 support -->
     <meta charset="UTF-8">
+    <!-- Responsive viewport for mobile/tablet/desktop layouts -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Security: prevent MIME type sniffing attacks -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <!--
+        Content Security Policy: same configuration as all other pages
+        for security consistency. Connect-src includes Formspree for
+        the newsletter form on other pages; this page uses products.js
+        which only fetches JSON data (connect-src self covers it).
+    -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-src https://www.google.com https://maps.google.com https://maps.googleapis.com; img-src 'self' data: https:; font-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; frame-ancestors *;">
+    <!-- SEO meta for product catalogue page search visibility -->
     <meta name="description" content="Browse AY PRINT's full catalogue — business cards, flyers, bags, banners, stickers, brochures and posters.">
     <meta name="keywords" content="print products, business cards, flyers, bags, banners, stickers, AY PRINT">
     <title>Products | AY PRINT</title>
+    <!-- PWA/favicon assets -->
     <link rel="icon" href="favicon.ico" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="manifest" href="site.webmanifest">
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/output.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/custom.css">
 </head>
 <body class="font-sans antialiased">
 
+    <!-- ============ FIXED NAVIGATION ============
+         Same navbar pattern as other pages. Active page link
+         (Products) is highlighted with primary text + bottom border
+         so users know which page they're on. -->
     <nav class="bg-white/60 backdrop-blur shadow-sm fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
@@ -31,6 +47,7 @@
                     <span class="block w-6 h-0.5 bg-primary  mb-1"></span>
                     <span class="block w-6 h-0.5 bg-primary "></span>
                 </button>
+                <!-- Desktop nav: Products link is styled as active (primary color + border) -->
                 <ul class="hidden md:flex space-x-8 items-center" id="navMenu">
                     <li><a href="index.html" class="text-gray-700 hover:text-primary transition-colors">Home</a></li>
                     <li><a href="products.html" class="text-primary font-semibold border-b-2 border-primary pb-1">Products</a></li>
@@ -47,6 +64,7 @@
                 </ul>
             </div>
         </div>
+        <!-- Mobile dropdown menu -->
         <div class="md:hidden hidden bg-white/60 backdrop-blur border-t" id="mobileMenu">
             <ul class="px-4 py-4 space-y-3">
                 <li><a href="index.html" class="block text-gray-700 hover:text-primary">Home</a></li>
@@ -60,16 +78,24 @@
         </div>
     </nav>
 
+    <!-- ============ PAGE HEADER ============ -->
     <section class="pt-28 pb-10 bg-gradient-to-r from-primary via-gradientMid to-secondary">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-3xl md:text-5xl font-bold text-white mb-3">Our Products</h1>
-            <p class="text-blue-50 text-lg">Browse our full range of premium print products</p>
+            <h1 class="text-3xl md:text-5xl font-bold text-white mb-3">Print products shaped around your brief</h1>
+            <p class="text-blue-50 text-lg">Compare distinct stocks, formats, finishes and production options across the AY PRINT catalogue.</p>
         </div>
     </section>
 
+    <!-- ============ FILTER/SEARCH/SORT CONTROLS ============
+         This is the product page's key differentiator vs homepage.
+         I grouped search, category filter, sort, and view toggle
+         in a single card (rounded-2xl shadow-lg) so users see all
+         controls in one place. Flex-col lg:flex-row makes it stack
+         on mobile but align horizontally on desktop. -->
     <section class="py-10 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col lg:flex-row lg:items-end gap-4">
+                <!-- Search input: filters products by title, summary, description, category, subcategory -->
                 <div class="flex-1">
                     <label class="block text-sm font-medium text-gray-700 mb-2">Search</label>
                     <div class="relative">
@@ -77,6 +103,7 @@
                         <input type="text" id="productSearch" placeholder="Search products..." class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none">
                     </div>
                 </div>
+                <!-- Category filter: exact match on product.category field -->
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">Category</label>
                     <select id="categoryFilter" class="w-full lg:w-48 px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none bg-white">
@@ -90,6 +117,7 @@
                         <option value="posters">Posters</option>
                     </select>
                 </div>
+                <!-- Sort dropdown: featured, name, min order, turnaround -->
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">Sort</label>
                     <select id="sortProducts" class="w-full lg:w-48 px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none bg-white">
@@ -99,6 +127,7 @@
                         <option value="turnaround">Turnaround</option>
                     </select>
                 </div>
+                <!-- Grid/List view toggle buttons -->
                 <div class="flex gap-2">
                     <button class="view-btn bg-primary text-white w-12 h-12 rounded-lg flex items-center justify-center" data-view="grid" aria-label="Grid view"><i class="fas fa-th-large"></i></button>
                     <button class="view-btn bg-gray-200 text-gray-600 w-12 h-12 rounded-lg flex items-center justify-center" data-view="list" aria-label="List view"><i class="fas fa-list"></i></button>
@@ -108,6 +137,12 @@
         </div>
     </section>
 
+    <!-- ============ PRODUCT GRID + LIST ============
+         #productsGrid shows cards in grid layout (default).
+         #listContainer shows horizontal rows in list layout.
+         #noResults displays when filters return zero matches.
+         products.js handles all filtering, sorting, rendering,
+         and view toggling dynamically from data/products.json. -->
     <section class="py-8 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="productsGrid"></div>
@@ -119,6 +154,7 @@
         </div>
     </section>
 
+    <!-- ============ FOOTER ============ -->
     <footer class="bg-gray-900 text-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -166,9 +202,14 @@
         </div>
     </footer>
 
+    <!-- ============ FIXED UI ELEMENTS ============ -->
     <button class="fixed bottom-8 right-8 bg-secondary text-white w-12 h-12 rounded-full shadow-lg hover:bg-goldDark transition-colors opacity-0 invisible" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
     <a href="#" data-whatsapp-link target="_blank" rel="noopener noreferrer" class="fixed bottom-24 right-8 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 flex items-center justify-center z-50" aria-label="Contact on WhatsApp"><i class="fab fa-whatsapp text-2xl"></i></a>
 
+    <!-- ============ SCRIPTS ============
+         config.js → main.js (shared) → products.js (page-specific).
+         products.js depends on main.js for quote button functions
+         (attachQuoteListeners, syncQuoteButtons) and APP_CONFIG. -->
     <script src="js/config.js"defer></script>
     <script src="js/main.js"defer></script>
     <script src="js/products.js"defer></script>

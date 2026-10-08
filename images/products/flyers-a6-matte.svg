@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">A6 matte leaflets</title>
+<desc id="desc">Illustration of compact matte A6 leaflet sheets.</desc>
+<rect width="800" height="600" fill="#f8f5ec"/>
+<rect width="800" height="170" fill="#1b3a5b"/>
+<circle cx="112" cy="82" r="64" fill="#C9A227" opacity=".25"/>
+<text x="56" y="76" fill="#ffffff" font-family="Arial, sans-serif" font-size="34" font-weight="700">AY PRINT</text>
+<text x="56" y="122" fill="#ffffff" font-family="Arial, sans-serif" font-size="25" font-weight="600">A6 MATTE LEAFLETS</text>
+<g transform="translate(210 215)">
+<rect x="30" y="24" width="250" height="178" rx="8" fill="#d8d2c4" transform="rotate(-7 155 113)"/>
+<rect x="70" y="42" width="250" height="178" rx="8" fill="#f5f1e8" stroke="#cfc7b8" stroke-width="3"/>
+<rect x="98" y="72" width="150" height="30" rx="6" fill="#C9A227"/>
+<rect x="98" y="122" width="190" height="10" rx="5" fill="#aeb0ad"/>
+<rect x="98" y="146" width="165" height="10" rx="5" fill="#aeb0ad"/>
+<rect x="98" y="170" width="180" height="10" rx="5" fill="#aeb0ad"/>
+<rect x="98" y="198" width="90" height="12" rx="6" fill="#2E90E6"/>
+</g>
+<text x="56" y="535" fill="#1b3a5b" font-family="Arial, sans-serif" font-size="22" font-weight="600">Compact format / soft-touch matte surface</text>
+</svg>

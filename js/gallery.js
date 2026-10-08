@@ -1,13 +1,33 @@
-// Gallery page JavaScript for AY PRINT
+/**
+ * Gallery page JavaScript for AY PRINT.
+ * Renders gallery items in a responsive grid with category filtering.
+ * Gallery data is fetched from data/gallery.json.
+ * Category filter buttons (with .gallery-filter-btn class) filter
+ * items by their category field. Uses a global window.__GALLERY_ITEMS
+ * cache to avoid re-fetching on filter changes.
+ */
 
 (function() {
     'use strict';
 
+    /**
+     * Minimal HTML escaping for gallery item titles and categories.
+     * Defined locally for page self-containment.
+     */
     function escapeHtml(s) { return typeof s !== 'string' ? s : s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;"); }
+    /**
+     * Minimal attribute escaping for gallery item images.
+     */
     function escapeAttr(s) { return typeof s !== 'string' ? s : s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#039;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
 
     const grid = document.getElementById('galleryGrid');
 
+    /**
+     * Renders an array of gallery items into the grid as cards.
+     * Each card shows an image (with hover scale effect), category badge,
+     * and title. Images include SVG fallback on error.
+     * @param {Array} list - Gallery items to render
+     */
     function render(list) {
         if (!grid) return;
         grid.innerHTML = list.map(it => `
@@ -22,6 +42,12 @@
             </div>`).join('');
     }
 
+    /**
+     * Filters and renders gallery items by category.
+     * 'all' shows every item; any other value filters by exact
+     * category match. Uses the window.__GALLERY_ITEMS cache.
+     * @param {string} cat - Category filter value ('all' or specific category)
+     */
     function applyFilter(cat) {
         if (cat === 'all') {
             render(window.__GALLERY_ITEMS || []);
@@ -30,6 +56,13 @@
         }
     }
 
+    /**
+     * Main initialization for the gallery page.
+     * 1. Fetches gallery data and caches items in window.__GALLERY_ITEMS
+     * 2. Attaches click handlers to category filter buttons
+     *    (toggle active button styling, apply filter)
+     * 3. Renders all items initially
+     */
     async function init() {
         try {
             const res = await fetch(window.APP_CONFIG.paths.galleryData);

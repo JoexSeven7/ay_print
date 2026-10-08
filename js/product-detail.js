@@ -1,14 +1,28 @@
-// Product detail page JavaScript for AY PRINT
+/**
+ * Product detail page JavaScript for AY PRINT.
+ * Renders individual product pages with variant switching,
+ * specification tables, feature lists, related products,
+ * and quote button integration.
+ * Reads the product ID from the URL query parameter (?id=).
+ * Uses IIFE pattern for scope isolation.
+ */
 
 (function () {
 	'use strict';
 
+	/**
+	 * Escapes HTML special characters for safe DOM insertion.
+	 * Local copy for page self-containment.
+	 */
 	function escapeHtml(unsafe) {
 		if (typeof unsafe !== 'string') return unsafe;
 		return unsafe
 			.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 			.replace(/"/g, '&quot;').replace(/'/g, '&#039;');
 	}
+	/**
+	 * Escapes attribute-special characters for safe attribute insertion.
+	 */
 	function escapeAttr(value) {
 		if (typeof value !== 'string') return value;
 		return value
@@ -19,11 +33,28 @@
 	const container = document.getElementById('productDetail');
 	const placeholder = window.APP_CONFIG.paths.placeholderImage;
 
+	/**
+	 * Extracts the product ID from the URL query string.
+	 * Returns NaN if no valid ID is found.
+	 * @returns {number} Product ID from ?id= parameter
+	 */
 	function getId() {
 		const params = new URLSearchParams(window.location.search);
 		return parseInt(params.get('id'));
 	}
 
+	/**
+	 * Builds variant objects for the product detail page.
+	 * If the product has explicit variant data, uses those.
+	 * Otherwise falls back to creating variants from the product's
+	 * image gallery (p.images array), using subcategory segments
+	 * as variant names.
+	 * Each variant includes: index, name, image, material, sizes,
+	 * finish, minOrder, priceDisplay, turnaround, features, description,
+	 * and specifications.
+	 * @param {Object} p - Product data object
+	 * @returns {Array} Array of variant objects
+	 */
 	function buildVariants(p) {
 		if (Array.isArray(p.variants) && p.variants.length > 0) {
 			return p.variants.map((v, i) => ({
@@ -36,7 +67,9 @@
 				minOrder: v.minOrder != null ? v.minOrder : p.minOrder,
 				priceDisplay: v.priceDisplay || p.priceDisplay,
 				turnaround: v.turnaround || p.turnaround,
-				features: v.features || p.features || []
+				features: v.features || p.features || [],
+				description: v.description || p.description,
+				specifications: v.specifications || p.specifications || []
 			}));
 		}
 		const fallbackImages = (p.images && p.images.length) ? p.images : [p.image];
@@ -50,17 +83,28 @@
 			minOrder: p.minOrder,
 			priceDisplay: p.priceDisplay,
 			turnaround: p.turnaround,
-			features: p.features || []
+			features: p.features || [],
+			description: p.description,
+			specifications: p.specifications || []
 		}));
 	}
 
-	function renderSpecRows(v) {
+		/**
+	 * Renders specification rows for a variant into a definition list format.
+	 * Combines explicit variant specifications with standard fields
+	 * (Material, Available sizes, Finishes, Minimum order, Turnaround).
+	 * @param {Object} v - Variant data
+	 * @param {Object} product - Parent product data (for fallback specs)
+	 * @returns {string} HTML string for spec rows
+	 */
+	function renderSpecRows(v, product) {
 		const rows = [
 			['Material', v.material],
 			['Available sizes', (v.sizes || []).join(', ')],
 			['Finishes', (v.finish || []).join(', ')],
 			['Minimum order', (v.minOrder != null ? v.minOrder + ' pcs' : '-')],
-			['Turnaround', v.turnaround]
+			['Turnaround', v.turnaround],
+			...(v.specifications || product.specifications || []).map(spec => [spec.label, spec.value])
 		];
 		return rows.map(([k, val]) => `
 			<div class="flex justify-between py-2 border-b border-gray-100">
@@ -69,6 +113,12 @@
 			</div>`).join('');
 	}
 
+		/**
+	 * Renders the feature list for a variant as a bulleted list
+	 * with check-circle icons. Each feature is HTML-escaped.
+	 * @param {Object} v - Variant data
+	 * @returns {string} HTML string for feature list
+	 */
 	function renderFeatureList(v) {
 		return (v.features || []).map(f => `
 			<li class="flex items-center gap-2 text-gray-700" data-feature>
@@ -76,6 +126,13 @@
 			</li>`).join('');
 	}
 
+		/**
+	 * Renders thumbnail buttons for variant images.
+	 * The active variant gets a primary border ring highlight.
+	 * @param {Array} variants - Array of variant objects
+	 * @param {number} activeIndex - Index of the currently active variant
+	 * @returns {string} HTML string for thumbnail buttons
+	 */
 	function renderThumbs(variants, activeIndex) {
 		return variants.map((v, i) => `
 			<button type="button" class="variant-thumb rounded-lg overflow-hidden border-2 ${i === activeIndex ? 'border-primary ring-2 ring-primary/30' : 'border-transparent hover:border-gray-300'} transition-all" data-index="${i}" aria-label="Show ${escapeAttr(v.name)}">
@@ -83,6 +140,14 @@
 			</button>`).join('');
 	}
 
+		/**
+	 * Renders tab buttons for variant selection.
+	 * Active tab gets primary background styling; inactive tabs
+	 * get white background with gray border that highlights on hover.
+	 * @param {Array} variants - Array of variant objects
+	 * @param {number} activeIndex - Index of the currently active variant
+	 * @returns {string} HTML string for tab buttons
+	 */
 	function renderTabs(variants, activeIndex) {
 		return variants.map((v, i) => `
 			<button type="button" class="variant-tab px-4 py-2 rounded-full text-sm font-semibold border transition-colors ${i === activeIndex ? 'bg-primary text-white border-primary' : 'bg-white text-gray-700 border-gray-300 hover:border-primary hover:text-primary'}" data-index="${i}" aria-pressed="${i === activeIndex}">
@@ -90,6 +155,20 @@
 			</button>`).join('');
 	}
 
+		/**
+	 * Main render function for the product detail page.
+	 * Builds the complete product view including:
+	 * - Breadcrumb navigation
+	 * - Main image with variant thumbnails and tabs
+	 * - Product info (category, variant name, title, price, turnaround)
+	 * - Description, specifications, features
+	 * - "Add to Quote" and "Request a Quote" action buttons
+	 * - Related products section (rendered asynchronously after initial render)
+	 * Binds variant switcher and quote button handlers after rendering.
+	 * @param {Object} product - The product data
+	 * @param {Array} variants - Computed variant objects
+	 * @param {number} activeIndex - Initially active variant index
+	 */
 	function render(product, variants, activeIndex) {
 		if (!product) {
 			container.innerHTML = `<div class="text-center py-20"><p class="text-xl text-gray-600">Sorry, we couldn't find that product.</p><a href="products.html" class="btn-primary inline-block mt-4">Back to Products</a></div>`;
@@ -128,8 +207,12 @@
 					<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">${escapeHtml(product.title)}</h1>
 					<p class="text-2xl font-bold text-primary mb-2" data-variant-price>${escapeHtml(v.priceDisplay || '-')}</p>
 					<p class="text-gray-600 mb-6"><i class="fas fa-clock text-secondary mr-2"></i><span data-variant-turnaround>${escapeHtml(v.turnaround || '-')}</span></p>
-					<p class="text-gray-700 mb-6">${escapeHtml(product.description)}</p>
-					<div class="bg-gray-50 rounded-xl p-5 mb-6" id="variantSpecs">${renderSpecRows(v)}</div>
+					<p class="text-gray-700 mb-4">${escapeHtml(product.description)}</p>
+					<div class="bg-gray-50 rounded-xl p-4 mb-6">
+						<p class="text-xs uppercase tracking-wider text-gray-500 mb-2">Why this option</p>
+						<p class="text-gray-700" data-variant-description>${escapeHtml(v.description || product.description)}</p>
+					</div>
+					<div class="bg-gray-50 rounded-xl p-5 mb-6" id="variantSpecs">${renderSpecRows(v, product)}</div>
 					<ul class="space-y-2 mb-6" id="variantFeatures">${renderFeatureList(v)}</ul>
 					<div class="flex flex-col sm:flex-row gap-3">
 						<button id="addToQuote" data-id="${escapeAttr(product.id)}" data-variant="${escapeAttr(v.name)}" class="btn-secondary flex items-center justify-center gap-2">
@@ -152,6 +235,14 @@
 		bindQuoteButton();
 	}
 
+		/**
+	 * Binds click handlers to variant tabs and thumbnails.
+	 * When clicked, triggers a smooth transition: fades out details,
+	 * swaps content (image, specs, features, pricing), then fades back in.
+	 * Updates active states on tabs, thumbnails, and button data attributes.
+	 * The 150ms timeout matches the CSS transition duration for a seamless effect.
+	 * @param {Array} variants - Array of variant objects
+	 */
 	function bindVariantSwitcher(variants) {
 		const mainImage = document.getElementById('mainImage');
 		const details = document.getElementById('variantDetails');
@@ -175,9 +266,11 @@
 				if (priceEl) priceEl.textContent = v.priceDisplay || '-';
 				const turnaroundEl = details.querySelector('[data-variant-turnaround]');
 				if (turnaroundEl) turnaroundEl.textContent = v.turnaround || '-';
+				const descriptionEl = details.querySelector('[data-variant-description]');
+				if (descriptionEl) descriptionEl.textContent = v.description || product.description;
 
 				const specs = document.getElementById('variantSpecs');
-				if (specs) specs.innerHTML = renderSpecRows(v);
+				if (specs) specs.innerHTML = renderSpecRows(v, product);
 				const features = document.getElementById('variantFeatures');
 				if (features) features.innerHTML = renderFeatureList(v);
 
@@ -216,6 +309,11 @@
 		});
 	}
 
+		/**
+	 * Binds click handler to the "Add to Quote" button on the product detail page.
+	 * Calls the shared toggleQuote() function from main.js and updates
+	 * the button's inner HTML to reflect the new state.
+	 */
 	function bindQuoteButton() {
 		const addBtn = document.getElementById('addToQuote');
 		if (!addBtn) return;
@@ -230,6 +328,10 @@
 		});
 	}
 
+		/**
+	 * Fetches all products from the data endpoint for related products calculation.
+	 * @returns {Promise<Array>} Array of all product objects
+	 */
 	async function loadProducts() {
 		try {
 			const res = await fetch(window.APP_CONFIG.paths.productsData);
@@ -243,6 +345,13 @@
 		return [];
 	}
 
+		/**
+	 * Renders related products (same category, different product)
+	 * into the #relatedProducts container. Limited by APP_CONFIG.limits.relatedProducts.
+	 * Each related product shows image, title, and price.
+	 * @param {Object} currentProduct - The product being viewed
+	 * @param {Array} allProducts - All available products
+	 */
 	async function renderRelated(currentProduct, allProducts) {
 		const related = allProducts
 			.filter(x => x.category === currentProduct.category && x.id !== currentProduct.id)
@@ -263,6 +372,11 @@
 			</a>`).join('');
 	}
 
+		/**
+	 * Initialization: reads product ID from URL, fetches all products,
+	 * renders the product detail view, then asynchronously renders
+	 * related products. Also syncs quote button states.
+	 */
 	async function init() {
 		const id = getId();
 		const allProducts = await loadProducts();

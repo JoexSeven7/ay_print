@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">Premium roll-up banner</title>
+<desc id="desc">Illustration of a wider 100 centimetre roll-up banner on a premium stand.</desc>
+<rect width="800" height="600" fill="#eef4fb"/>
+<rect width="800" height="170" fill="#1b3a5b"/>
+<circle cx="112" cy="82" r="66" fill="#C9A227" opacity=".25"/>
+<text x="56" y="76" fill="#ffffff" font-family="Arial, sans-serif" font-size="34" font-weight="700">AY PRINT</text>
+<text x="56" y="122" fill="#ffffff" font-family="Arial, sans-serif" font-size="25" font-weight="600">PREMIUM ROLL-UP</text>
+<g transform="translate(235 190)">
+<rect x="0" y="0" width="330" height="315" rx="8" fill="#ffffff" stroke="#b8c7d6" stroke-width="4"/>
+<rect x="28" y="28" width="274" height="54" rx="8" fill="#C9A227"/>
+<rect x="28" y="104" width="126" height="116" rx="8" fill="#dceaf6"/>
+<rect x="174" y="104" width="128" height="116" rx="8" fill="#f2e6c6"/>
+<rect x="28" y="240" width="274" height="28" rx="7" fill="#2E90E6"/>
+<rect x="146" y="315" width="38" height="50" fill="#6d7f91"/>
+<rect x="68" y="366" width="194" height="26" rx="13" fill="#1b3a5b"/>
+<rect x="94" y="392" width="142" height="12" rx="6" fill="#9fb4c8"/>
+</g>
+<text x="56" y="535" fill="#1b3a5b" font-family="Arial, sans-serif" font-size="22" font-weight="600">100 x 200 cm / wider graphic / premium hardware</text>
+</svg>

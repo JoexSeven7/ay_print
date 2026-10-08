@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+    <!-- Responsive viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Security: prevent MIME sniffing -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <!--
+        Content Security Policy: same as other pages for consistency.
+        connect-src includes Formspree because the "Request a Quote"
+        CTA on this page links to contact.html which uses Formspree.
+    -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-src https://www.google.com https://maps.google.com https://maps.googleapis.com; img-src 'self' data: https:; font-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; frame-ancestors *;">
     <meta name="description" content="View product details, specifications, finishes and request a quote.">
     <meta name="keywords" content="print product details, AY PRINT">
@@ -18,6 +26,9 @@
 </head>
 <body class="font-sans antialiased">
 
+    <!-- ============ FIXED NAVIGATION ============
+         Products link is highlighted as active since this page
+         is a sub-page of the products section. -->
     <nav class="bg-white/60 backdrop-blur shadow-sm fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
@@ -60,12 +71,20 @@
         </div>
     </nav>
 
+    <!-- ============ PRODUCT DETAIL CONTAINER ============
+         #productDetail is populated dynamically by product-detail.js.
+         It shows "Loading..." initially, then renders the full
+         product view (image, specs, features, variants) once
+         data is fetched from data/products.json.
+         min-h-screen ensures the footer stays at the bottom
+         even with little content during loading. -->
     <section class="pt-28 pb-16 bg-gray-50 min-h-screen">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div id="productDetail">Loading...</div>
         </div>
     </section>
 
+    <!-- ============ FOOTER ============ -->
     <footer class="bg-gray-900 text-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -91,9 +110,9 @@
                     <h3 class="text-lg font-semibold mb-6">Our Products</h3>
                     <ul class="space-y-3">
                         <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Business Cards</a></li>
-                        <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Flyers & Leaflets</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Flyers &amp; Leaflets</a></li>
                         <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Branded Bags</a></li>
-                        <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Banners & Signage</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Banners &amp; Signage</a></li>
                     </ul>
                 </div>
                 <div>
@@ -113,9 +132,14 @@
         </div>
     </footer>
 
+    <!-- ============ FIXED UI ELEMENTS ============ -->
     <button class="fixed bottom-8 right-8 bg-secondary text-white w-12 h-12 rounded-full shadow-lg hover:bg-goldDark transition-colors opacity-0 invisible" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
     <a href="#" data-whatsapp-link target="_blank" rel="noopener noreferrer" class="fixed bottom-24 right-8 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 flex items-center justify-center z-50" aria-label="Contact on WhatsApp"><i class="fab fa-whatsapp text-2xl"></i></a>
 
+    <!-- ============ SCRIPTS ============
+         config.js → main.js → product-detail.js.
+         product-detail.js depends on main.js for toggleQuote,
+         getQuote, attachQuoteListeners, and syncQuoteButtons. -->
     <script src="js/config.js"defer></script>
     <script src="js/main.js"defer></script>
     <script src="js/product-detail.js"defer></script>

@@ -1,13 +1,33 @@
-// Blog listing page JavaScript for AY PRINT
+/**
+ * Blog listing page JavaScript for AY PRINT.
+ * Fetches blog posts from data/blog-posts.json and renders
+ * them as clickable cards linking to individual blog post pages.
+ * Each card shows image, category badge, title, excerpt, date,
+ * and read time.
+ */
 
 (function() {
     'use strict';
 
+    /**
+     * HTML escaping for blog post fields.
+     * Defined locally for page self-containment.
+     */
     function escapeHtml(s) { return typeof s !== 'string' ? s : s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;"); }
+    /**
+     * Attribute escaping for blog post images.
+     */
     function escapeAttr(s) { return typeof s !== 'string' ? s : s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#039;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
 
     const grid = document.getElementById('blogGrid');
 
+    /**
+     * Generates HTML for a single blog post card.
+     * Card links to blog-post.html?slug=... and includes
+     * image, category, title, excerpt, date, and read time.
+     * @param {Object} p - Blog post data object
+     * @returns {string} HTML string for the blog card
+     */
     function renderCard(p) {
         return `
             <a href="blog-post.html?slug=${escapeAttr(p.slug)}" class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow block">
@@ -24,6 +44,11 @@
             </a>`;
     }
 
+    /**
+     * Fetches blog posts from the configured JSON endpoint
+     * and renders them into the grid. Shows "No posts" message
+     * if the data is empty or unavailable.
+     */
     async function init() {
         let posts = [];
         try {

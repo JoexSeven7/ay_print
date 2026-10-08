@@ -1,17 +1,37 @@
-// Blog post page JavaScript for AY PRINT
+/**
+ * Blog post page JavaScript for AY PRINT.
+ * Renders individual blog posts by looking up the post
+ * slug in the fetched blog posts data.
+ * Reads the slug from the URL query parameter (?slug=).
+ */
 
 (function() {
     'use strict';
 
+    /**
+     * HTML/attribute escaping functions for safe DOM insertion.
+     * Defined locally for page self-containment.
+     */
     function escapeHtml(s) { return typeof s !== 'string' ? s : s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;"); }
     function escapeAttr(s) { return typeof s !== 'string' ? s : s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#039;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
 
     const container = document.getElementById('blogPost');
 
+    /**
+     * Extracts the blog post slug from the URL query string.
+     * @returns {string|null} The slug parameter value or null
+     */
     function getSlug() {
         return new URLSearchParams(window.location.search).get('slug');
     }
 
+    /**
+     * Renders a single blog post into the page container.
+     * Displays: back link, hero image, category badge,
+     * title, author/date/read time meta, and formatted content.
+     * Shows "Post not found" if no post matches the slug.
+     * @param {Object|null} p - Blog post data or null
+     */
     function render(p) {
         if (!p) {
             container.innerHTML = '<div class="text-center py-20"><p class="text-xl text-gray-600">Post not found.</p><a href="blog.html" class="btn-primary inline-block mt-4">Back to Blog</a></div>';
@@ -34,6 +54,10 @@
             </article>`;
     }
 
+    /**
+     * Initialization: fetches blog posts data, finds the post
+     * matching the URL slug, and renders it.
+     */
     async function init() {
         const slug = getSlug();
         let post = null;

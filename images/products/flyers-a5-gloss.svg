@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">A5 gloss flyers</title>
+<desc id="desc">Illustration of glossy A5 flyer sheets with full-colour panels.</desc>
+<rect width="800" height="600" fill="#f3f7fb"/>
+<rect width="800" height="170" fill="#2E90E6"/>
+<circle cx="690" cy="72" r="76" fill="#C9A227" opacity=".28"/>
+<text x="56" y="76" fill="#ffffff" font-family="Arial, sans-serif" font-size="34" font-weight="700">AY PRINT</text>
+<text x="56" y="122" fill="#ffffff" font-family="Arial, sans-serif" font-size="25" font-weight="600">A5 GLOSS FLYERS</text>
+<g transform="translate(155 205)">
+<rect x="35" y="28" width="350" height="250" rx="10" fill="#d9e8f5" transform="rotate(-5 210 153)"/>
+<rect x="72" y="50" width="350" height="250" rx="10" fill="#ffffff" stroke="#c9d7e5" stroke-width="3"/>
+<rect x="102" y="82" width="220" height="42" rx="8" fill="#2E90E6"/>
+<rect x="102" y="148" width="145" height="92" rx="8" fill="#C9A227"/>
+<rect x="263" y="148" width="125" height="92" rx="8" fill="#1b3a5b"/>
+<path d="M125 78 L260 275" stroke="#ffffff" stroke-width="18" opacity=".42" stroke-linecap="round"/>
+<rect x="102" y="263" width="286" height="14" rx="7" fill="#b8c7d6"/>
+</g>
+<text x="56" y="535" fill="#1b3a5b" font-family="Arial, sans-serif" font-size="22" font-weight="600">Vivid colour / crisp trim / campaign ready</text>
+</svg>

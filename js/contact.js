@@ -1,4 +1,12 @@
-// Contact / Quote form JavaScript for AY PRINT
+/**
+ * Contact / Quote form JavaScript for AY PRINT.
+ * Handles form validation (name, email, phone, product, message),
+ * honeypot spam protection, submission to Formspree, and
+ * URL parameter pre-fill (product slug from ?product=).
+ * Reuses validation functions from main.js when available
+ * (validateName, validateEmail, validatePhone, validateProduct).
+ * Uses IIFE pattern for scope isolation.
+ */
 
 (function() {
     "use strict";
@@ -14,6 +22,11 @@
     const messageInput = document.getElementById("message");
     const honeypot = document.getElementById("company_website");
 
+    /**
+     * Pre-fills the product interest dropdown from the URL
+     * ?product= query parameter, enabling deep links from
+     * product pages directly into the quote form.
+     */
     const params = new URLSearchParams(window.location.search);
     const productSlug = params.get("product");
     if (productSlug && productSelect) {
@@ -21,12 +34,26 @@
         if (matched) matched.selected = true;
     }
 
+    /**
+     * Toggles error/normal border styling on an input element.
+     * Uses Tailwind border classes for visual feedback.
+     * @param {HTMLInputElement|HTMLSelectElement} input - The form element
+     * @param {boolean} hasError - True to show error state
+     */
     function setError(input, hasError) {
         if (!input) return;
         input.classList.toggle("border-red-500", hasError);
         input.classList.toggle("border-gray-300", !hasError);
     }
 
+    /**
+     * Validates a name field with configurable requirement.
+     * Uses validateName() from main.js if available, otherwise
+     * falls back to a simple non-empty check.
+     * @param {HTMLInputElement} input - The name input element
+     * @param {boolean} required - Whether the field is required
+     * @returns {boolean} True if valid
+     */
     function validateNameField(input, required) {
         if (!input) return true;
         const value = input.value.trim();
