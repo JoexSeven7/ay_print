@@ -21,7 +21,15 @@
 
 	function getId() {
 		const params = new URLSearchParams(window.location.search);
-		return parseInt(params.get('id'));
+		if (params.has('id')) {
+			const n = parseInt(params.get('id'), 10);
+			return Number.isFinite(n) ? n : null;
+		}
+		if (params.has('product')) {
+			const n = parseInt(params.get('product'), 10);
+			return Number.isFinite(n) ? n : null;
+		}
+		return null;
 	}
 
 	function buildVariants(p) {
@@ -209,10 +217,10 @@
 		}
 
 		tabs.forEach(tab => {
-			tab.addEventListener('click', () => activate(parseInt(tab.dataset.index)));
+			tab.addEventListener('click', () => activate(parseInt(tab.dataset.index, 10)));
 		});
-		thumbs.forEach(thumb => {
-			thumb.addEventListener('click', () => activate(parseInt(thumb.dataset.index)));
+		imgContainer.querySelectorAll('.thumbnail').forEach(thumb => {
+			thumb.addEventListener('click', () => activate(parseInt(thumb.dataset.index, 10)));
 		});
 	}
 

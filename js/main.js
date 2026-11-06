@@ -72,7 +72,7 @@ function validatePhoneInput(inputElement) {
 
 const ALLOWED_PRODUCTS = [
 	'business-cards', 'flyers-leaflets', 'branded-bags', 'roll-up-banners',
-	'sticks-labels', 'brochures-catalogues', 'posters', 'large-format', 'other'
+	'stickers-labels', 'brochures-catalogues', 'posters', 'large-format', 'other'
 ];
 
 const NAME_REGEX = /^[\p{L}][\p{L} .\x27-]{0,49}$/u;
@@ -85,11 +85,13 @@ function validateName(name) {
 }
 
 function validateProduct(value) {
-	return ALLOWED_PRODUCTS.includes((value || '').trim());
+	const v = (value || '').trim();
+	if (!v) return true; // optional field
+	return ALLOWED_PRODUCTS.includes(v);
 }
 
 function sanitizeText(raw, max) {
-	max = max || window.APP_CONFIG.limits.sanitizeTextMax;
+	max = max || (window.APP_CONFIG && window.APP_CONFIG.limits && window.APP_CONFIG.limits.sanitizeTextMax) || 2000;
 	return (raw || '').replace(/[^\p{L}\p{N} ,.!?;:\x22\x27\-()\n]/gu, '').slice(0, max);
 }
 

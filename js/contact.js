@@ -88,6 +88,7 @@
         if (phone && typeof validatePhone === "function" && !validatePhone(phone)) { setError(phoneInput, true); fail(phoneInput); }
         else { setError(phoneInput, false); }
 
+        // Allow empty product selection (optional field); only validate when a value is chosen
         if (product && typeof validateProduct === "function" && !validateProduct(product)) { setError(productSelect, true); fail(productSelect); }
         else { setError(productSelect, false); }
 

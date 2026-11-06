@@ -24,17 +24,25 @@
 		"yearsExperience": 8,
 		"satisfaction": 98
 	},
-	"branding": {
-		"primaryColor": "#2E90E6",
-		"secondaryColor": "#C9A227",
-		"accentColor": "#F4E4BC",
-		"darkColor": "#1b3a5b",
-		"goldDark": "#A8811B",
-		"blueLight": "#5AA9E6",
-		"gradientStart": "#2E90E6",
-		"gradientMid": "#3a6aa0",
-		"gradientEnd": "#C9A227"
-	},
+  "branding": {
+    "copyright": "© 2026 AY PRINT — Premium Printing Services.",
+    "tagline": "Premium printing solutions for businesses of all sizes.",
+    "sinceLabel": "Since 2018",
+    "primaryColor": "#2E90E6",
+    "secondaryColor": "#C9A227",
+    "accentColor": "#F4E4BC",
+    "darkColor": "#1b3a5b",
+    "goldDark": "#A8811B",
+    "blueLight": "#5AA9E6",
+    "gradientStart": "#2E90E6",
+    "gradientMid": "#3a6aa0",
+    "gradientEnd": "#C9A227"
+  },
+  "copyright": {
+    "useCurrentYear": true,
+    "fallbackYear": 2026,
+    "text": "AY PRINT. All rights reserved."
+  },
 	"formspree": {
 		"id": "FORMSPREE_ID",
 		"endpoint": "https://formspree.io/f/FORMSPREE_ID",
