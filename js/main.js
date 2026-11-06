@@ -331,7 +331,7 @@ if (document.readyState === 'loading') {
 
 document.addEventListener('DOMContentLoaded', function () {
 	const internalLinks = document.querySelectorAll(
-		'a[href^="."], a[href^="/"], a[href^="index.html"], a[href^="products.html"], a[href^="product-detail.html"], a[href^="services.html"], a[href^="gallery.html"], a[href^="about.html"], a[href^="blog.html"], a[href^="blog-post.html"], a[href^="contact.html"]',
+		'a[href^="."], a[href^="/"], a[href^="index.html"], a[href^="products.html"], a[href^="product-detail.html"], a[href^="services.html"], a[href^="gallery.html"], a[href^="about.html"], a[href^="contact.html"]',
 	);
 
 	internalLinks.forEach((link) => {

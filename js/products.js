@@ -4,16 +4,15 @@
     'use strict';
 
     function escapeHtml(unsafe) {
+        if (typeof window.escapeHtml === 'function') return window.escapeHtml(unsafe);
         if (typeof unsafe !== 'string') return unsafe;
-        return unsafe
-            .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+        return unsafe.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
     }
+
     function escapeAttr(value) {
+        if (typeof window.escapeAttr === 'function') return window.escapeAttr(value);
         if (typeof value !== 'string') return value;
-        return value
-            .replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#039;")
-            .replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        return value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#039;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
 
     const gridContainer = document.getElementById('productsGrid');

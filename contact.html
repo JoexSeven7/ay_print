@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-src https://www.google.com https://maps.google.com https://maps.googleapis.com; img-src 'self' data: https:; font-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; frame-ancestors *;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-src https://www.google.com https://maps.google.com https://maps.googleapis.com; img-src 'self' data: https:; font-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; frame-ancestors 'self';">
     <meta name="description" content="Contact AY PRINT for a quote on business cards, flyers, bags, banners, stickers and more.">
     <meta name="keywords" content="print quote, contact AY PRINT, printing order">
     <title>Contact & Quote | AY PRINT</title>
@@ -28,7 +28,6 @@
                     <li><a href="products.html" class="text-gray-700 hover:text-primary transition-colors">Products</a></li>
                     <li><a href="services.html" class="text-gray-700 hover:text-primary transition-colors">Services</a></li>
                     <li><a href="gallery.html" class="text-gray-700 hover:text-primary transition-colors">Gallery</a></li>
-                    <li><a href="blog.html" class="text-gray-700 hover:text-primary transition-colors">Blog</a></li>
                     <li class="relative"><a href="products.html" class="text-gray-700 hover:text-primary transition-colors" aria-label="Quote shortlist"><i class="far fa-bookmark text-xl relative"></i><span id="quoteCount" class="absolute -top-2 -right-2 bg-secondary text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center hidden" style="z-index:10;">0</span></a></li>
                     <li><a href="contact.html" class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-goldDark transition-colors">Get a Quote</a></li>
                 </ul>
@@ -40,7 +39,6 @@
                 <li><a href="products.html" class="block text-gray-700 hover:text-primary">Products</a></li>
                 <li><a href="services.html" class="block text-gray-700 hover:text-primary">Services</a></li>
                 <li><a href="gallery.html" class="block text-gray-700 hover:text-primary">Gallery</a></li>
-                <li><a href="blog.html" class="block text-gray-700 hover:text-primary">Blog</a></li>
                 <li><a href="products.html" class="block text-gray-700 hover:text-primary">My Quote List</a></li>
                 <li><a href="contact.html" class="block bg-primary text-white px-6 py-2 rounded-lg text-center">Get a Quote</a></li>
             </ul>
@@ -58,14 +56,15 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
                 <h2 class="text-2xl font-bold text-gray-900 mb-6">Request a Quote</h2>
-                <form id="quoteForm" action="https://formspree.io/f/FORMSPREE_ID" method="POST" class="bg-white p-8 rounded-2xl shadow-lg space-y-5">
+                <form id="quoteForm" action="https://formspree.io/f/FORMSPREE_ID" method="POST" class="bg-white p-8 rounded-2xl shadow-lg space-y-5" novalidate>
+                    <div id="quoteFormStatus" class="hidden rounded-lg border px-4 py-3 text-sm" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
-                            <input type="text" id="firstName" name="firstName" required maxlength="50" autocomplete="given-name" inputmode="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none">
+                            <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                            <input type="text" id="firstName" aria-describedby="quoteFormStatus" name="firstName" required maxlength="50" autocomplete="given-name" inputmode="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                            <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
                             <input type="text" id="lastName" name="lastName" maxlength="50" autocomplete="family-name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none">
                         </div>
                     </div>

@@ -4,11 +4,10 @@
     window.APP_CONFIG = {
         paths: {
             productsData: 'data/products.json',
-            blogPostsData: 'data/blog-posts.json',
-            siteConfig: 'data/config.json',
             galleryData: 'data/gallery.json',
             testimonialsData: 'data/testimonials.json',
             servicesData: 'data/services.json',
+            siteConfig: 'data/config.json',
             placeholderImage: 'images/products/card.jpeg'
         },
         thresholds: {
@@ -116,4 +115,24 @@
     window.getPlaceholderImage = function () {
         return window.APP_CONFIG.paths.placeholderImage;
     };
+    window.escapeHtml = function (unsafe) {
+        if (typeof unsafe !== 'string') return unsafe;
+        return unsafe
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    };
+
+    window.escapeAttr = function (value) {
+        if (typeof value !== 'string') return value;
+        return value
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+    };
+
 })();
