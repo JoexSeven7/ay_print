@@ -142,7 +142,7 @@ function validatePhoneInput(inputElement) {
  */
 const ALLOWED_PRODUCTS = [
 	'business-cards', 'flyers-leaflets', 'branded-bags', 'roll-up-banners',
-	'sticks-labels', 'brochures-catalogues', 'posters', 'large-format', 'other'
+	'stickers-labels', 'brochures-catalogues', 'posters', 'large-format', 'other'
 ];
 
 /**
@@ -177,7 +177,9 @@ function validateName(name) {
  * @returns {boolean} True if the value is a recognized product category
  */
 function validateProduct(value) {
-	return ALLOWED_PRODUCTS.includes((value || '').trim());
+	const v = (value || '').trim();
+	if (!v) return true; // optional field
+	return ALLOWED_PRODUCTS.includes(v);
 }
 
 /**
@@ -191,7 +193,7 @@ function validateProduct(value) {
  * @returns {string} The sanitized and truncated string
  */
 function sanitizeText(raw, max) {
-	max = max || window.APP_CONFIG.limits.sanitizeTextMax;
+	max = max || (window.APP_CONFIG && window.APP_CONFIG.limits && window.APP_CONFIG.limits.sanitizeTextMax) || 2000;
 	return (raw || '').replace(/[^\p{L}\p{N} ,.!?;:\x22\x27\-()\n]/gu, '').slice(0, max);
 }
 
@@ -553,7 +555,7 @@ if (document.readyState === 'loading') {
  */
 document.addEventListener('DOMContentLoaded', function () {
 	const internalLinks = document.querySelectorAll(
-		'a[href^="."], a[href^="/"], a[href^="index.html"], a[href^="products.html"], a[href^="product-detail.html"], a[href^="services.html"], a[href^="gallery.html"], a[href^="about.html"], a[href^="blog.html"], a[href^="blog-post.html"], a[href^="contact.html"]',
+		'a[href^="."], a[href^="/"], a[href^="index.html"], a[href^="products.html"], a[href^="product-detail.html"], a[href^="services.html"], a[href^="gallery.html"], a[href^="about.html"], a[href^="contact.html"]',
 	);
 
 	internalLinks.forEach((link) => {
