@@ -1,422 +1,768 @@
 {
-	"products": [
-		{
-			"id": 1,
-			"title": "Business Cards",
-			"slug": "business-cards",
-			"category": "cards",
-			"subcategory": "Standard / Premium / Spot-UV",
-			"material": "300gsm Art Card",
-			"sizes": ["85x55mm", "90x50mm"],
-			"finish": ["Matte", "Gloss", "Soft-touch"],
-			"minOrder": 100,
-			"price": 0,
-			"priceDisplay": "From ₦15,000 / 100 pcs",
-			"turnaround": "2-3 business days",
-			"features": ["Full colour both sides", "Free design", "Fast turnaround"],
-			"image": "images/products/card1.jpeg",
-			"images": ["images/products/card1.jpeg", "images/products/card2.jpeg", "images/products/card3.jpeg", "images/products/card4.jpeg"],
-			"description": "Make a lasting first impression with premium business cards printed on 300gsm art card. Choose from matte, gloss or soft-touch finishes, with optional spot-UV highlights for that extra lift.",
-			"options": ["Paper type", "Size", "Finish", "Quantity"],
-			"featured": true,
-			"createdAt": "2026-08-05",
-			"variants": [
-				{
-					"name": "Standard",
-					"image": "images/products/card1.jpeg",
-					"material": "300gsm Art Card",
-					"finish": ["Matte", "Gloss"],
-					"priceDisplay": "From ₦15,000 / 100 pcs",
-					"minOrder": 100,
-					"turnaround": "2-3 business days",
-					"features": ["Full colour both sides", "Free design", "Fast turnaround"]
-				},
-				{
-					"name": "Premium",
-					"image": "images/products/card2.jpeg",
-					"material": "400gsm Ivory",
-					"finish": ["Soft-touch"],
-					"priceDisplay": "From ₦22,000 / 100 pcs",
-					"minOrder": 100,
-					"turnaround": "3-4 business days",
-					"features": ["Full colour both sides", "Free design", "Soft-touch lamination"]
-				},
-				{
-					"name": "Spot-UV",
-					"image": "images/products/card3.jpeg",
-					"material": "350gsm Art Card",
-					"finish": ["Matte + Spot-UV"],
-					"priceDisplay": "From ₦30,000 / 100 pcs",
-					"minOrder": 100,
-					"turnaround": "3-4 business days",
-					"features": ["Selective gloss UV", "Free design", "Premium finish"]
-				},
-				{
-					"name": "Textured",
-					"image": "images/products/card4.jpeg",
-					"material": "300gsm Linen Card",
-					"finish": ["Linen texture"],
-					"priceDisplay": "From ₦20,000 / 100 pcs",
-					"minOrder": 100,
-					"turnaround": "3-4 business days",
-					"features": ["Linen texture", "Free design", "Distinctive feel"]
-				}
-			]
-		},
-		{
-			"id": 2,
-			"title": "Flyers & Leaflets",
-			"slug": "flyers-leaflets",
-			"category": "flyers",
-			"subcategory": "A5 / A6 / DL",
-			"material": "150gsm Gloss Art",
-			"sizes": ["A6", "A5", "DL", "A4"],
-			"finish": ["Gloss", "Matte"],
-			"minOrder": 500,
-			"price": 0,
-			"priceDisplay": "From ₦25,000 / 500 pcs",
-			"turnaround": "2-4 business days",
-			"features": ["Vivid full-colour print", "Bulk discounts", "Folded options"],
-			"image": "images/products/card.jpeg",
-			"images": ["images/products/card.jpeg", "images/products/card.jpeg"],
-			"description": "Promote events, sales and menus with high-impact flyers and leaflets. Available in multiple sizes and paper weights, with folding options for menus and programmes.",
-			"options": ["Size", "Paper weight", "Finish", "Quantity"],
-			"featured": true,
-			"createdAt": "2026-08-05",
-			"variants": [
-				{
-					"name": "A5 Gloss",
-					"image": "images/products/card.jpeg",
-					"sizes": ["A5"],
-					"material": "150gsm Gloss Art",
-					"finish": ["Gloss"],
-					"priceDisplay": "From ₦25,000 / 500 pcs",
-					"minOrder": 500,
-					"turnaround": "2-3 business days",
-					"features": ["Vivid full-colour print", "Bulk discounts"]
-				},
-				{
-					"name": "A6 Matte",
-					"image": "images/products/card1.jpeg",
-					"sizes": ["A6"],
-					"material": "170gsm Matte Art",
-					"finish": ["Matte"],
-					"priceDisplay": "From ₦20,000 / 500 pcs",
-					"minOrder": 500,
-					"turnaround": "2-3 business days",
-					"features": ["Refined matte feel", "Compact A6 size"]
-				},
-				{
-					"name": "DL Folded",
-					"image": "images/products/card2.jpeg",
-					"sizes": ["DL"],
-					"material": "150gsm Gloss Art",
-					"finish": ["Gloss", "Bi-fold"],
-					"priceDisplay": "From ₦30,000 / 500 pcs",
-					"minOrder": 500,
-					"turnaround": "3-4 business days",
-					"features": ["Bi-fold", "Vivid full-colour print", "Bulk discounts"]
-				}
-			]
-		},
-		{
-			"id": 3,
-			"title": "Branded Tote & Paper Bags",
-			"slug": "branded-bags",
-			"category": "bags",
-			"subcategory": "Tote / Gift / Paper",
-			"material": "100% Cotton / Kraft Paper",
-			"sizes": ["Small", "Medium", "Large"],
-			"finish": ["Screen print", "Full-colour"],
-			"minOrder": 50,
-			"price": 0,
-			"priceDisplay": "From ₦450 / pc",
-			"turnaround": "5-7 business days",
-			"features": ["Eco-friendly options", "Reusable", "Custom artwork"],
-			"image": "images/products/bag4.jpeg",
-			"images": ["images/products/bag4.jpeg", "images/products/bag2.jpeg", "images/products/bag5.jpeg", "images/products/bag3.jpeg", "images/products/bag1.jpeg"],
-			"description": "Carry your brand everywhere with custom tote bags and premium paper gift bags. Eco-friendly cotton totes and kraft paper options, printed with your logo in full colour.",
-			"options": ["Bag type", "Size", "Print method", "Quantity"],
-			"featured": true,
-			"createdAt": "2026-08-05",
-			"variants": [
-				{
-					"name": "Cotton Tote",
-					"image": "images/products/bag1.jpeg",
-					"material": "100% Cotton",
-					"sizes": ["Small", "Medium", "Large"],
-					"finish": ["Screen print", "Full-colour"],
-					"priceDisplay": "From ₦1,200 / pc",
-					"minOrder": 50,
-					"turnaround": "5-7 business days",
-					"features": ["Eco-friendly", "Reusable", "Custom artwork"]
-				},
-				{
-					"name": "Kraft Paper Bag",
-					"image": "images/products/bag2.jpeg",
-					"material": "Kraft Paper",
-					"sizes": ["Small", "Medium", "Large"],
-					"finish": ["Full-colour"],
-					"priceDisplay": "From ₦450 / pc",
-					"minOrder": 50,
-					"turnaround": "5-7 business days",
-					"features": ["Eco-friendly", "Recyclable", "Custom artwork"]
-				},
-				{
-					"name": "Premium Gift Bag",
-					"image": "images/products/bag3.jpeg",
-					"material": "Art Paper + Ribbon Handle",
-					"sizes": ["Medium", "Large"],
-					"finish": ["Full-colour", "Foil stamp"],
-					"priceDisplay": "From ₦1,800 / pc",
-					"minOrder": 50,
-					"turnaround": "7-9 business days",
-					"features": ["Premium feel", "Ribbon handles", "Foil stamping available"]
-				},
-				{
-					"name": "Non-Woven Bag",
-					"image": "images/products/bag4.jpeg",
-					"material": "Non-woven Polypropylene",
-					"sizes": ["Small", "Medium", "Large"],
-					"finish": ["Screen print", "Full-colour"],
-					"priceDisplay": "From ₦650 / pc",
-					"minOrder": 50,
-					"turnaround": "5-7 business days",
-					"features": ["Lightweight", "Reusable", "Custom artwork"]
-				},
-				{
-					"name": "Jute Bag",
-					"image": "images/products/bag5.jpeg",
-					"material": "Natural Jute",
-					"sizes": ["Medium", "Large"],
-					"finish": ["Screen print"],
-					"priceDisplay": "From ₦1,500 / pc",
-					"minOrder": 50,
-					"turnaround": "7-9 business days",
-					"features": ["Eco-friendly", "Premium texture", "Reusable"]
-				}
-			]
-		},
-		{
-			"id": 4,
-			"title": "Roll-Up Banners",
-			"slug": "roll-up-banners",
-			"category": "banners",
-			"subcategory": "Standard / Premium",
-			"material": "440gsm PVC / Pop-up",
-			"sizes": ["85cm x 200cm", "100cm x 200cm"],
-			"finish": ["Matte", "Gloss"],
-			"minOrder": 1,
-			"price": 0,
-			"priceDisplay": "From ₦18,000 / pc",
-			"turnaround": "1-2 business days",
-			"features": ["Portable stand included", "Tool-free setup", "Indoor/outdoor"],
-			"image": "images/products/IMG_3207.jpeg",
-			"images": ["images/products/IMG_3207.jpeg", "images/products/card4.jpeg"],
-			"description": "Stand out at exhibitions and in-store with crisp roll-up banners. Lightweight aluminium stand, tool-free setup, and a protective carry case included.",
-			"options": ["Size", "Material", "Quantity"],
-			"featured": true,
-			"createdAt": "2026-08-05",
-			"variants": [
-				{
-					"name": "Standard 85cm",
-					"image": "images/products/IMG_3207.jpeg",
-					"sizes": ["85cm x 200cm"],
-					"material": "440gsm PVC",
-					"finish": ["Matte"],
-					"priceDisplay": "From ₦18,000 / pc",
-					"minOrder": 1,
-					"turnaround": "1-2 business days",
-					"features": ["Portable stand included", "Tool-free setup", "Indoor/outdoor"]
-				},
-				{
-					"name": "Premium 100cm",
-					"image": "images/products/card4.jpeg",
-					"sizes": ["100cm x 200cm"],
-					"material": "Premium 440gsm PVC",
-					"finish": ["Matte", "Gloss"],
-					"priceDisplay": "From ₦24,000 / pc",
-					"minOrder": 1,
-					"turnaround": "2-3 business days",
-					"features": ["Wider format", "Portable stand included", "Carry case included"]
-				}
-			]
-		},
-		{
-			"id": 5,
-			"title": "Stickers & Labels",
-			"slug": "stickers-labels",
-			"category": "stickers",
-			"subcategory": "Die-cut / Roll",
-			"material": "Vinyl / Paper",
-			"sizes": ["Custom"],
-			"finish": ["Gloss", "Matte", "Transparent"],
-			"minOrder": 100,
-			"price": 0,
-			"priceDisplay": "From ₦12,000 / 100 pcs",
-			"turnaround": "3-4 business days",
-			"features": ["Weatherproof vinyl", "Any shape", "Strong adhesive"],
-			"image": "images/products/card.jpeg",
-			"images": ["images/products/card.jpeg"],
-			"description": "Custom stickers and product labels in any shape. Choose weatherproof vinyl for outdoor use or paper labels for packaging, with gloss, matte or transparent finishes.",
-			"options": ["Shape", "Material", "Finish", "Quantity"],
-			"featured": false,
-			"createdAt": "2026-08-05",
-			"variants": [
-				{
-					"name": "Die-cut Vinyl",
-					"image": "images/products/card.jpeg",
-					"material": "Vinyl",
-					"finish": ["Gloss", "Matte"],
-					"priceDisplay": "From ₦12,000 / 100 pcs",
-					"minOrder": 100,
-					"turnaround": "3-4 business days",
-					"features": ["Weatherproof", "Any shape", "Strong adhesive"]
-				},
-				{
-					"name": "Transparent Vinyl",
-					"image": "images/products/card.jpeg",
-					"material": "Transparent Vinyl",
-					"finish": ["Transparent"],
-					"priceDisplay": "From ₦15,000 / 100 pcs",
-					"minOrder": 100,
-					"turnaround": "3-4 business days",
-					"features": ["No-background look", "Weatherproof", "Strong adhesive"]
-				}
-			]
-		},
-		{
-			"id": 6,
-			"title": "Brochures & Catalogues",
-			"slug": "brochures-catalogues",
-			"category": "brochures",
-			"subcategory": "Tri-fold / Saddle-stitch",
-			"material": "170gsm Silk",
-			"sizes": ["A4", "A5"],
-			"finish": ["Gloss", "Matte", "Soft-touch"],
-			"minOrder": 100,
-			"price": 0,
-			"priceDisplay": "From ₦40,000 / 100 pcs",
-			"turnaround": "4-5 business days",
-			"features": ["Multiple folds", "Perfect binding", "Premium feel"],
-			"image": "images/products/card1.jpeg",
-			"images": ["images/products/card1.jpeg"],
-			"description": "Showcase your products and services with professionally printed brochures and catalogues. Tri-fold, saddle-stitched and perfect-bound options on silk art paper.",
-			"options": ["Fold type", "Size", "Finish", "Quantity"],
-			"featured": false,
-			"createdAt": "2026-08-05",
-			"variants": [
-				{
-					"name": "Tri-fold",
-					"image": "images/products/card1.jpeg",
-					"sizes": ["A4"],
-					"material": "170gsm Silk",
-					"finish": ["Gloss", "Matte"],
-					"priceDisplay": "From ₦40,000 / 100 pcs",
-					"minOrder": 100,
-					"turnaround": "4-5 business days",
-					"features": ["Tri-fold", "Vivid colour", "Premium feel"]
-				},
-				{
-					"name": "Saddle-stitch",
-					"image": "images/products/card1.jpeg",
-					"sizes": ["A5"],
-					"material": "170gsm Silk",
-					"finish": ["Matte", "Soft-touch"],
-					"priceDisplay": "From ₦55,000 / 100 pcs",
-					"minOrder": 100,
-					"turnaround": "5-6 business days",
-					"features": ["Stitched binding", "Multiple page counts", "Soft-touch option"]
-				}
-			]
-		},
-		{
-			"id": 7,
-			"title": "Posters",
-			"slug": "posters",
-			"category": "posters",
-			"subcategory": "A2 / A1 / A0",
-			"material": "200gsm Photo Paper",
-			"sizes": ["A2", "A1", "A0"],
-			"finish": ["Gloss", "Matte"],
-			"minOrder": 1,
-			"price": 0,
-			"priceDisplay": "From ₦3,500 / pc",
-			"turnaround": "1-2 business days",
-			"features": ["Photo-quality", "Large format", "Vivid colour"],
-			"image": "images/products/card3.jpeg",
-			"images": ["images/products/card3.jpeg"],
-			"description": "Bold, photo-quality posters for events, promotions and wall art. Printed on 200gsm photo paper in A2, A1 and A0 sizes with gloss or matte finish.",
-			"options": ["Size", "Paper", "Finish", "Quantity"],
-			"featured": false,
-			"createdAt": "2026-08-05",
-			"variants": [
-				{
-					"name": "A2 Gloss",
-					"image": "images/products/card3.jpeg",
-					"sizes": ["A2"],
-					"material": "200gsm Photo Paper",
-					"finish": ["Gloss"],
-					"priceDisplay": "From ₦3,500 / pc",
-					"minOrder": 1,
-					"turnaround": "1-2 business days",
-					"features": ["Photo-quality", "Vivid colour", "Glossy finish"]
-				},
-				{
-					"name": "A1 Matte",
-					"image": "images/products/card3.jpeg",
-					"sizes": ["A1"],
-					"material": "200gsm Photo Paper",
-					"finish": ["Matte"],
-					"priceDisplay": "From ₦6,500 / pc",
-					"minOrder": 1,
-					"turnaround": "1-2 business days",
-					"features": ["Photo-quality", "Vivid colour", "Matte anti-glare"]
-				}
-			]
-		},
-		{
-			"id": 8,
-			"title": "Large Format Printing",
-			"slug": "large-format",
-			"category": "banners",
-			"subcategory": "Flex / Vinyl / Mesh",
-			"material": "PVC Flex",
-			"sizes": ["Custom"],
-			"finish": ["Gloss", "Matte"],
-			"minOrder": 1,
-			"price": 0,
-			"priceDisplay": "From ₦2,500 / sqm",
-			"turnaround": "2-3 business days",
-			"features": ["Weatherproof", "Any size", "Eyelets available"],
-			"image": "images/products/card4.jpeg",
-			"images": ["images/products/card4.jpeg"],
-			"description": "Big, bold and built to last. Large-format flex and vinyl printing for shop fronts, billboards and events, with optional eyelets and hemming.",
-			"options": ["Material", "Size", "Finishing", "Quantity"],
-			"featured": false,
-			"createdAt": "2026-08-05",
-			"variants": [
-				{
-					"name": "Flex Banner",
-					"image": "images/products/card4.jpeg",
-					"material": "PVC Flex",
-					"finish": ["Gloss", "Matte"],
-					"priceDisplay": "From ₦2,500 / sqm",
-					"minOrder": 1,
-					"turnaround": "2-3 business days",
-					"features": ["Weatherproof", "Any size", "Eyelets available"]
-				},
-				{
-					"name": "Vinyl Sticker",
-					"image": "images/products/card4.jpeg",
-					"material": "Self-adhesive Vinyl",
-					"finish": ["Gloss", "Matte"],
-					"priceDisplay": "From ₦3,500 / sqm",
-					"minOrder": 1,
-					"turnaround": "2-3 business days",
-					"features": ["Self-adhesive", "Weatherproof", "Any size"]
-				}
-			]
-		}
-	]
+  "products": [
+    {
+      "id": 1,
+      "title": "Business Cards",
+      "slug": "business-cards",
+      "category": "cards",
+      "subcategory": "Everyday / Ivory / Spot-UV / Linen",
+      "material": "300-400gsm premium card stocks",
+      "sizes": ["85 x 55 mm", "90 x 50 mm"],
+      "finish": ["Matte laminate", "Gloss laminate", "Soft-touch", "Spot-UV", "Linen texture"],
+      "minOrder": 100,
+      "price": 0,
+      "priceDisplay": "From ₦15,000 / 100 pcs",
+      "turnaround": "2-4 business days",
+      "summary": "A contact card with the right weight, texture and finish for the way you network.",
+      "description": "Business cards should feel like the conversation that follows them. Choose a sturdy everyday stock, a velvet-soft ivory, a matte sheet with selective gloss highlights, or a tactile linen weave, then match the finish to the personality of your brand. Every option is trimmed cleanly and prepared for double-sided colour.",
+      "specifications": [
+        {"label": "Print", "value": "Full colour, double sided"},
+        {"label": "Bleed", "value": "3 mm on all sides"},
+        {"label": "Corner options", "value": "Square or rounded"},
+        {"label": "Proof", "value": "Digital proof before production"}
+      ],
+      "features": [
+        "Four tactile stocks for different brand personalities",
+        "Crisp colour and clean edge trimming",
+        "Bleed and safe-area guidance included",
+        "Packed for handouts, desks and networking"
+      ],
+      "image": "images/products/card1.jpeg",
+      "images": ["images/products/card1.jpeg", "images/products/card2.jpeg", "images/products/card3.jpeg", "images/products/card4.jpeg"],
+      "options": ["Paper stock", "Size", "Finish", "Quantity"],
+      "featured": true,
+      "createdAt": "2026-08-05",
+      "variants": [
+        {
+          "name": "Standard",
+          "image": "images/products/card1.jpeg",
+          "material": "300gsm white art card",
+          "sizes": ["85 x 55 mm", "90 x 50 mm"],
+          "finish": ["Matte laminate", "Gloss laminate"],
+          "priceDisplay": "From ₦15,000 / 100 pcs",
+          "minOrder": 100,
+          "turnaround": "2-3 business days",
+          "description": "The everyday premium choice: a sturdy 300gsm sheet with a clean matte or gloss surface, built for high-volume networking without a bulky feel.",
+          "features": [
+            "Sturdy 300gsm hand-feel",
+            "Sharp double-sided colour",
+            "Matte or gloss laminate",
+            "Ideal for teams and events"
+          ],
+          "specifications": [
+            {"label": "Stock", "value": "300gsm art card"},
+            {"label": "Print area", "value": "Full bleed, both sides"},
+            {"label": "Pack", "value": "100-card minimum run"}
+          ]
+        },
+        {
+          "name": "Premium",
+          "image": "images/products/card2.jpeg",
+          "material": "400gsm ivory card",
+          "sizes": ["85 x 55 mm", "90 x 50 mm"],
+          "finish": ["Soft-touch laminate"],
+          "priceDisplay": "From ₦22,000 / 100 pcs",
+          "minOrder": 100,
+          "turnaround": "3-4 business days",
+          "description": "A heavier ivory sheet with soft-touch lamination gives your details a quiet, velvet-like presence for clients and partners who notice the finish.",
+          "features": [
+            "Weighty 400gsm ivory stock",
+            "Soft-touch velvet surface",
+            "Premium first-hand impression",
+            "Suited to consultants and executives"
+          ],
+          "specifications": [
+            {"label": "Stock", "value": "400gsm ivory card"},
+            {"label": "Lamination", "value": "Single-side soft-touch"},
+            {"label": "Best for", "value": "Premium personal branding"}
+          ]
+        },
+        {
+          "name": "Spot-UV",
+          "image": "images/products/card3.jpeg",
+          "material": "350gsm art card",
+          "sizes": ["85 x 55 mm", "90 x 50 mm"],
+          "finish": ["Matte laminate", "Selective Spot-UV"],
+          "priceDisplay": "From ₦30,000 / 100 pcs",
+          "minOrder": 100,
+          "turnaround": "3-4 business days",
+          "description": "A matte base with selective gloss UV lets a logo, name or graphic catch the light while the rest of the card stays understated and tactile.",
+          "features": [
+            "Selective gloss UV highlights",
+            "Matte background for contrast",
+            "Logo-led visual accent",
+            "Memorable premium finish"
+          ],
+          "specifications": [
+            {"label": "Stock", "value": "350gsm art card"},
+            {"label": "UV area", "value": "Selected design elements"},
+            {"label": "Best for", "value": "Logo and identity emphasis"}
+          ]
+        },
+        {
+          "name": "Textured",
+          "image": "images/products/card4.jpeg",
+          "material": "300gsm linen card",
+          "sizes": ["85 x 55 mm", "90 x 50 mm"],
+          "finish": ["Linen texture"],
+          "priceDisplay": "From ₦20,000 / 100 pcs",
+          "minOrder": 100,
+          "turnaround": "3-4 business days",
+          "description": "A woven linen texture adds a physical signature to every introduction, making the card feel considered before a single word is read.",
+          "features": [
+            "Embossed linen weave",
+            "Distinctive tactile hand-feel",
+            "Subtle premium texture",
+            "Ideal for creative and hospitality brands"
+          ],
+          "specifications": [
+            {"label": "Stock", "value": "300gsm linen card"},
+            {"label": "Texture", "value": "Woven linen finish"},
+            {"label": "Best for", "value": "Tactile brand experiences"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Flyers & Leaflets",
+      "slug": "flyers-leaflets",
+      "category": "flyers",
+      "subcategory": "A6 / A5 / DL bi-fold",
+      "material": "150-170gsm gloss or matte art paper",
+      "sizes": ["A6", "A5", "DL"],
+      "finish": ["Gloss", "Matte", "Bi-fold"],
+      "minOrder": 500,
+      "price": 0,
+      "priceDisplay": "From ₦20,000 / 500 pcs",
+      "turnaround": "2-4 business days",
+      "summary": "A size and finish for every handout, from compact A6 promos to DL folded menus.",
+      "description": "Flyers work best when the format matches the moment. Use A6 for compact offers, A5 for bold event promotion, or a scored DL bi-fold for menus, programmes and information that needs a little more room. Each format is printed in full colour, trimmed cleanly and priced around its paper footprint.",
+      "specifications": [
+        {"label": "Print", "value": "Full colour, double sided"},
+        {"label": "Trim", "value": "Cut to final format after printing"},
+        {"label": "Artwork", "value": "PDF with 3 mm bleed"},
+        {"label": "Finishing", "value": "Flat or scored bi-fold"}
+      ],
+      "features": [
+        "Size-led pricing for predictable campaign budgets",
+        "Double-sided colour with clean edge trimming",
+        "Flat and bi-fold formats for different audiences",
+        "Bulk runs packed and finished by format"
+      ],
+      "image": "images/products/flyers-a5-gloss.svg",
+      "images": ["images/products/flyers-a5-gloss.svg", "images/products/flyers-a6-matte.svg", "images/products/flyers-dl-folded.svg"],
+      "options": ["Format", "Paper weight", "Finish", "Quantity"],
+      "featured": true,
+      "createdAt": "2026-08-05",
+      "variants": [
+        {
+          "name": "A5 Gloss",
+          "image": "images/products/flyers-a5-gloss.svg",
+          "sizes": ["A5"],
+          "material": "150gsm gloss art paper",
+          "finish": ["Gloss"],
+          "priceDisplay": "From ₦25,000 / 500 pcs",
+          "minOrder": 500,
+          "turnaround": "2-3 business days",
+          "description": "A5 gloss gives promotions enough space for a strong headline, supporting copy and a clear call to action while keeping the sheet light enough for high-volume distribution.",
+          "features": [
+            "Balanced A5 handout footprint",
+            "Gloss surface for punchy colour",
+            "Double-sided campaign layout",
+            "Efficient for event and retail drops"
+          ],
+          "specifications": [
+            {"label": "Format", "value": "A5 flat"},
+            {"label": "Paper", "value": "150gsm gloss art"},
+            {"label": "Use case", "value": "Events, offers and retail promotion"}
+          ]
+        },
+        {
+          "name": "A6 Matte",
+          "image": "images/products/flyers-a6-matte.svg",
+          "sizes": ["A6"],
+          "material": "170gsm matte art paper",
+          "finish": ["Matte"],
+          "priceDisplay": "From ₦20,000 / 500 pcs",
+          "minOrder": 500,
+          "turnaround": "2-3 business days",
+          "description": "A6 matte is a compact, understated format for vouchers, quick announcements and takeaway messages. The heavier sheet feels deliberate while the matte surface keeps text easy to read.",
+          "features": [
+            "Compact A6 distribution size",
+            "Heavier 170gsm matte sheet",
+            "Low-glare reading surface",
+            "Ideal for vouchers and quick updates"
+          ],
+          "specifications": [
+            {"label": "Format", "value": "A6 flat"},
+            {"label": "Paper", "value": "170gsm matte art"},
+            {"label": "Use case", "value": "Vouchers, notices and compact offers"}
+          ]
+        },
+        {
+          "name": "DL Folded",
+          "image": "images/products/flyers-dl-folded.svg",
+          "sizes": ["DL"],
+          "material": "150gsm gloss art paper",
+          "finish": ["Gloss", "Bi-fold"],
+          "priceDisplay": "From ₦30,000 / 500 pcs",
+          "minOrder": 500,
+          "turnaround": "3-4 business days",
+          "description": "A scored DL bi-fold turns one sheet into a compact sequence of panels, making it a practical choice for menus, service lists and event programmes that need a clear reading order.",
+          "features": [
+            "Scored bi-fold for an organized layout",
+            "DL size fits standard envelopes",
+            "Gloss surface for food and event imagery",
+            "Clear panel-by-panel reading flow"
+          ],
+          "specifications": [
+            {"label": "Format", "value": "DL bi-fold"},
+            {"label": "Paper", "value": "150gsm gloss art"},
+            {"label": "Use case", "value": "Menus, programmes and service lists"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Branded Tote & Paper Bags",
+      "slug": "branded-bags",
+      "category": "bags",
+      "subcategory": "Cotton / Kraft / Gift / Non-woven / Jute",
+      "material": "Cotton, kraft, art paper, non-woven PP or jute",
+      "sizes": ["Small", "Medium", "Large"],
+      "finish": ["Screen print", "Full-colour", "Foil stamp"],
+      "minOrder": 50,
+      "price": 0,
+      "priceDisplay": "From ₦450 / pc",
+      "turnaround": "5-9 business days",
+      "summary": "A reusable brand carrier for every channel, from cotton totes to ribbon-handled gift bags.",
+      "description": "A bag keeps working after the sale. Choose cotton for a durable everyday tote, kraft for a recyclable retail default, art paper with ribbon handles for gifting, non-woven polypropylene for lightweight events, or natural jute for a textured premium feel. The print method follows the material so your logo stays legible and appropriate.",
+      "specifications": [
+        {"label": "Handle options", "value": "Self-fabric, ribbon or twisted paper"},
+        {"label": "Print area", "value": "Front and back panels where applicable"},
+        {"label": "Artwork", "value": "Vector logo recommended"},
+        {"label": "Use case", "value": "Retail, events and gifting"}
+      ],
+      "features": [
+        "Five substrates with distinct handling and brand feel",
+        "Logo placement planned around each bag shape",
+        "Reusable formats for retail, events and gifting",
+        "Print method matched to material and order volume"
+      ],
+      "image": "images/products/bag4.jpeg",
+      "images": ["images/products/bag1.jpeg", "images/products/bag2.jpeg", "images/products/bag3.jpeg", "images/products/bag4.jpeg", "images/products/bag5.jpeg"],
+      "options": ["Bag type", "Size", "Print method", "Quantity"],
+      "featured": true,
+      "createdAt": "2026-08-05",
+      "variants": [
+        {
+          "name": "Cotton Tote",
+          "image": "images/products/bag1.jpeg",
+          "material": "100% cotton canvas",
+          "sizes": ["Small", "Medium", "Large"],
+          "finish": ["Screen print", "Full-colour"],
+          "priceDisplay": "From ₦1,200 / pc",
+          "minOrder": 50,
+          "turnaround": "5-7 business days",
+          "description": "A heavyweight cotton tote is made for repeat use, with enough surface area for a confident logo and the durability to become part of someone's daily routine.",
+          "features": [
+            "Durable 100% cotton canvas",
+            "Comfortable self-fabric handles",
+            "Strong logo presence on a reusable bag",
+            "Ideal for retail and lifestyle brands"
+          ],
+          "specifications": [
+            {"label": "Material", "value": "100% cotton canvas"},
+            {"label": "Handles", "value": "Self-fabric tote handles"},
+            {"label": "Best for", "value": "Long-term brand reuse"}
+          ]
+        },
+        {
+          "name": "Kraft Paper Bag",
+          "image": "images/products/bag2.jpeg",
+          "material": "Recyclable kraft paper",
+          "sizes": ["Small", "Medium", "Large"],
+          "finish": ["Full-colour"],
+          "priceDisplay": "From ₦450 / pc",
+          "minOrder": 50,
+          "turnaround": "5-7 business days",
+          "description": "Kraft paper gives everyday retail a natural, responsible look. It is a practical carrier for boutiques, markets and takeaway purchases, with full-colour branding available on the front panel.",
+          "features": [
+            "Recyclable kraft construction",
+            "Natural retail appearance",
+            "Twisted paper handles for easy carrying",
+            "Cost-effective branded packaging"
+          ],
+          "specifications": [
+            {"label": "Material", "value": "Recyclable kraft paper"},
+            {"label": "Handles", "value": "Twisted paper"},
+            {"label": "Best for", "value": "Retail and market sales"}
+          ]
+        },
+        {
+          "name": "Premium Gift Bag",
+          "image": "images/products/bag3.jpeg",
+          "material": "Art paper with ribbon handles",
+          "sizes": ["Medium", "Large"],
+          "finish": ["Full-colour", "Foil stamp"],
+          "priceDisplay": "From ₦1,800 / pc",
+          "minOrder": 50,
+          "turnaround": "7-9 business days",
+          "description": "A structured art-paper bag with ribbon handles turns packaging into part of the gift. Full-colour artwork or foil stamping can make the unboxing moment feel intentionally premium.",
+          "features": [
+            "Structured art-paper body",
+            "Soft ribbon handles",
+            "Foil stamping available for logos",
+            "Designed for gifting and premium retail"
+          ],
+          "specifications": [
+            {"label": "Material", "value": "Art paper"},
+            {"label": "Handles", "value": "Ribbon"},
+            {"label": "Best for", "value": "Gifts and premium retail"}
+          ]
+        },
+        {
+          "name": "Non-Woven Bag",
+          "image": "images/products/bag4.jpeg",
+          "material": "Non-woven polypropylene",
+          "sizes": ["Small", "Medium", "Large"],
+          "finish": ["Screen print", "Full-colour"],
+          "priceDisplay": "From ₦650 / pc",
+          "minOrder": 50,
+          "turnaround": "5-7 business days",
+          "description": "Non-woven polypropylene is light to store, easy to carry and practical for conferences, activations and high-volume giveaways where the bag needs to travel well.",
+          "features": [
+            "Lightweight non-woven polypropylene",
+            "Folds flat for storage and transport",
+            "Screen print or full-colour decoration",
+            "Practical for events and activations"
+          ],
+          "specifications": [
+            {"label": "Material", "value": "Non-woven polypropylene"},
+            {"label": "Handles", "value": "Integrated non-woven handles"},
+            {"label": "Best for", "value": "Events and bulk giveaways"}
+          ]
+        },
+        {
+          "name": "Jute Bag",
+          "image": "images/products/bag5.jpeg",
+          "material": "Natural jute",
+          "sizes": ["Medium", "Large"],
+          "finish": ["Screen print"],
+          "priceDisplay": "From ₦1,500 / pc",
+          "minOrder": 50,
+          "turnaround": "7-9 business days",
+          "description": "Natural jute brings a coarse, earthy texture and a strong visual identity to a reusable carrier. Its character suits markets, hospitality and brands that want their packaging to feel distinct.",
+          "features": [
+            "Natural jute texture",
+            "Strong visual and tactile character",
+            "Screen-printed brand placement",
+            "Reusable carrier for premium casual use"
+          ],
+          "specifications": [
+            {"label": "Material", "value": "Natural jute"},
+            {"label": "Handles", "value": "Jute carry handles"},
+            {"label": "Best for", "value": "Markets, hospitality and lifestyle brands"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Roll-Up Banners",
+      "slug": "roll-up-banners",
+      "category": "banners",
+      "subcategory": "85cm / 100cm aluminium stand",
+      "material": "440gsm block-out PVC graphic",
+      "sizes": ["85 x 200 cm", "100 x 200 cm"],
+      "finish": ["Matte", "Gloss"],
+      "minOrder": 1,
+      "price": 0,
+      "priceDisplay": "From ₦18,000 / set",
+      "turnaround": "1-3 business days",
+      "summary": "A fast, portable display that turns a corner, counter or booth into a branded focal point.",
+      "description": "Roll-up banners are built for moments when you need presence without a permanent installation. A block-out graphic rises from a compact aluminium base, gives your message a tall viewing area, and packs back into a carry case for the next venue.",
+      "specifications": [
+        {"label": "Hardware", "value": "Aluminium roll-up stand"},
+        {"label": "Graphic", "value": "440gsm block-out PVC"},
+        {"label": "Setup", "value": "Tool-free assembly"},
+        {"label": "Includes", "value": "Protective carry case"}
+      ],
+      "features": [
+        "Tool-free aluminium base and telescopic pole",
+        "Block-out graphic resists background show-through",
+        "Protective carry case sized to each format",
+        "Compact setup for counters, aisles and exhibition stands"
+      ],
+      "image": "images/products/roll-up-standard.svg",
+      "images": ["images/products/roll-up-standard.svg", "images/products/roll-up-premium.svg"],
+      "options": ["Format", "Graphic finish", "Quantity"],
+      "featured": true,
+      "createdAt": "2026-08-05",
+      "variants": [
+        {
+          "name": "Standard 85cm",
+          "image": "images/products/roll-up-standard.svg",
+          "material": "440gsm block-out PVC",
+          "sizes": ["85 x 200 cm"],
+          "finish": ["Matte"],
+          "priceDisplay": "From ₦18,000 / set",
+          "minOrder": 1,
+          "turnaround": "1-2 business days",
+          "description": "The 85cm format is the compact workhorse for reception areas, product counters and exhibition aisles, giving you a tall message without taking over the floor plan.",
+          "features": [
+            "Compact 85cm viewing width",
+            "Fast tool-free setup",
+            "Block-out graphic for clean colour",
+            "Carry case included for repeat use"
+          ],
+          "specifications": [
+            {"label": "Format", "value": "85 x 200 cm"},
+            {"label": "Stand", "value": "Aluminium roll-up base"},
+            {"label": "Best for", "value": "Counters, aisles and small booths"}
+          ]
+        },
+        {
+          "name": "Premium 100cm",
+          "image": "images/products/roll-up-premium.svg",
+          "material": "440gsm block-out PVC",
+          "sizes": ["100 x 200 cm"],
+          "finish": ["Matte", "Gloss"],
+          "priceDisplay": "From ₦24,000 / set",
+          "minOrder": 1,
+          "turnaround": "2-3 business days",
+          "description": "The 100cm format adds valuable visual width for trade-show graphics, product ranges and bold brand statements while retaining the same portable roll-up hardware.",
+          "features": [
+            "Wider 100cm graphic area",
+            "Premium aluminium stand",
+            "Matte or gloss graphic option",
+            "Carry case sized for the wider format"
+          ],
+          "specifications": [
+            {"label": "Format", "value": "100 x 200 cm"},
+            {"label": "Stand", "value": "Premium aluminium roll-up base"},
+            {"label": "Best for", "value": "Trade shows and feature displays"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Stickers & Labels",
+      "slug": "stickers-labels",
+      "category": "stickers",
+      "subcategory": "Die-cut / Transparent vinyl",
+      "material": "Weatherproof vinyl",
+      "sizes": ["Custom cut"],
+      "finish": ["Gloss", "Matte", "Transparent"],
+      "minOrder": 100,
+      "price": 0,
+      "priceDisplay": "From ₦12,000 / 100 pcs",
+      "turnaround": "3-4 business days",
+      "summary": "Shape, stick and stay visible with custom vinyl labels made for packaging and promotions.",
+      "description": "Stickers turn packaging, windows and campaign materials into small branded surfaces. Supply a contour-ready artwork and choose white vinyl for a bold label or clear vinyl for a no-background finish, then select gloss, matte or transparent surface treatment.",
+      "specifications": [
+        {"label": "Cut", "value": "Kiss-cut to your supplied contour"},
+        {"label": "Adhesive", "value": "Permanent acrylic"},
+        {"label": "Artwork", "value": "Vector or 300 dpi print-ready file"},
+        {"label": "Application", "value": "Smooth, clean surfaces"}
+      ],
+      "features": [
+        "Contour cutting follows your artwork outline",
+        "Permanent adhesive for packaging, windows and promotions",
+        "Gloss, matte or clear surface options",
+        "Individual pieces supplied ready to peel and apply"
+      ],
+      "image": "images/products/stickers-die-cut.svg",
+      "images": ["images/products/stickers-die-cut.svg", "images/products/stickers-transparent.svg"],
+      "options": ["Shape", "Material", "Finish", "Quantity"],
+      "featured": false,
+      "createdAt": "2026-08-05",
+      "variants": [
+        {
+          "name": "Die-cut Vinyl",
+          "image": "images/products/stickers-die-cut.svg",
+          "material": "White weatherproof vinyl",
+          "sizes": ["Custom cut"],
+          "finish": ["Gloss", "Matte"],
+          "priceDisplay": "From ₦12,000 / 100 pcs",
+          "minOrder": 100,
+          "turnaround": "3-4 business days",
+          "description": "Die-cut vinyl follows the outline of your artwork, so logos, characters and product marks can leave the sheet as individual shapes rather than sitting inside a rectangle.",
+          "features": [
+            "Contour-cut to your artwork",
+            "White vinyl for strong colour",
+            "Gloss or matte surface choice",
+            "Permanent adhesive for packaging and promotions"
+          ],
+          "specifications": [
+            {"label": "Material", "value": "White weatherproof vinyl"},
+            {"label": "Cut style", "value": "Kiss-cut individual shapes"},
+            {"label": "Best for", "value": "Product labels and branded giveaways"}
+          ]
+        },
+        {
+          "name": "Transparent Vinyl",
+          "image": "images/products/stickers-transparent.svg",
+          "material": "Clear weatherproof vinyl",
+          "sizes": ["Custom cut"],
+          "finish": ["Transparent"],
+          "priceDisplay": "From ₦15,000 / 100 pcs",
+          "minOrder": 100,
+          "turnaround": "3-4 business days",
+          "description": "Clear vinyl lets the surface beneath the label become part of the design, creating a floating, no-background look for bottles, jars, windows and glass displays.",
+          "features": [
+            "Crystal-clear vinyl face",
+            "No-background floating appearance",
+            "Weather-resistant outdoor use",
+            "Ideal for transparent packaging and windows"
+          ],
+          "specifications": [
+            {"label": "Material", "value": "Clear weatherproof vinyl"},
+            {"label": "Cut style", "value": "Kiss-cut individual shapes"},
+            {"label": "Best for", "value": "Bottles, jars, windows and glass"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Brochures & Catalogues",
+      "slug": "brochures-catalogues",
+      "category": "brochures",
+      "subcategory": "Tri-fold / Saddle-stitch",
+      "material": "170gsm silk art paper",
+      "sizes": ["A4", "A5"],
+      "finish": ["Gloss", "Matte", "Soft-touch"],
+      "minOrder": 100,
+      "price": 0,
+      "priceDisplay": "From ₦40,000 / 100 pcs",
+      "turnaround": "4-6 business days",
+      "summary": "Turn a product range or service story into a tactile piece people can browse at their own pace.",
+      "description": "Brochures give detailed information a physical rhythm. A tri-fold is ideal for a concise service story or countertop handout, while a saddle-stitched catalogue carries more pages for ranges, portfolios and company profiles. Both use 170gsm silk art paper for crisp imagery and a substantial page turn.",
+      "specifications": [
+        {"label": "Print", "value": "Full colour, inside and out"},
+        {"label": "Paper", "value": "170gsm silk art"},
+        {"label": "Artwork", "value": "Print-ready PDF with bleed"},
+        {"label": "Finishing", "value": "Scored fold or stitched binding"}
+      ],
+      "features": [
+        "Folded or bound formats matched to content depth",
+        "Silk art paper balances colour detail and page stiffness",
+        "Clean scoring, stitching and trimming",
+        "Ideal for ranges, service menus and company profiles"
+      ],
+      "image": "images/products/brochures-trifold.svg",
+      "images": ["images/products/brochures-trifold.svg", "images/products/brochures-saddle-stitch.svg"],
+      "options": ["Format", "Page count", "Finish", "Quantity"],
+      "featured": false,
+      "createdAt": "2026-08-05",
+      "variants": [
+        {
+          "name": "Tri-fold",
+          "image": "images/products/brochures-trifold.svg",
+          "material": "170gsm silk art paper",
+          "sizes": ["A4"],
+          "finish": ["Gloss", "Matte"],
+          "priceDisplay": "From ₦40,000 / 100 pcs",
+          "minOrder": 100,
+          "turnaround": "4-5 business days",
+          "description": "A single A4 sheet folded into three panels gives a service or product story a clear sequence while remaining compact enough for counters, mailers and handbags.",
+          "features": [
+            "Three-panel A4 layout",
+            "Precision score lines for a clean fold",
+            "Concise format for service summaries",
+            "Easy to distribute and store"
+          ],
+          "specifications": [
+            {"label": "Format", "value": "A4 tri-fold"},
+            {"label": "Panels", "value": "Three scored panels"},
+            {"label": "Best for", "value": "Service summaries and countertop handouts"}
+          ]
+        },
+        {
+          "name": "Saddle-stitch",
+          "image": "images/products/brochures-saddle-stitch.svg",
+          "material": "170gsm silk art paper",
+          "sizes": ["A5"],
+          "finish": ["Matte", "Soft-touch"],
+          "priceDisplay": "From ₦55,000 / 100 pcs",
+          "minOrder": 100,
+          "turnaround": "5-6 business days",
+          "description": "A5 saddle-stitch binding turns multiple pages into a compact catalogue or portfolio, with a stitched spine that keeps product ranges and longer stories together neatly.",
+          "features": [
+            "Multi-page A5 catalogue format",
+            "Stitched spine for a clean profile",
+            "Matte or soft-touch cover finish",
+            "Ideal for ranges and company profiles"
+          ],
+          "specifications": [
+            {"label": "Format", "value": "A5 saddle-stitch"},
+            {"label": "Binding", "value": "Wire-stitched spine"},
+            {"label": "Best for", "value": "Catalogues, portfolios and profiles"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Posters",
+      "slug": "posters",
+      "category": "posters",
+      "subcategory": "A2 gloss / A1 matte",
+      "material": "200gsm photo paper",
+      "sizes": ["A2", "A1"],
+      "finish": ["Gloss", "Matte anti-glare"],
+      "minOrder": 1,
+      "price": 0,
+      "priceDisplay": "From ₦3,500 / pc",
+      "turnaround": "1-2 business days",
+      "summary": "Large, vivid prints for walls, windows and short-run campaigns, finished for the way they will be seen.",
+      "description": "Posters need to work from a distance and up close. A2 gloss maximizes colour impact for events and retail windows, while A1 matte keeps text and imagery readable under bright lights. Both are printed on 200gsm photo paper and trimmed to a standard A-series size.",
+      "specifications": [
+        {"label": "Resolution", "value": "Print-ready 300 dpi recommended"},
+        {"label": "Bleed", "value": "3 mm on all sides"},
+        {"label": "Mounting", "value": "Unmounted; trimming included"},
+        {"label": "Use", "value": "Indoor display"}
+      ],
+      "features": [
+        "Photo-grade colour for artwork, events and retail displays",
+        "Gloss for saturated colour, matte for low-glare viewing",
+        "Cut to standard A-series sizes",
+        "Single-piece orders supported"
+      ],
+      "image": "images/products/posters-a2-gloss.svg",
+      "images": ["images/products/posters-a2-gloss.svg", "images/products/posters-a1-matte.svg"],
+      "options": ["Size", "Finish", "Quantity"],
+      "featured": false,
+      "createdAt": "2026-08-05",
+      "variants": [
+        {
+          "name": "A2 Gloss",
+          "image": "images/products/posters-a2-gloss.svg",
+          "material": "200gsm photo paper",
+          "sizes": ["A2"],
+          "finish": ["Gloss"],
+          "priceDisplay": "From ₦3,500 / pc",
+          "minOrder": 1,
+          "turnaround": "1-2 business days",
+          "description": "A2 gloss gives bold artwork and promotional imagery a saturated, eye-catching surface for windows, noticeboards and short-run event displays.",
+          "features": [
+            "A2 display size",
+            "Gloss surface for high colour impact",
+            "Photo-grade paper for detailed imagery",
+            "Ready for windows and indoor boards"
+          ],
+          "specifications": [
+            {"label": "Format", "value": "A2"},
+            {"label": "Surface", "value": "Gloss photo paper"},
+            {"label": "Best for", "value": "Events, retail windows and announcements"}
+          ]
+        },
+        {
+          "name": "A1 Matte",
+          "image": "images/products/posters-a1-matte.svg",
+          "material": "200gsm photo paper",
+          "sizes": ["A1"],
+          "finish": ["Matte anti-glare"],
+          "priceDisplay": "From ₦6,500 / pc",
+          "minOrder": 1,
+          "turnaround": "1-2 business days",
+          "description": "A1 matte keeps large text and detailed imagery readable in bright spaces, making it the practical choice for presentations, exhibitions and information-led displays.",
+          "features": [
+            "Large A1 viewing area",
+            "Matte anti-glare surface",
+            "Readable text under bright lighting",
+            "Ideal for exhibitions and presentations"
+          ],
+          "specifications": [
+            {"label": "Format", "value": "A1"},
+            {"label": "Surface", "value": "Matte anti-glare photo paper"},
+            {"label": "Best for", "value": "Exhibitions, presentations and information displays"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Large Format Printing",
+      "slug": "large-format",
+      "category": "banners",
+      "subcategory": "Flex banner / Self-adhesive vinyl",
+      "material": "Outdoor PVC flex or self-adhesive vinyl",
+      "sizes": ["Custom width and height"],
+      "finish": ["Gloss", "Matte", "Eyeleted", "Hemmed"],
+      "minOrder": 1,
+      "price": 0,
+      "priceDisplay": "From ₦2,500 / sqm",
+      "turnaround": "2-3 business days",
+      "summary": "Custom-scale graphics for storefronts, sites and events, finished for the way they will be installed.",
+      "description": "Large-format printing turns the dimensions of your space into the dimensions of your message. Choose PVC flex for a standalone banner with eyelets or hemming, or self-adhesive vinyl for a graphic that becomes part of a window, wall or site surface.",
+      "specifications": [
+        {"label": "Production", "value": "Printed and finished to size"},
+        {"label": "Finishing", "value": "Eyelets, hemming or adhesive backing"},
+        {"label": "Artwork", "value": "Scaled PDF or vector at final size"},
+        {"label": "Installation", "value": "Fixings not included unless quoted"}
+      ],
+      "features": [
+        "Made to the exact dimensions of your space",
+        "Outdoor-grade substrates with weather-resistant inks",
+        "Eyelets, hemming or adhesive backing selected by installation",
+        "Suitable for storefronts, events and site graphics"
+      ],
+      "image": "images/products/large-format-flex.svg",
+      "images": ["images/products/large-format-flex.svg", "images/products/large-format-vinyl.svg"],
+      "options": ["Material", "Size", "Finishing", "Quantity"],
+      "featured": false,
+      "createdAt": "2026-08-05",
+      "variants": [
+        {
+          "name": "Flex Banner",
+          "image": "images/products/large-format-flex.svg",
+          "material": "440gsm PVC flex",
+          "sizes": ["Custom width and height"],
+          "finish": ["Gloss or matte", "Eyeleted", "Hemmed"],
+          "priceDisplay": "From ₦2,500 / sqm",
+          "minOrder": 1,
+          "turnaround": "2-3 business days",
+          "description": "PVC flex is a durable, flexible banner material for storefronts, events and site signage. Eyelets and hemmed edges make it ready for ropes, frames or other fixings specified for the installation.",
+          "features": [
+            "Outdoor-grade 440gsm PVC flex",
+            "Produced to custom dimensions",
+            "Eyeleted or hemmed edge finishing",
+            "Suitable for storefronts and temporary sites"
+          ],
+          "specifications": [
+            {"label": "Material", "value": "440gsm PVC flex"},
+            {"label": "Finishing", "value": "Eyelets or hemmed edges"},
+            {"label": "Best for", "value": "Standalone banners and site signage"}
+          ]
+        },
+        {
+          "name": "Vinyl Sticker",
+          "image": "images/products/large-format-vinyl.svg",
+          "material": "Self-adhesive outdoor vinyl",
+          "sizes": ["Custom width and height"],
+          "finish": ["Gloss", "Matte"],
+          "priceDisplay": "From ₦3,500 / sqm",
+          "minOrder": 1,
+          "turnaround": "2-3 business days",
+          "description": "Self-adhesive vinyl turns a window, wall or smooth site surface into a branded graphic. Choose gloss for colour presence or matte for a lower-glare finish, with the graphic printed to the measured dimensions.",
+          "features": [
+            "Self-adhesive backing for smooth surfaces",
+            "Custom width and height",
+            "Gloss or matte surface choice",
+            "Ideal for windows, walls and site graphics"
+          ],
+          "specifications": [
+            {"label": "Material", "value": "Self-adhesive outdoor vinyl"},
+            {"label": "Backing", "value": "Pressure-sensitive adhesive"},
+            {"label": "Best for", "value": "Windows, walls and applied site graphics"}
+          ]
+        }
+      ]
+    }
+  ]
 }

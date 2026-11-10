@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">Die-cut vinyl stickers</title>
+<desc id="desc">Illustration of contour-cut vinyl stickers in different shapes.</desc>
+<rect width="800" height="600" fill="#f8f5ec"/>
+<rect width="800" height="170" fill="#C9A227"/>
+<circle cx="694" cy="76" r="72" fill="#2E90E6" opacity=".22"/>
+<text x="56" y="76" fill="#ffffff" font-family="Arial, sans-serif" font-size="34" font-weight="700">AY PRINT</text>
+<text x="56" y="122" fill="#ffffff" font-family="Arial, sans-serif" font-size="25" font-weight="600">DIE-CUT VINYL STICKERS</text>
+<g transform="translate(175 215)">
+<rect x="20" y="30" width="430" height="260" rx="14" fill="#ffffff" stroke="#d5c9b5" stroke-width="3"/>
+<circle cx="140" cy="135" r="62" fill="#2E90E6"/>
+<circle cx="140" cy="135" r="48" fill="#ffffff" opacity=".92"/>
+<rect x="245" y="78" width="120" height="120" rx="24" fill="#1b3a5b" transform="rotate(8 305 138)"/>
+<rect x="263" y="98" width="84" height="80" rx="16" fill="#f2e6c6" transform="rotate(8 305 138)"/>
+<path d="M112 238 C170 190 245 260 340 210" fill="#C9A227" opacity=".9"/>
+<circle cx="140" cy="135" r="62" fill="none" stroke="#ffffff" stroke-width="5" stroke-dasharray="8 7"/>
+<rect x="245" y="78" width="120" height="120" rx="24" fill="none" stroke="#ffffff" stroke-width="5" stroke-dasharray="8 7" transform="rotate(8 305 138)"/>
+</g>
+<text x="56" y="535" fill="#1b3a5b" font-family="Arial, sans-serif" font-size="22" font-weight="600">Contour cut / permanent adhesive / gloss or matte</text>
+</svg>

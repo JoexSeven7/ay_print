@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">Standard roll-up banner</title>
+<desc id="desc">Illustration of an 85 centimetre roll-up banner on an aluminium stand.</desc>
+<rect width="800" height="600" fill="#f3f7fb"/>
+<rect width="800" height="170" fill="#2E90E6"/>
+<circle cx="690" cy="76" r="72" fill="#C9A227" opacity=".25"/>
+<text x="56" y="76" fill="#ffffff" font-family="Arial, sans-serif" font-size="34" font-weight="700">AY PRINT</text>
+<text x="56" y="122" fill="#ffffff" font-family="Arial, sans-serif" font-size="25" font-weight="600">STANDARD ROLL-UP</text>
+<g transform="translate(285 195)">
+<rect x="0" y="0" width="230" height="310" rx="8" fill="#ffffff" stroke="#b8c7d6" stroke-width="4"/>
+<rect x="24" y="28" width="182" height="52" rx="8" fill="#2E90E6"/>
+<rect x="24" y="104" width="182" height="112" rx="8" fill="#dceaf6"/>
+<rect x="24" y="238" width="182" height="28" rx="7" fill="#C9A227"/>
+<rect x="104" y="310" width="22" height="48" fill="#6d7f91"/>
+<rect x="42" y="354" width="146" height="24" rx="12" fill="#1b3a5b"/>
+<rect x="62" y="378" width="106" height="12" rx="6" fill="#9fb4c8"/>
+</g>
+<text x="56" y="535" fill="#1b3a5b" font-family="Arial, sans-serif" font-size="22" font-weight="600">85 x 200 cm / aluminium base / carry case</text>
+</svg>

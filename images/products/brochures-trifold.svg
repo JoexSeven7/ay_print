@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">Tri-fold brochure</title>
+<desc id="desc">Illustration of an open three-panel tri-fold brochure.</desc>
+<rect width="800" height="600" fill="#f3f7fb"/>
+<rect width="800" height="170" fill="#1b3a5b"/>
+<circle cx="694" cy="78" r="70" fill="#C9A227" opacity=".25"/>
+<text x="56" y="76" fill="#ffffff" font-family="Arial, sans-serif" font-size="34" font-weight="700">AY PRINT</text>
+<text x="56" y="122" fill="#ffffff" font-family="Arial, sans-serif" font-size="25" font-weight="600">TRI-FOLD BROCHURES</text>
+<g transform="translate(155 210)">
+<rect x="0" y="36" width="490" height="252" rx="8" fill="#ffffff" stroke="#c9d7e5" stroke-width="3"/>
+<line x1="163" y1="42" x2="163" y2="282" stroke="#9fb4c8" stroke-width="3" stroke-dasharray="10 8"/>
+<line x1="327" y1="42" x2="327" y2="282" stroke="#9fb4c8" stroke-width="3" stroke-dasharray="10 8"/>
+<rect x="24" y="66" width="112" height="38" rx="8" fill="#2E90E6"/>
+<rect x="188" y="66" width="112" height="38" rx="8" fill="#C9A227"/>
+<rect x="352" y="66" width="112" height="38" rx="8" fill="#1b3a5b"/>
+<rect x="24" y="130" width="112" height="104" rx="8" fill="#dceaf6"/>
+<rect x="188" y="130" width="112" height="104" rx="8" fill="#f2e6c6"/>
+<rect x="352" y="130" width="112" height="104" rx="8" fill="#d8e2ec"/>
+<rect x="24" y="250" width="440" height="12" rx="6" fill="#b8c7d6"/>
+</g>
+<text x="56" y="535" fill="#1b3a5b" font-family="Arial, sans-serif" font-size="22" font-weight="600">Three panels / precise scoring / handout friendly</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">A2 gloss poster</title>
+<desc id="desc">Illustration of a glossy A2 poster with photo-quality colour blocks.</desc>
+<rect width="800" height="600" fill="#eef4fb"/>
+<rect width="800" height="170" fill="#2E90E6"/>
+<circle cx="694" cy="76" r="72" fill="#C9A227" opacity=".22"/>
+<text x="56" y="76" fill="#ffffff" font-family="Arial, sans-serif" font-size="34" font-weight="700">AY PRINT</text>
+<text x="56" y="122" fill="#ffffff" font-family="Arial, sans-serif" font-size="25" font-weight="600">A2 GLOSS POSTERS</text>
+<g transform="translate(255 195)">
+<rect x="0" y="0" width="290" height="330" rx="8" fill="#ffffff" stroke="#b8c7d6" stroke-width="4"/>
+<rect x="24" y="26" width="242" height="142" rx="8" fill="#1b3a5b"/>
+<rect x="24" y="188" width="112" height="92" rx="8" fill="#C9A227"/>
+<rect x="154" y="188" width="112" height="92" rx="8" fill="#dceaf6"/>
+<path d="M44 34 L190 158" stroke="#ffffff" stroke-width="14" opacity=".35" stroke-linecap="round"/>
+<rect x="24" y="296" width="242" height="12" rx="6" fill="#b8c7d6"/>
+</g>
+<text x="56" y="535" fill="#1b3a5b" font-family="Arial, sans-serif" font-size="22" font-weight="600">Photo-grade colour / saturated gloss finish</text>
+</svg>

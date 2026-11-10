@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">A1 matte poster</title>
+<desc id="desc">Illustration of a large matte A1 poster with anti-glare surface.</desc>
+<rect width="800" height="600" fill="#f3f7fb"/>
+<rect width="800" height="170" fill="#1b3a5b"/>
+<circle cx="112" cy="82" r="66" fill="#C9A227" opacity=".25"/>
+<text x="56" y="76" fill="#ffffff" font-family="Arial, sans-serif" font-size="34" font-weight="700">AY PRINT</text>
+<text x="56" y="122" fill="#ffffff" font-family="Arial, sans-serif" font-size="25" font-weight="600">A1 MATTE POSTERS</text>
+<g transform="translate(190 185)">
+<rect x="0" y="0" width="420" height="350" rx="8" fill="#f5f1e8" stroke="#cfc7b8" stroke-width="4"/>
+<rect x="28" y="28" width="364" height="150" rx="8" fill="#d8e2ec"/>
+<rect x="28" y="202" width="166" height="106" rx="8" fill="#C9A227"/>
+<rect x="218" y="202" width="174" height="106" rx="8" fill="#2E90E6"/>
+<rect x="28" y="326" width="364" height="12" rx="6" fill="#b8c7d6"/>
+<path d="M52 44 L330 160" stroke="#ffffff" stroke-width="12" opacity=".35" stroke-linecap="round"/>
+</g>
+<text x="56" y="535" fill="#1b3a5b" font-family="Arial, sans-serif" font-size="22" font-weight="600">Large display / matte anti-glare surface</text>
+</svg>

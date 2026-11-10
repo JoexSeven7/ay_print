@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">Saddle-stitch catalogue</title>
+<desc id="desc">Illustration of a saddle-stitched A5 catalogue booklet.</desc>
+<rect width="800" height="600" fill="#f8f5ec"/>
+<rect width="800" height="170" fill="#C9A227"/>
+<circle cx="112" cy="82" r="66" fill="#2E90E6" opacity=".22"/>
+<text x="56" y="76" fill="#ffffff" font-family="Arial, sans-serif" font-size="34" font-weight="700">AY PRINT</text>
+<text x="56" y="122" fill="#ffffff" font-family="Arial, sans-serif" font-size="25" font-weight="600">SADDLE-STITCH CATALOGUES</text>
+<g transform="translate(245 205)">
+<rect x="0" y="30" width="310" height="280" rx="10" fill="#ffffff" stroke="#d5c9b5" stroke-width="3"/>
+<rect x="18" y="58" width="274" height="64" rx="8" fill="#1b3a5b"/>
+<rect x="18" y="145" width="122" height="92" rx="8" fill="#dceaf6"/>
+<rect x="160" y="145" width="132" height="92" rx="8" fill="#f2e6c6"/>
+<rect x="18" y="255" width="274" height="14" rx="7" fill="#b8c7d6"/>
+<circle cx="155" cy="34" r="5" fill="#6d7f91"/>
+<circle cx="155" cy="302" r="5" fill="#6d7f91"/>
+<line x1="155" y1="34" x2="155" y2="302" stroke="#6d7f91" stroke-width="3" stroke-dasharray="5 7"/>
+</g>
+<text x="56" y="535" fill="#1b3a5b" font-family="Arial, sans-serif" font-size="22" font-weight="600">Multi-page / stitched spine / catalogue ready</text>
+</svg>
