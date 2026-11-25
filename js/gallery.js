@@ -35,7 +35,7 @@
             const res = await fetch(window.APP_CONFIG.paths.galleryData);
             if (res.ok) {
                 const data = await res.json();
-                window.__GALLERY_ITEMS = data.items || [];
+                window.__GALLERY_ITEMS = (data.items || []).filter(item => window.isRealImage(item.image));
             } else {
                 window.__GALLERY_ITEMS = [];
             }

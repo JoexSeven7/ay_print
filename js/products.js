@@ -134,7 +134,7 @@
             const res = await fetch(window.APP_CONFIG.paths.productsData);
             if (!res.ok) throw new Error('HTTP ' + res.status);
             const data = await res.json();
-            allProducts = data.products;
+            allProducts = window.filterRealImageProducts(data.products);
         } catch (e) {
             console.error('Products load failed:', e);
             allProducts = [];
