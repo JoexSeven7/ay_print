@@ -43,7 +43,9 @@
 				minOrder: v.minOrder != null ? v.minOrder : p.minOrder,
 				priceDisplay: v.priceDisplay || p.priceDisplay,
 				turnaround: v.turnaround || p.turnaround,
-				features: v.features || p.features || []
+				features: v.features || p.features || [],
+				description: v.description || p.description,
+				specifications: v.specifications || p.specifications || []
 			}));
 		}
 		const fallbackImages = (p.images && p.images.length) ? p.images : [p.image];
@@ -57,7 +59,9 @@
 			minOrder: p.minOrder,
 			priceDisplay: p.priceDisplay,
 			turnaround: p.turnaround,
-			features: p.features || []
+			features: p.features || [],
+			description: p.description,
+			specifications: p.specifications || []
 		}));
 	}
 
@@ -69,7 +73,9 @@
 			['Minimum order', (v.minOrder != null ? v.minOrder + ' pcs' : '-')],
 			['Turnaround', v.turnaround]
 		];
-		return rows.map(([k, val]) => `
+		const customRows = Array.isArray(v.specifications) ? v.specifications.map(s => [s.label, s.value]) : [];
+		const allRows = [...customRows, ...rows.filter(([key]) => !customRows.some(([label]) => label === key))];
+		return allRows.map(([k, val]) => `
 			<div class="flex justify-between py-2 border-b border-gray-100">
 				<span class="text-gray-500">${escapeHtml(k)}</span>
 				<span class="font-medium text-gray-900 text-right" data-spec="${escapeAttr(k)}">${escapeHtml(val || '-')}</span>
@@ -135,7 +141,7 @@
 					<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">${escapeHtml(product.title)}</h1>
 					<p class="text-2xl font-bold text-primary mb-2" data-variant-price>${escapeHtml(v.priceDisplay || '-')}</p>
 					<p class="text-gray-600 mb-6"><i class="fas fa-clock text-secondary mr-2"></i><span data-variant-turnaround>${escapeHtml(v.turnaround || '-')}</span></p>
-					<p class="text-gray-700 mb-6">${escapeHtml(product.description)}</p>
+					<p class="text-gray-700 mb-6" data-variant-description>${escapeHtml(v.description || product.description)}</p>
 					<div class="bg-gray-50 rounded-xl p-5 mb-6" id="variantSpecs">${renderSpecRows(v)}</div>
 					<ul class="space-y-2 mb-6" id="variantFeatures">${renderFeatureList(v)}</ul>
 					<div class="flex flex-col sm:flex-row gap-3">
@@ -182,6 +188,8 @@
 				if (priceEl) priceEl.textContent = v.priceDisplay || '-';
 				const turnaroundEl = details.querySelector('[data-variant-turnaround]');
 				if (turnaroundEl) turnaroundEl.textContent = v.turnaround || '-';
+				const descriptionEl = details.querySelector('[data-variant-description]');
+				if (descriptionEl) descriptionEl.textContent = v.description || '-';
 
 				const specs = document.getElementById('variantSpecs');
 				if (specs) specs.innerHTML = renderSpecRows(v);
@@ -189,7 +197,13 @@
 				if (features) features.innerHTML = renderFeatureList(v);
 
 				const quoteBtn = document.getElementById('addToQuote');
-				if (quoteBtn) quoteBtn.dataset.variant = v.name;
+				if (quoteBtn) {
+					quoteBtn.dataset.variant = v.name;
+					const selected = typeof isQuoteSelected === 'function' && isQuoteSelected(quoteBtn.dataset.id, v.name);
+					quoteBtn.innerHTML = selected
+						? '<i class="fas fa-bookmark"></i> Added to Quote'
+						: '<i class="far fa-bookmark"></i> Add to Quote';
+				}
 
 				tabs.forEach((t, i) => {
 					const active = i === index;
@@ -218,7 +232,7 @@
 		tabs.forEach(tab => {
 			tab.addEventListener('click', () => activate(parseInt(tab.dataset.index, 10)));
 		});
-		imgContainer.querySelectorAll('.thumbnail').forEach(thumb => {
+		thumbs.forEach(thumb => {
 			thumb.addEventListener('click', () => activate(parseInt(thumb.dataset.index, 10)));
 		});
 	}
@@ -228,13 +242,19 @@
 		if (!addBtn) return;
 		addBtn.addEventListener('click', () => {
 			if (typeof toggleQuote === 'function') {
-				toggleQuote(addBtn.dataset.id);
-				const inQuote = (typeof getQuote === 'function') && getQuote().includes(String(addBtn.dataset.id));
+				toggleQuote(addBtn.dataset.id, addBtn.dataset.variant);
+				const inQuote = typeof isQuoteSelected === 'function' && isQuoteSelected(addBtn.dataset.id, addBtn.dataset.variant);
 				addBtn.innerHTML = inQuote
 					? '<i class="fas fa-bookmark"></i> Added to Quote'
 					: '<i class="far fa-bookmark"></i> Add to Quote';
 			}
 		});
+		if (typeof isQuoteSelected === 'function') {
+			const inQuote = isQuoteSelected(addBtn.dataset.id, addBtn.dataset.variant);
+			addBtn.innerHTML = inQuote
+				? '<i class="fas fa-bookmark"></i> Added to Quote'
+				: '<i class="far fa-bookmark"></i> Add to Quote';
+		}
 	}
 
 	async function loadProducts() {
@@ -242,7 +262,7 @@
 			const res = await fetch(window.APP_CONFIG.paths.productsData);
 			if (res.ok) {
 				const data = await res.json();
-				return data.products;
+                return window.filterRealImageProducts(data.products);
 			}
 		} catch (e) {
 			console.error('Products load failed:', e);

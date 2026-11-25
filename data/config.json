@@ -62,11 +62,6 @@
 		"servicesData": "data/services.json",
 		"siteConfig": "data/config.json"
 	},
-	"copyright": {
-		"useCurrentYear": true,
-		"fallbackYear": 2026,
-		"text": "AY PRINT. All rights reserved."
-	},
 	"navigation": [
 		{ "label": "Home", "href": "index.html" },
 		{ "label": "Products", "href": "products.html" },

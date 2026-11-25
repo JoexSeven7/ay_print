@@ -585,10 +585,29 @@ window.addEventListener('load', function () {
  * Retrieves the current quote shortlist from localStorage.
  * Uses the quoteStorageKey from APP_CONFIG.limits as the
  * localStorage key. Returns an empty array if nothing is stored.
- * @returns {Array<string>} Array of product IDs in the quote list
+ * @returns {Array<{productId: string, variant: string|null}>} Quote selections
  */
 function getQuote() {
-	return JSON.parse(localStorage.getItem(window.APP_CONFIG.limits.quoteStorageKey) || '[]');
+	try {
+		const stored = JSON.parse(localStorage.getItem(window.APP_CONFIG.limits.quoteStorageKey) || '[]');
+		if (!Array.isArray(stored)) return [];
+		return stored.map((entry) => {
+			if (entry && typeof entry === 'object') {
+				return { productId: String(entry.productId ?? entry.id ?? ''), variant: entry.variant ? String(entry.variant) : null };
+			}
+			return { productId: String(entry), variant: null };
+		}).filter((entry) => entry.productId);
+	} catch (error) {
+		console.warn('Invalid quote shortlist; resetting it.', error);
+		try { localStorage.removeItem(window.APP_CONFIG.limits.quoteStorageKey); } catch (_) { /* storage may be unavailable */ }
+		return [];
+	}
+}
+
+function isQuoteSelected(id, variant = null) {
+	const productId = String(id);
+	const selectedVariant = variant ? String(variant) : null;
+	return getQuote().some((entry) => entry.productId === productId && entry.variant === selectedVariant);
 }
 
 /**
@@ -606,19 +625,20 @@ function updateQuoteCount() {
 }
 
 /**
- * Toggles a product ID in the quote shortlist stored in localStorage.
- * If the ID exists, it is removed; otherwise it is added.
+ * Toggles a product/variant selection in the quote shortlist stored in localStorage.
+ * If the selection exists, it is removed; otherwise it is added.
  * After mutation, updates the badge count and syncs all quote
  * button icons across the page to reflect the new state.
  * @param {string|number} id - The product ID to toggle
  */
-function toggleQuote(id) {
+function toggleQuote(id, variant = null) {
 	let quote = getQuote();
-	const strId = String(id);
-	if (quote.includes(strId)) {
-		quote = quote.filter((x) => x !== strId);
+	const productId = String(id);
+	const selectedVariant = variant ? String(variant) : null;
+	if (isQuoteSelected(productId, selectedVariant)) {
+		quote = quote.filter((entry) => !(entry.productId === productId && entry.variant === selectedVariant));
 	} else {
-		quote.push(strId);
+		quote.push({ productId, variant: selectedVariant });
 	}
 	localStorage.setItem(window.APP_CONFIG.limits.quoteStorageKey, JSON.stringify(quote));
 	updateQuoteCount();
@@ -638,7 +658,7 @@ function syncQuoteButtons() {
 		const id = btn.dataset.id;
 		const icon = btn.querySelector('i');
 		if (!icon) return;
-		if (quote.includes(id)) {
+		if (quote.some((entry) => entry.productId === String(id))) {
 			icon.classList.remove('far');
 			icon.classList.add('fas', 'text-gold');
 			btn.title = 'Remove from quote';
@@ -689,7 +709,7 @@ async function fetchProducts() {
 		const response = await fetch(window.APP_CONFIG.paths.productsData);
 		if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
 		const data = await response.json();
-		productsData = data.products;
+		productsData = window.filterRealImageProducts(data.products);
 		return productsData;
 	} catch (error) {
 		console.error('Error loading products:', error);

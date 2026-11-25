@@ -191,6 +191,17 @@
     window.getPlaceholderImage = function () {
         return window.APP_CONFIG.paths.placeholderImage;
     };
+
+    // Only show verified raster artwork in customer-facing cards. SVG diagrams
+    // are not portfolio photography and should not be presented as finished work.
+    window.isRealImage = function (src) {
+        return typeof src === 'string' && /\.(?:jpe?g|png|webp|gif)(?:[?#].*)?$/i.test(src);
+    };
+
+    window.filterRealImageProducts = function (products) {
+        return Array.isArray(products) ? products.filter(product => window.isRealImage(product.image)) : [];
+    };
+
     window.escapeHtml = function (unsafe) {
         if (typeof unsafe !== 'string') return unsafe;
         return unsafe
