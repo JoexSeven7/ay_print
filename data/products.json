@@ -78,25 +78,28 @@
           ]
         },
         {
-          "name": "Spot-UV",
+          "name": "Delivery Sticker",
+          "title": "Delivery Stickers",
+          "category": "stickers",
+          "subcategory": "Delivery labels / Custom adhesive print",
           "image": "images/products/card3.jpeg",
-          "material": "350gsm art card",
-          "sizes": ["85 x 55 mm", "90 x 50 mm"],
-          "finish": ["Matte laminate", "Selective Spot-UV"],
-          "priceDisplay": "From ₦30,000 / 100 pcs",
+          "material": "Self-adhesive sticker paper",
+          "sizes": ["Custom size"],
+          "finish": ["Full-colour print", "Matte or gloss"],
+          "priceDisplay": "₦10,000 / 100 pcs",
           "minOrder": 100,
-          "turnaround": "3-4 business days",
-          "description": "A matte base with selective gloss UV lets a logo, name or graphic catch the light while the rest of the card stays understated and tactile.",
+          "turnaround": "2-4 business days",
+          "description": "Custom delivery stickers for parcels, food orders and branded packaging. Send your artwork or let AY PRINT prepare the layout for clean, readable labels.",
           "features": [
-            "Selective gloss UV highlights",
-            "Matte background for contrast",
-            "Logo-led visual accent",
-            "Memorable premium finish"
+            "Delivery and packaging label format",
+            "Full-colour custom artwork",
+            "Self-adhesive backing",
+            "100-copy minimum order"
           ],
           "specifications": [
-            {"label": "Stock", "value": "350gsm art card"},
-            {"label": "UV area", "value": "Selected design elements"},
-            {"label": "Best for", "value": "Logo and identity emphasis"}
+            {"label": "Product", "value": "Delivery sticker"},
+            {"label": "Quantity", "value": "100 copies"},
+            {"label": "Best for", "value": "Packages, takeaway orders and branded deliveries"}
           ]
         },
         {
