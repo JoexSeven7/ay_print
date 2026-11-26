@@ -1,7 +1,7 @@
 {
-  "name": "AY PRINT",
-  "short_name": "AY Print",
-  "description": "AY PRINT - printed cards, flyers, bags, banners, stickers and more.",
+  "name": "AYMEDIACONSULT",
+  "short_name": "AYMEDIACONSULT",
+  "description": "AYMEDIACONSULT - printed cards, flyers, bags, banners, stickers and more.",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#eef4fb",

@@ -456,7 +456,7 @@ function createLoadingOverlay() {
 				</div>
 				<p class="text-white text-lg font-medium tracking-[0.25em] uppercase"
 					style="font-family:inherit;">
-					AY PRINT<span class="loading-dots"></span>
+					AYMEDIACONSULT<span class="loading-dots"></span>
 				</p>
 			</div>
 		</div>
@@ -1011,4 +1011,4 @@ document.addEventListener('DOMContentLoaded', async function () {
 	initSmoothScroll();
 });
 
-console.log('AY PRINT website loaded successfully!');
+console.log('AYMEDIACONSULT website loaded successfully!');
