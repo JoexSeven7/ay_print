@@ -351,3 +351,18 @@ html {
     outline: 2px solid var(--color-primary, #2E90E6);
     outline-offset: 2px;
 }
+
+/* Keep the compact brand name visible beside the logo on every screen size. */
+nav a[aria-label="AYMEDIACONSULT home"] > span {
+    display: inline !important;
+    font-size: 0.625rem;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+    nav a[aria-label="AYMEDIACONSULT home"] > span {
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+    }
+}
