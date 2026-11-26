@@ -27,26 +27,32 @@
     let allProducts = [];
 
     function generateProductCard(p) {
-        const categoryBadge = `<span class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold">${escapeHtml(p.category)}</span>`;
-        const featuredBadge = p.featured ? '<span class="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-full text-xs font-semibold">Featured</span>' : '';
+        const categoryNames = { cards: 'Business Cards', bags: 'Branded Bags', stickers: 'Stickers & Labels' };
+        const categoryBadge = `<span class="catalog-card__category">${escapeHtml(categoryNames[p.category] || p.category)}</span>`;
+        const featuredBadge = p.featured ? '<span class="catalog-card__featured">Featured</span>' : '';
         return `
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow product-card">
-                <div class="relative">
-                    <img src="${escapeAttr(p.image)}" alt="${escapeAttr(p.title)}" class="w-full h-48 object-cover" onerror="this.src='${window.APP_CONFIG.paths.placeholderImage}'">
+            <article class="catalog-card bg-white rounded-2xl overflow-hidden product-card">
+                <div class="catalog-card__media relative">
+                    <img src="${escapeAttr(p.image)}" alt="${escapeAttr(p.title)}" class="w-full h-full object-cover" onerror="this.src='${window.APP_CONFIG.paths.placeholderImage}'">
                     ${featuredBadge}
                     ${categoryBadge}
-                    <button class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow hover:bg-gray-100 transition-colors quote-btn" data-id="${escapeAttr(p.id)}" title="Add to quote" aria-label="Add to quote">
+                    <button class="catalog-card__bookmark quote-btn" data-id="${escapeAttr(p.id)}" title="Add to quote" aria-label="Add to quote">
                         <i class="far fa-bookmark text-gray-600"></i>
                     </button>
                 </div>
-                <div class="p-5">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-1">${escapeHtml(p.title)}</h3>
-                    <p class="text-sm text-gray-500 mb-3"><i class="fas fa-layer-group text-primary mr-2"></i>${escapeHtml(p.subcategory)}</p>
-                    <p class="text-lg font-bold text-primary mb-1">${escapeHtml(p.priceDisplay)}</p>
-                    <p class="text-sm text-gray-600 mb-4"><i class="fas fa-clock text-secondary mr-2"></i>${escapeHtml(p.turnaround)}</p>
-                    <a href="product-detail.html?id=${escapeAttr(p.id)}" class="block text-center border-2 border-primary text-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition-colors">View Details</a>
+                <div class="catalog-card__body p-6 flex flex-col">
+                    <p class="catalog-card__eyebrow">${escapeHtml(p.subcategory)}</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">${escapeHtml(p.title)}</h3>
+                    <p class="catalog-card__description text-gray-600">${escapeHtml(p.description || p.summary)}</p>
+                    <div class="catalog-card__footer mt-auto pt-6">
+                        <div>
+                            <p class="catalog-card__price">${escapeHtml(p.priceDisplay)}</p>
+                            <p class="catalog-card__turnaround"><i class="fas fa-clock text-secondary mr-2"></i>${escapeHtml(p.turnaround)}</p>
+                        </div>
+                        <a href="product-detail.html?id=${escapeAttr(p.id)}" class="catalog-card__cta">View Details</a>
+                    </div>
                 </div>
-            </div>`;
+            </article>`;
     }
 
     function generateProductListRow(p) {
@@ -134,7 +140,7 @@
             const res = await fetch(window.APP_CONFIG.paths.productsData);
             if (!res.ok) throw new Error('HTTP ' + res.status);
             const data = await res.json();
-            allProducts = window.filterRealImageProducts(data.products);
+            allProducts = window.expandProductVariants(data.products);
         } catch (e) {
             console.error('Products load failed:', e);
             allProducts = [];

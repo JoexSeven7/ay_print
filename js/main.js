@@ -709,7 +709,7 @@ async function fetchProducts() {
 		const response = await fetch(window.APP_CONFIG.paths.productsData);
 		if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
 		const data = await response.json();
-		productsData = window.filterRealImageProducts(data.products);
+		productsData = window.expandProductVariants(data.products);
 		return productsData;
 	} catch (error) {
 		console.error('Error loading products:', error);
@@ -733,7 +733,7 @@ function generateProductCard(product) {
 		: '';
 
 	return `
-		<div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow product-card">
+		<div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow product-card flex flex-col">
 			<div class="relative">
 				<img src="${escapeAttr(product.image)}" alt="${escapeAttr(product.title)}" class="w-full h-48 object-cover" onerror="this.src='${window.APP_CONFIG.paths.placeholderImage}'">
 				${featuredBadge}
@@ -742,13 +742,13 @@ function generateProductCard(product) {
 					<i class="far fa-bookmark text-gray-600"></i>
 				</button>
 			</div>
-			<div class="p-5">
+			<div class="p-5 flex flex-col flex-1">
 				<h3 class="text-lg font-semibold text-gray-900 mb-1">${escapeHtml(product.title)}</h3>
 				<p class="text-sm text-gray-500 mb-3"><i class="fas fa-layer-group text-primary mr-2"></i>${escapeHtml(product.subcategory)}</p>
 				<p class="text-sm text-gray-600 mb-4">${escapeHtml(product.summary || product.description)}</p>
 				<p class="text-lg font-bold text-primary mb-1">${escapeHtml(product.priceDisplay)}</p>
 				<p class="text-sm text-gray-600 mb-4"><i class="fas fa-clock text-secondary mr-2"></i>${escapeHtml(product.turnaround)}</p>
-				<a href="product-detail.html?id=${escapeAttr(product.id)}" class="block text-center border-2 border-primary text-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition-colors">View Details</a>
+				<a href="product-detail.html?id=${escapeAttr(product.id)}" class="block text-center border-2 border-primary text-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition-colors mt-auto">View Details</a>
 			</div>
 		</div>
 	`;
@@ -768,7 +768,8 @@ function renderFeaturedProducts(products) {
 
 	const limit = window.APP_CONFIG.limits.featuredProducts;
 	const featured = products.filter((p) => p.featured).slice(0, limit);
-	const display = featured.length > 0 ? featured : products.slice(0, limit);
+	const remaining = products.filter((p) => !featured.includes(p));
+	const display = [...featured, ...remaining].slice(0, limit);
 
 	if (display.length === 0) {
 		track.innerHTML = `<div class="col-span-full text-center py-12"><p class="text-gray-600">No products available at the moment.</p></div>`;

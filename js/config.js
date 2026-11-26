@@ -202,6 +202,38 @@
         return Array.isArray(products) ? products.filter(product => window.isRealImage(product.image)) : [];
     };
 
+    // Turn each photographed variant into a standalone catalogue item so it
+    // can have its own title, price, description, quote button and detail URL.
+    window.expandProductVariants = function (products) {
+        return window.filterRealImageProducts(products).flatMap(product => {
+            if (!Array.isArray(product.variants) || product.variants.length === 0) {
+                return [product];
+            }
+
+            return product.variants
+                .filter(variant => window.isRealImage(variant.image || product.image))
+                .map((variant, index) => ({
+                    ...product,
+                    id: Number(product.id) * 100 + index + 1,
+                    title: variant.title || `${product.title} - ${variant.name}`,
+                    image: variant.image || product.image,
+                    images: [variant.image || product.image],
+                    summary: variant.description || product.summary,
+                    description: variant.description || product.description,
+                    category: variant.category || product.category,
+                    subcategory: variant.subcategory || product.subcategory,
+                    material: variant.material || product.material,
+                    sizes: variant.sizes || product.sizes,
+                    finish: variant.finish || product.finish,
+                    minOrder: variant.minOrder ?? product.minOrder,
+                    priceDisplay: variant.priceDisplay || product.priceDisplay,
+                    turnaround: variant.turnaround || product.turnaround,
+                    featured: Boolean(product.featured && index === 0),
+                    variants: [{ ...variant, image: variant.image || product.image }]
+                }));
+        });
+    };
+
     window.escapeHtml = function (unsafe) {
         if (typeof unsafe !== 'string') return unsafe;
         return unsafe

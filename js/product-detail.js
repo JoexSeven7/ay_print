@@ -262,7 +262,7 @@
 			const res = await fetch(window.APP_CONFIG.paths.productsData);
 			if (res.ok) {
 				const data = await res.json();
-                return window.filterRealImageProducts(data.products);
+                return window.expandProductVariants(data.products);
 			}
 		} catch (e) {
 			console.error('Products load failed:', e);
