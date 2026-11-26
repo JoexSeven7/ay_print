@@ -1,6 +1,6 @@
 {
 	"company": {
-		"name": "AY PRINT",
+		"name": "AYMEDIACONSULT",
 		"logo": "images/ay_logo.png",
 		"since": 2018,
 		"description": "AY PRINT is your trusted partner for premium printing — business cards, flyers, bags, banners, stickers and more. Fast turnaround, free design and eco-friendly options."
@@ -41,7 +41,7 @@
 	"copyright": {
 		"useCurrentYear": true,
 		"fallbackYear": 2026,
-		"text": "AY PRINT. All rights reserved."
+		"text": "AYMEDIACONSULT. All rights reserved."
 	},
 	"formspree": {
 		"id": "FORMSPREE_ID",

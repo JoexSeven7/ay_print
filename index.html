@@ -15,7 +15,7 @@
 		<meta
 			name="keywords"
 			content="printing, business cards, flyers, branded bags, banners, stickers, brochures, posters, AY PRINT" />
-		<title>AY PRINT | Cards, Flyers, Bags & Printing Services</title>
+		<title>AYMEDIACONSULT | Cards, Flyers, Bags & Printing Services</title>
 		<link rel="icon" href="favicon.ico" />
 		<link rel="icon" type="image/png" href="favicon.png" />
 		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -29,8 +29,11 @@
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="flex justify-between items-center h-20">
 					<div class="flex-shrink-0">
-						<a href="index.html" class="flex items-center">
-							<img src="images/ay_logo.png" alt="AY PRINT" class="h-12 w-auto" />
+						<a href="index.html" class="flex items-center gap-3" aria-label="AYMEDIACONSULT home">
+							<img src="images/ay_logo.png" alt="AYMEDIACONSULT" class="h-12 w-auto" />
+							<span class="hidden sm:inline text-primary text-xs font-semibold tracking-widest uppercase opacity-70">
+								AYMEDIACONSULT
+							</span>
 						</a>
 					</div>
 					<button class="md:hidden p-2 rounded-lg hover:bg-gray-100" id="navToggle" aria-label="Toggle navigation">
@@ -206,7 +209,7 @@
 					<div class="relative mt-4 md:mt-0">
 						<img
 							src="images/hero_page.jpg"
-							alt="About AY PRINT"
+							alt="About AYMEDIACONSULT"
 							class="rounded-2xl shadow-2xl"
 							onerror="this.src = 'images/hero_page.jpg'" />
 						<div
@@ -216,12 +219,12 @@
 						</div>
 					</div>
 					<div class="lg:pl-8">
-						<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 mt-16">Welcome to AY PRINT</h2>
+						<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 mt-16">Welcome to AYMEDIACONSULT</h2>
 						<p class="text-xl text-primary mb-6">
 							Your Trusted Printing Partner Since <span data-config="company.since">2018</span>
 						</p>
 						<p class="text-gray-600 mb-4">
-							At AY PRINT we help businesses look their best on paper and beyond. From crisp business cards to
+							At AYMEDIACONSULT we help businesses look their best on paper and beyond. From crisp business cards to
 							large-format banners, we combine premium materials, vivid colour and fast turnaround to deliver print that
 							gets noticed.
 						</p>
@@ -289,7 +292,7 @@
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-12">
 					<div>
-						<img src="images/ay_logo.png" alt="AY PRINT" class="h-12 w-auto mb-6" />
+							<img src="images/ay_logo.png" alt="AYMEDIACONSULT" class="h-12 w-auto mb-6" />
 						<p class="text-gray-400 mb-6">
 							AY PRINT is your trusted partner for premium printing — business cards, flyers, bags, banners, stickers
 							and more. Fast turnaround, free design and eco-friendly options.
@@ -399,5 +402,11 @@
 		<script src="js/config.js" defer></script>
 		<script src="js/hero.js" defer></script>
 		<script src="js/main.js" defer></script>
-	</body>
+<script>
+	// Keep the homepage footer aligned with the current brand name.
+	document.querySelectorAll('footer').forEach((footer) => {
+		footer.innerHTML = footer.innerHTML.replaceAll('AY PRINT', 'AYMEDIACONSULT');
+	});
+</script>
+</body>
 </html>
